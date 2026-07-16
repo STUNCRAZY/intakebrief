@@ -13,6 +13,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { BookingService, type SlotStore, type SlotState } from '@/lib/booking/service';
+import { DemoCalendarProvider, isDemoMode } from './demo';
 import { GoogleCalendarProvider, type CalendarProvider } from './provider';
 
 /** Holds expire after 15 minutes. */
@@ -90,7 +91,7 @@ export function _resetBookingServiceForTests(store?: SlotStore, now?: () => numb
 }
 
 export type AvailabilityResult =
-  | { status: 'ok'; timezone: string; slots: { startISO: string; endISO: string }[] }
+  | { status: 'ok'; timezone: string; slots: { startISO: string; endISO: string }[]; demo?: boolean }
   | { status: 'blocked'; detail: string };
 
 /**
@@ -117,6 +118,13 @@ export async function getAvailability(
     }
   }
 
+  // Demo mode: only when no real provider is configured. A configured real
+  // provider always wins; without DEMO_MODE === 'true' this stays blocked.
+  const demo = !provider && isDemoMode(env);
+  if (!provider && demo) {
+    provider = new DemoCalendarProvider();
+  }
+
   if (!provider) {
     const missing = REQUIRED_GOOGLE_ENV.filter((name) => !env[name]);
     return {
@@ -132,5 +140,5 @@ export async function getAvailability(
   const open = slots
     .filter((slot) => !confirmedIds.has(slot.startISO) && !booking.isHeld(slot.startISO))
     .map((slot) => ({ startISO: slot.startISO, endISO: slot.endISO }));
-  return { status: 'ok', timezone, slots: open };
+  return demo ? { status: 'ok', timezone, slots: open, demo: true } : { status: 'ok', timezone, slots: open };
 }

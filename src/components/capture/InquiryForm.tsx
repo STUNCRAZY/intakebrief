@@ -103,6 +103,7 @@ export function InquiryForm({ firm, fields, preparation }: InquiryFormProps) {
   const [slots, setSlots] = useState<Slot[]>([]);
   const [timezone, setTimezone] = useState<string>('');
   const [schedDetail, setSchedDetail] = useState<string>('');
+  const [schedDemo, setSchedDemo] = useState<boolean>(false);
 
   const [selected, setSelected] = useState<string>('');
   const [holdState, setHoldState] = useState<HoldState>('none');
@@ -137,9 +138,10 @@ export function InquiryForm({ firm, fields, preparation }: InquiryFormProps) {
           return;
         }
         if (!res.ok) throw new Error('availability-failed');
-        const body = (await res.json()) as { status: 'ok'; timezone: string; slots: Slot[] };
+        const body = (await res.json()) as { status: 'ok'; timezone: string; slots: Slot[]; demo?: boolean };
         setTimezone(body.timezone);
         setSlots(body.slots);
+        setSchedDemo(body.demo === true);
         if (body.slots.length === 0) {
           setSched('empty');
           setStatusLine('No open consultation times in the next two weeks.');
@@ -316,8 +318,8 @@ export function InquiryForm({ firm, fields, preparation }: InquiryFormProps) {
         return;
       }
       if (!res.ok) throw new Error('checkout-failed');
-      const body = (await res.json()) as { url: string; sessionId: string };
-      setStatusLine('Redirecting to secure payment…');
+      const body = (await res.json()) as { url: string; sessionId: string; demo?: boolean };
+      setStatusLine(body.demo ? 'Redirecting to the demo checkout…' : 'Redirecting to secure payment…');
       window.location.href = body.url;
     } catch {
       setCheckout('idle');
@@ -526,6 +528,11 @@ export function InquiryForm({ firm, fields, preparation }: InquiryFormProps) {
               {holdMessage ? (
                 <p className={styles.holdMessage} role="alert">
                   {holdMessage}
+                </p>
+              ) : null}
+              {schedDemo ? (
+                <p className={styles.demoStamp} role="note">
+                  Demo times — sample availability, calendar not connected
                 </p>
               ) : null}
               <div className={styles.slotList} role="radiogroup" aria-label="Available consultation times">

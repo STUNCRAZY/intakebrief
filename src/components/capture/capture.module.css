@@ -316,6 +316,19 @@
   margin-bottom: var(--space-3);
 }
 
+.demoStamp {
+  display: inline-block;
+  font-family: var(--font-ui);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--warning);
+  border: 1.5px dashed var(--warning);
+  padding: var(--space-1) var(--space-2);
+  margin: 0 0 var(--space-3);
+}
+
 .slotList {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(13rem, 1fr));

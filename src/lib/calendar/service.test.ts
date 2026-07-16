@@ -93,6 +93,44 @@ describe('getAvailability', () => {
     expect(getBookingService().isHeld('slot-1')).toBe(false);
     expect(getBookingService().releaseHold(holdId)).toBe(false);
   });
+
+  it('demo mode off without a provider is blocked exactly as before (no slots fabricated)', async () => {
+    for (const env of [
+      ENV_WITHOUT_GOOGLE,
+      { ...ENV_WITHOUT_GOOGLE, DEMO_MODE: 'false' } as NodeJS.ProcessEnv,
+    ]) {
+      const result = await getAvailability('firm-x', '2026-05-01T00:00:00Z', '2026-05-15T00:00:00Z', env);
+      expect(result.status).toBe('blocked');
+      expect(result).not.toHaveProperty('slots');
+      expect(result).not.toHaveProperty('demo');
+    }
+  });
+
+  it('demo mode on without a provider returns ok demo:true with labeled sample slots', async () => {
+    _resetBookingServiceForTests(new InMemorySlotStore());
+    const env = { ...ENV_WITHOUT_GOOGLE, DEMO_MODE: 'true' } as NodeJS.ProcessEnv;
+    const result = await getAvailability('firm-x', '2026-05-04T00:00:00Z', '2026-05-10T00:00:00Z', env);
+    expect(result.status).toBe('ok');
+    if (result.status === 'ok') {
+      expect(result.demo).toBe(true);
+      expect(result.timezone).toBe('America/Chicago');
+      expect(result.slots.length).toBeGreaterThan(0);
+    }
+  });
+
+  it('a configured real provider always wins over demo mode (no demo flag)', async () => {
+    _resetBookingServiceForTests(new InMemorySlotStore(), () => 1_000_000);
+    const env = { ...ENV_WITHOUT_GOOGLE, DEMO_MODE: 'true' } as NodeJS.ProcessEnv;
+    const slots = twoSlots();
+    const result = await getAvailability('firm-x', '2026-05-01T00:00:00Z', '2026-05-15T00:00:00Z', env, stubProvider(slots));
+    expect(result.status).toBe('ok');
+    expect(result).not.toHaveProperty('demo');
+    if (result.status === 'ok') {
+      expect(result.slots).toHaveLength(2);
+      // Real provider slots, not demo sample slots.
+      expect(result.slots[0].startISO).toBe(slots[0].startISO);
+    }
+  });
 });
 
 describe('FileSlotStore', () => {

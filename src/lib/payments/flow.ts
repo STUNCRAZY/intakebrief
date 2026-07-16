@@ -14,6 +14,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { DEPOSIT_AMOUNT_CENTS, getStripe } from './stripe';
+import { isDemoMode } from '@/lib/calendar/demo';
 import { getFirm } from '@/lib/firms/load';
 import type { BookingService } from '@/lib/booking/service';
 import type { EmailMessage, EmailProvider, ProviderResult } from '@/lib/email/provider';
@@ -51,10 +52,27 @@ export async function createDepositCheckout(
     return { http: 404, body: { error: 'unknown-firm' } };
   }
   const stripe = deps.stripe ?? getStripe(env);
-  if (!stripe) {
-    return { http: 503, body: { status: 'blocked', detail: 'payments blocked: missing STRIPE_SECRET_KEY' } };
-  }
   const booking = deps.booking;
+  if (!stripe) {
+    // Demo mode: simulated checkout for local sales previews — only when no
+    // real Stripe is configured. The valid-hold rule is still enforced, and
+    // the response is explicitly labeled demo so the UI can stamp it.
+    if (!isDemoMode(env)) {
+      return { http: 503, body: { status: 'blocked', detail: 'payments blocked: missing STRIPE_SECRET_KEY' } };
+    }
+    if (!booking || !booking.isHeld(input.slotId)) {
+      return { http: 409, body: { error: 'hold-required' } };
+    }
+    const demoBase = env.APP_BASE_URL ?? '';
+    return {
+      http: 200,
+      body: {
+        url: `${demoBase}/capture/${input.firmId}/return?demo=1&slotId=${encodeURIComponent(input.slotId)}&holdId=${encodeURIComponent(input.holdId)}`,
+        sessionId: `demo-${input.holdId}`,
+        demo: true,
+      },
+    };
+  }
   if (!booking || !booking.isHeld(input.slotId)) {
     return { http: 409, body: { error: 'hold-required' } };
   }

@@ -159,6 +159,65 @@ describe('createDepositCheckout', () => {
     expect(booking.getConfirmed()).toHaveLength(0);
     expect(booking.isHeld(SLOT_ID)).toBe(true);
   });
+
+  it('demo mode without a valid hold still returns 409 (hold rule enforced)', async () => {
+    const booking = new BookingService(); // no hold placed
+    const env = { DEMO_MODE: 'true' } as unknown as NodeJS.ProcessEnv;
+    const res = await createDepositCheckout(
+      { firmId: FIRM_ID, slotId: SLOT_ID, holdId: 'hold-nope' },
+      { env, booking },
+    );
+    expect(res.http).toBe(409);
+    expect(res.body).toMatchObject({ error: 'hold-required' });
+    expect(res.body).not.toMatchObject({ demo: true });
+  });
+
+  it('demo mode with a valid hold returns 200 demo:true with a demo=1 return URL', async () => {
+    const { booking, holdId } = heldBooking();
+    const env = { DEMO_MODE: 'true', APP_BASE_URL: 'https://app.example.com' } as unknown as NodeJS.ProcessEnv;
+    const res = await createDepositCheckout(
+      { firmId: FIRM_ID, slotId: SLOT_ID, holdId },
+      { env, booking },
+    );
+    expect(res.http).toBe(200);
+    expect(res.body).toMatchObject({ demo: true, sessionId: `demo-${holdId}` });
+    const url = (res.body as { url?: string }).url ?? '';
+    expect(url).toContain('demo=1');
+    expect(url).toContain(`https://app.example.com/capture/${FIRM_ID}/return`);
+    expect(url).toContain(`slotId=${encodeURIComponent(SLOT_ID)}`);
+    expect(url).toContain(`holdId=${encodeURIComponent(holdId)}`);
+    // Simulated checkout never confirms the booking by itself.
+    expect(booking.getConfirmed()).toHaveLength(0);
+  });
+
+  it('demo mode off without Stripe is 503 blocked exactly as before', async () => {
+    const { booking, holdId } = heldBooking();
+    for (const env of [
+      {} as NodeJS.ProcessEnv,
+      { DEMO_MODE: 'false' } as unknown as NodeJS.ProcessEnv,
+    ]) {
+      const res = await createDepositCheckout(
+        { firmId: FIRM_ID, slotId: SLOT_ID, holdId },
+        { env, booking },
+      );
+      expect(res.http).toBe(503);
+      expect(res.body).toMatchObject({ status: 'blocked', detail: 'payments blocked: missing STRIPE_SECRET_KEY' });
+    }
+  });
+
+  it('a configured Stripe always wins over demo mode (real session created, no demo flag)', async () => {
+    const { fake, calls } = fakeStripeRecorder();
+    const { booking, holdId } = heldBooking();
+    const env = { DEMO_MODE: 'true' } as unknown as NodeJS.ProcessEnv;
+    const res = await createDepositCheckout(
+      { firmId: FIRM_ID, slotId: SLOT_ID, holdId },
+      { stripe: fake, booking, env },
+    );
+    expect(res.http).toBe(200);
+    expect(res.body).toMatchObject({ sessionId: 'cs_test_123' });
+    expect(res.body).not.toMatchObject({ demo: true });
+    expect(calls).toHaveLength(1);
+  });
 });
 
 describe('handleWebhook', () => {

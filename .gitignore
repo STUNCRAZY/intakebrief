@@ -23,3 +23,6 @@ next-env.d.ts
 # booking slot store (local runtime state)
 .runtime/
 
+
+# generated HTML previews
+preview/

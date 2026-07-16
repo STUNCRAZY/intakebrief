@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import React from 'react';
+import { getBookingService } from '@/lib/calendar/service';
 import { getFirm } from '@/lib/firms/load';
 import shared from '../../../shared.module.css';
 import styles from './page.module.css';
@@ -9,9 +10,30 @@ import styles from './page.module.css';
 interface ReturnSearchParams {
   session_id?: string;
   cancelled?: string;
+  demo?: string;
+  slotId?: string;
+  holdId?: string;
 }
 
 export const metadata: Metadata = { title: 'Deposit return' };
+
+/** Wall-clock rendering of a demo slot ISO (explicit -05:00 offset inside). */
+function formatDemoSlot(iso: string): string {
+  try {
+    return new Intl.DateTimeFormat('en-US', {
+      weekday: 'long',
+      month: 'long',
+      day: 'numeric',
+      year: 'numeric',
+      hour: 'numeric',
+      minute: '2-digit',
+      timeZoneName: 'long',
+      timeZone: 'America/Chicago',
+    }).format(new Date(iso));
+  } catch {
+    return iso;
+  }
+}
 
 /**
  * Stripe checkout return target. Honest copy only: a completed checkout session
@@ -32,6 +54,27 @@ export default async function CaptureReturnPage({
 
   const cancelled = query.cancelled === '1';
   const hasSession = typeof query.session_id === 'string' && query.session_id.length > 0;
+  const isDemo = query.demo === '1';
+
+  // Demo mode return: no Stripe, no charge. Confirm the held slot locally so
+  // the sales preview shows a realistic end state; an already-confirmed slot
+  // (demo link visited twice) is a note, never a crash.
+  let demoAlreadyBooked = false;
+  let demoConfirmFailed = false;
+  if (isDemo) {
+    const slotId = query.slotId ?? '';
+    const holdId = query.holdId ?? '';
+    try {
+      getBookingService().confirmBooking(slotId, `demo-${holdId}`);
+    } catch (err) {
+      const message = err instanceof Error ? err.message : String(err);
+      if (message.includes('already confirmed')) {
+        demoAlreadyBooked = true;
+      } else {
+        demoConfirmFailed = true;
+      }
+    }
+  }
 
   return (
     <div className={styles.page}>
@@ -39,7 +82,45 @@ export default async function CaptureReturnPage({
         <Link href={`/capture/${firm.id}`}>← Back to the {firm.name} page</Link>
       </p>
 
-      {cancelled ? (
+      {isDemo ? (
+        <section className={styles.panel} aria-labelledby="return-heading">
+          <span className={`${shared.stamp} ${shared.stampDanger}`} style={{ fontSize: '1rem', padding: '0.35em 0.6em', border: '2px solid currentColor' }}>
+            Demo — no charge made
+          </span>
+          <h1 id="return-heading" className={styles.title}>
+            Simulated checkout complete
+          </h1>
+          <p>
+            <strong>This is a demo.</strong> No payment was collected and no card was involved. The appointment
+            {query.slotId ? (
+              <>
+                {' '}
+                for <strong>{formatDemoSlot(query.slotId)}</strong>
+              </>
+            ) : null}{' '}
+            is confirmed in this local demo only.
+          </p>
+          <p>
+            In production, the $50 deposit is charged through Stripe-hosted checkout, and the appointment locks only
+            after a signed Stripe webhook verifies the payment — a browser redirect is never proof of payment.
+          </p>
+          {demoAlreadyBooked ? (
+            <p>
+              <em>Note: this demo appointment was already booked — revisiting the link changes nothing.</em>
+            </p>
+          ) : null}
+          {demoConfirmFailed ? (
+            <p>
+              <em>Note: the demo booking could not be recorded locally; the demo flow is otherwise unaffected.</em>
+            </p>
+          ) : null}
+          <p>
+            <Link className={styles.cta} href={`/capture/${firm.id}`}>
+              Back to the {firm.name} page
+            </Link>
+          </p>
+        </section>
+      ) : cancelled ? (
         <section className={styles.panel} aria-labelledby="return-heading">
           <span className={`${shared.stamp} ${shared.stampWarning}`}>Checkout cancelled</span>
           <h1 id="return-heading" className={styles.title}>
