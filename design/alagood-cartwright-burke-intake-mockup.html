@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Alagood Cartwright Burke PC — Custom Intake · PROPOSED CONCEPT</title>
+<!--
+  Static design mockup implementing design/alagood-cartwright-burke.md (2026-07-16).
+  Palette, typography, taglines, and disclaimer voice derived from dentonlaw.com
+  and its theme stylesheet. No live backend: availability is sample data and the
+  checkout/payment step is simulated. Labeled proposed concept throughout.
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,500;6..96,600&family=Jost:wght@200;500&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#164863;        /* deep navy section background (live site) */
+    --blue:#427d9d;        /* primary brand blue — CTAs (live site) */
+    --sky:#9bbec8;         /* light sky-blue accent — button wedge, panels */
+    --tan:#d2b589;         /* warm tan accent — headline rule, summary border */
+    --ink:#0d374c;         /* dark blue text on light backgrounds */
+    --grey:#787878;
+    --taken:#d1d1d1;
+    --card:#ffffff;
+    --serif:'Bodoni Moda', 'Bodoni MT', Didot, 'Times New Roman', serif;
+    --sans:'Poppins', 'Segoe UI', Arial, sans-serif;
+    --btn:'Jost', 'Futura', 'Trebuchet MS', sans-serif;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0; background:var(--navy); color:var(--ink);
+    font-family:var(--sans); font-weight:300; line-height:1.55;
+    -webkit-text-size-adjust:100%;
+  }
+  .stamp{
+    display:block; text-align:center; padding:.45rem 1rem;
+    background:#f5efdd; color:#6b5a2b;
+    font-family:var(--btn); font-weight:500; font-size:.72rem;
+    letter-spacing:.14em; text-transform:uppercase;
+  }
+  .topbar{
+    display:flex; flex-wrap:wrap; gap:.5rem 1.5rem; align-items:baseline;
+    justify-content:space-between; padding:1rem clamp(1rem,4vw,2.5rem);
+    color:#fff;
+  }
+  .topbar .brand{font-family:var(--serif); font-weight:600; text-transform:uppercase; letter-spacing:.04em; font-size:1.05rem}
+  .topbar .phone{font-family:var(--btn); font-weight:500; letter-spacing:.46px; text-transform:uppercase; font-size:.9rem; color:var(--sky)}
+  .progress{
+    display:flex; gap:1.25rem; padding:0 clamp(1rem,4vw,2.5rem) 1rem;
+    color:var(--sky); font-family:var(--btn); font-weight:500; font-size:.78rem;
+    letter-spacing:.12em; text-transform:uppercase;
+  }
+  .progress span{opacity:.55}
+  .progress span[aria-current="step"]{opacity:1; color:#fff}
+  .progress .dots-short{display:none}
+  main{display:flex; justify-content:center; padding:0 1rem 4rem}
+  .card{
+    background:var(--card); width:100%; max-width:44rem;
+    padding:clamp(1.5rem,4vw,3rem); box-shadow:0 18px 50px rgba(0,0,0,.28);
+  }
+  h1,h2{
+    font-family:var(--serif); font-weight:600; text-transform:uppercase;
+    letter-spacing:-.01em; line-height:1.12; color:var(--ink);
+    margin:.25rem 0 .35rem; font-size:clamp(1.55rem,3.4vw,2.2rem);
+  }
+  .rule{width:3.5rem; border:0; border-top:3px solid var(--tan); margin:.4rem 0 1.1rem}
+  .micro{margin:0 0 1.4rem; max-width:36rem}
+  .trustline{font-size:.8rem; color:var(--grey); margin:1.1rem 0 0}
+  label{display:block; font-weight:400; font-size:.9rem; margin:1rem 0 .3rem}
+  input[type=text],input[type=email],input[type=tel],input[type=date],textarea{
+    width:100%; padding:.7rem .8rem; font:inherit; color:var(--ink);
+    border:1px solid #c8c8c8; border-radius:2px; background:#fff;
+  }
+  input:focus-visible,textarea:focus-visible,button:focus-visible{outline:3px solid var(--sky); outline-offset:1px}
+  .seg{display:flex; gap:.5rem; flex-wrap:wrap; margin-top:.35rem}
+  .seg button{
+    font-family:var(--btn); font-weight:500; text-transform:uppercase; letter-spacing:.46px;
+    font-size:.8rem; padding:.6rem 1.1rem; min-height:44px;
+    background:#fff; color:var(--blue); border:1.5px solid var(--blue); cursor:pointer;
+  }
+  .seg button[aria-pressed="true"]{background:var(--blue); color:#fff}
+  .chips{display:flex; flex-wrap:wrap; gap:.55rem; margin:.35rem 0 .4rem}
+  .chip{
+    font-family:var(--sans); font-weight:400; font-size:.85rem;
+    padding:.55rem .95rem; min-height:44px; border-radius:999px;
+    border:1.5px solid var(--blue); color:var(--blue); background:#fff; cursor:pointer;
+  }
+  .chip[aria-pressed="true"]{background:var(--blue); color:#fff}
+  .helper{font-size:.78rem; color:var(--grey); margin:.25rem 0 0}
+  .consent{
+    background:var(--sky); padding:1rem 1.2rem; margin:1.4rem 0 0;
+  }
+  .consent label{display:flex; gap:.6rem; align-items:flex-start; margin:.35rem 0; font-weight:400}
+  .consent input{margin-top:.28rem; width:1.05rem; height:1.05rem}
+  .btnrow{display:flex; gap:.8rem; margin-top:1.8rem; flex-wrap:wrap}
+  .btn{
+    position:relative; font-family:var(--btn); font-weight:500; text-transform:uppercase;
+    letter-spacing:.46px; font-size:.88rem; min-height:48px; padding:.85rem 1.6rem .85rem 1.9rem;
+    border:0; cursor:pointer; background:var(--blue); color:#fff;
+  }
+  .btn::before{
+    content:""; position:absolute; left:0; top:0; bottom:0; width:8px; background:var(--sky);
+  }
+  .btn.secondary{background:#fff; color:var(--blue); border:1.5px solid var(--blue)}
+  .btn.secondary::before{display:none}
+  .btn:disabled{opacity:.55; cursor:default}
+  .windows h3{
+    font-family:var(--btn); font-weight:500; text-transform:uppercase; letter-spacing:.14em;
+    font-size:.78rem; color:var(--grey); margin:1.2rem 0 .5rem;
+  }
+  .days{display:flex; gap:.45rem; flex-wrap:wrap; margin-bottom:.4rem}
+  .day{
+    min-width:4.6rem; padding:.5rem .4rem; text-align:center; font-size:.82rem;
+    border:1px solid #c8c8c8; background:#fff; cursor:pointer;
+  }
+  .day[aria-pressed="true"]{border-color:var(--blue); box-shadow:inset 0 0 0 1.5px var(--blue); color:var(--blue)}
+  .day.closed{background:#f1f1f1; color:#a3a3a3; cursor:default; text-decoration:none}
+  .slots{display:flex; flex-wrap:wrap; gap:.5rem}
+  .slot{
+    min-width:4.9rem; min-height:44px; padding:.55rem .7rem; font-size:.88rem;
+    background:#fff; border:1.5px solid var(--blue); color:var(--ink); cursor:pointer;
+  }
+  .slot[aria-pressed="true"]{background:var(--blue); color:#fff}
+  .slot.taken{border-color:var(--taken); color:#a3a3a3; text-decoration:line-through; cursor:default; background:#fafafa}
+  .hold{
+    background:var(--sky); color:var(--ink); padding:1rem 1.2rem; margin-top:1.4rem;
+  }
+  .hold p{margin:.25rem 0}
+  .countdown{font-family:var(--btn); font-weight:500; text-transform:uppercase; letter-spacing:.46px; color:var(--blue); font-size:.9rem}
+  .summary{
+    border-left:6px solid var(--tan); background:#fff; padding:1rem 1.2rem;
+    box-shadow:0 1px 0 #e4e4e4; margin:0 0 1.2rem;
+  }
+  .summary p{margin:.3rem 0}
+  .summary .amount{font-weight:600; font-size:1.2rem}
+  .lockline{font-size:.8rem; color:var(--grey); margin-top:1rem}
+  .confirm{
+    background:var(--navy); color:#fff; padding:clamp(1.5rem,4vw,2.5rem);
+  }
+  .confirm h2{color:#fff}
+  .confirm .rule{border-top-color:var(--tan)}
+  .pending{
+    border:1.5px dashed var(--blue); padding:1rem 1.2rem; margin-top:1.4rem;
+  }
+  .visually-hidden{position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap}
+  @media (max-width:560px){
+    .progress .dots-long{display:none}
+    .progress .dots-short{display:inline}
+    .btn{width:100%; padding-left:1.6rem}
+    .btn::before{width:0; border-top:4px solid var(--sky); left:0; right:0; top:0; bottom:auto; height:0}
+    .btnrow{flex-direction:column}
+    .btnrow .btn.secondary{order:2}
+    .slots .slot{flex:1 1 30%}
+    .hold.sticky{position:sticky; bottom:0; z-index:5; box-shadow:0 -8px 24px rgba(0,0,0,.18)}
+  }
+</style>
+</head>
+<body>
+<span class="stamp">Proposed concept — not the firm&rsquo;s official website · Design mockup with sample availability and simulated checkout</span>
+
+<header class="topbar">
+  <span class="brand">Alagood Cartwright Burke PC</span>
+  <span class="phone">940-891-0003</span>
+</header>
+
+<nav class="progress" aria-label="Intake progress">
+  <span class="dots-long" id="dots-long">
+    <span data-dot="1" aria-current="step">● 1 Contact</span> →
+    <span data-dot="2">○ 2 Your matter</span> →
+    <span data-dot="3">○ 3 Time</span> →
+    <span data-dot="4">○ 4 Reserve</span>
+  </span>
+  <span class="dots-short" id="dots-short">Step 1 of 4</span>
+</nav>
+
+<main>
+  <div class="card">
+
+    <!-- STEP 1 — Contact -->
+    <section data-step="1" aria-labelledby="s1-h">
+      <h1 id="s1-h">Get The Answers You Need</h1>
+      <hr class="rule">
+      <p class="micro">Tell us how to reach you. An attorney from our Denton office will be ready for your consultation — your success is our primary concern.</p>
+
+      <label for="f-name">Full name</label>
+      <input id="f-name" type="text" autocomplete="name">
+      <label for="f-email">Email</label>
+      <input id="f-email" type="email" autocomplete="email">
+      <label for="f-phone">Phone</label>
+      <input id="f-phone" type="tel" autocomplete="tel">
+
+      <label id="pm-label">Preferred way to reach you</label>
+      <div class="seg" role="group" aria-labelledby="pm-label">
+        <button type="button" aria-pressed="true">Call</button>
+        <button type="button" aria-pressed="false">Text</button>
+        <button type="button" aria-pressed="false">Email</button>
+      </div>
+
+      <p class="trustline">This form does not create an attorney-client relationship. Please don&rsquo;t include confidential details yet.</p>
+
+      <div class="btnrow">
+        <button class="btn" data-next="2">Continue →</button>
+      </div>
+    </section>
+
+    <!-- STEP 2 — Your matter -->
+    <section data-step="2" aria-labelledby="s2-h" hidden>
+      <h2 id="s2-h">Trusted Legal Advice For Many Areas Of Life</h2>
+      <hr class="rule">
+      <p class="micro">What&rsquo;s going on? A sentence or two is plenty — we help people find effective solutions to life&rsquo;s problems.</p>
+
+      <label id="chips-label">Which of these sounds closest? <span class="helper">(optional — tap one)</span></label>
+      <div class="chips" role="group" aria-labelledby="chips-label">
+        <button type="button" class="chip" aria-pressed="false" data-seed="My job / employer — ">My job / employer</button>
+        <button type="button" class="chip" aria-pressed="false" data-seed="A business or contract dispute — ">A business or contract dispute</button>
+        <button type="button" class="chip" aria-pressed="false" data-seed="An injury or accident — ">An injury or accident</button>
+        <button type="button" class="chip" aria-pressed="false" data-seed="Property / real estate — ">Property / real estate</button>
+        <button type="button" class="chip" aria-pressed="false" data-seed="A will, trust, or estate — ">A will, trust, or estate</button>
+        <button type="button" class="chip" aria-pressed="false" data-seed="">Something else</button>
+      </div>
+
+      <label for="f-what">What happened, briefly…</label>
+      <textarea id="f-what" rows="4"></textarea>
+
+      <label for="f-other">Who&rsquo;s on the other side? (employer, company, or person)</label>
+      <input id="f-other" type="text">
+      <p class="helper">We use this only to check for conflicts.</p>
+
+      <label for="f-deadline">Is there a deadline — a court, filing, or response date?</label>
+      <input id="f-deadline" type="date">
+      <p class="helper"><label style="display:inline; margin:0"><input type="checkbox" id="f-nodeadline"> No deadline / not sure</label></p>
+
+      <div class="consent">
+        <label><input type="checkbox"> It&rsquo;s OK for the firm to contact me about my inquiry.</label>
+        <label><input type="checkbox"> I understand this form doesn&rsquo;t create an attorney-client relationship.</label>
+      </div>
+
+      <div class="btnrow">
+        <button class="btn secondary" data-next="1">← Back</button>
+        <button class="btn" data-next="3">Choose my time →</button>
+      </div>
+    </section>
+
+    <!-- STEP 3 — Time -->
+    <section data-step="3" aria-labelledby="s3-h" hidden>
+      <h2 id="s3-h">Schedule A Consultation</h2>
+      <hr class="rule">
+      <p class="micro">Pick a time that works. Consultations are 30 minutes, Monday through Friday, with our Denton office.</p>
+
+      <div class="days" role="group" aria-label="Choose a day (sample week)">
+        <button type="button" class="day" aria-pressed="true">Mon<br>Jul 20</button>
+        <button type="button" class="day" aria-pressed="false">Tue<br>Jul 21</button>
+        <button type="button" class="day" aria-pressed="false">Wed<br>Jul 22</button>
+        <button type="button" class="day" aria-pressed="false">Thu<br>Jul 23</button>
+        <button type="button" class="day" aria-pressed="false">Fri<br>Jul 24</button>
+        <span class="day closed" aria-disabled="true">Sat<br>closed</span>
+        <span class="day closed" aria-disabled="true">Sun<br>closed</span>
+      </div>
+
+      <div class="windows">
+        <h3>Morning (CT)</h3>
+        <div class="slots" role="group" aria-label="Morning times">
+          <button type="button" class="slot">9:00</button>
+          <button type="button" class="slot">9:30</button>
+          <button type="button" class="slot taken" aria-disabled="true">10:00</button>
+          <button type="button" class="slot">10:30</button>
+          <button type="button" class="slot">11:00</button>
+        </div>
+        <h3>Afternoon (CT)</h3>
+        <div class="slots" role="group" aria-label="Afternoon times">
+          <button type="button" class="slot">1:30</button>
+          <button type="button" class="slot" id="demo-slot">2:00</button>
+          <button type="button" class="slot">2:30</button>
+          <button type="button" class="slot">3:00</button>
+          <button type="button" class="slot taken" aria-disabled="true">3:30</button>
+          <button type="button" class="slot">4:00</button>
+          <button type="button" class="slot">4:30</button>
+        </div>
+      </div>
+
+      <div class="hold sticky" id="hold-banner" hidden>
+        <p>We&rsquo;ll hold <strong id="hold-label">Tuesday, July 21 at 2:00 PM CT</strong> for the next <strong>15 minutes</strong> while you reserve it. Your <strong>$50.00 deposit</strong> secures that time with our office — if the deposit isn&rsquo;t completed, the time is released for someone else who needs it. Your consultation is confirmed once your payment is verified, and we&rsquo;ll email you right away.</p>
+        <p class="countdown" role="timer">Held for <span id="countdown">15:00</span></p>
+      </div>
+
+      <div class="btnrow">
+        <button class="btn secondary" data-next="2">← Back</button>
+        <button class="btn" id="reserve-btn" data-next="4" disabled>Reserve this time →</button>
+      </div>
+    </section>
+
+    <!-- STEP 4 — Reserve -->
+    <section data-step="4" aria-labelledby="s4-h" hidden>
+      <h2 id="s4-h">Reserve Your Consultation</h2>
+      <hr class="rule">
+
+      <div class="summary">
+        <p><strong>Tue, Jul 21 · 2:00–2:30 PM CT</strong> · 30-minute consultation</p>
+        <p class="amount">Reservation deposit: $50.00</p>
+        <p class="helper">Fixed, shown read-only — never an editable field. Deposit set by the firm.</p>
+      </div>
+
+      <p class="micro">Your deposit secures this time with our office. You&rsquo;ll pay through our secure checkout — we never see your card details.</p>
+
+      <div class="btnrow">
+        <button class="btn secondary" data-next="3">← Back</button>
+        <button class="btn" id="pay-btn">Pay $50.00 &amp; Secure My Time →</button>
+      </div>
+      <p class="lockline">🔒 Secure checkout · Deposit set by the firm · Held time releases in <span id="countdown-4">15:00</span> if not completed</p>
+      <p class="helper">Design mockup: the checkout below is simulated — no real charge is made.</p>
+    </section>
+
+    <!-- STEP 5 — Confirmation -->
+    <section data-step="5" aria-labelledby="s5-h" hidden>
+      <!-- State B: redirect returned, webhook not yet verified -->
+      <div class="pending" id="state-b">
+        <h2 id="s5-h" style="font-size:1.3rem">Almost there — we&rsquo;re verifying your payment.</h2>
+        <p>This usually takes a few seconds, and your confirmation will arrive by email. Please know that simply returning to this page does not confirm your appointment; your time is confirmed only after your payment is verified.</p>
+      </div>
+
+      <!-- State A: webhook verified -->
+      <div class="confirm" id="state-a" hidden>
+        <h2>You&rsquo;re Confirmed.</h2>
+        <hr class="rule">
+        <p>Your consultation is set for <strong>Tue, Jul 21 at 2:00 PM CT</strong>. A confirmation is on its way to your email. We look forward to helping you find an effective solution.</p>
+      </div>
+      <p class="helper" style="margin-top:1rem">Mockup note: State A renders only after a verified payment webhook in the real system — never from the browser redirect alone. The transition above is simulated.</p>
+    </section>
+
+  </div>
+</main>
+
+<p class="visually-hidden" aria-live="polite" id="sr-status"></p>
+
+<script>
+(function(){
+  var sections = document.querySelectorAll('[data-step]');
+  var dots = document.querySelectorAll('[data-dot]');
+  var shortLabel = document.getElementById('dots-short');
+  var sr = document.getElementById('sr-status');
+  var countdownTimer = null;
+
+  function show(step){
+    sections.forEach(function(s){ s.hidden = s.getAttribute('data-step') !== String(step); });
+    dots.forEach(function(d){
+      var n = d.getAttribute('data-dot');
+      if (n === String(step)) { d.setAttribute('aria-current','step'); d.textContent = d.textContent.replace('○','●'); }
+      else { d.removeAttribute('aria-current'); d.textContent = d.textContent.replace('●','○'); }
+    });
+    shortLabel.textContent = 'Step ' + Math.min(step,4) + ' of 4';
+    sr.textContent = 'Step ' + step;
+    window.scrollTo({top:0});
+  }
+
+  document.querySelectorAll('[data-next]').forEach(function(btn){
+    btn.addEventListener('click', function(){ show(btn.getAttribute('data-next')); });
+  });
+
+  // Segmented control + chips
+  document.querySelectorAll('.seg button, .chip').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var group = btn.parentElement;
+      group.querySelectorAll('button').forEach(function(b){ b.setAttribute('aria-pressed','false'); });
+      btn.setAttribute('aria-pressed','true');
+      if (btn.classList.contains('chip') && btn.dataset.seed){
+        var ta = document.getElementById('f-what');
+        if (!ta.value.trim()) ta.value = btn.dataset.seed;
+      }
+    });
+  });
+
+  // Days (single-select demo)
+  document.querySelectorAll('.day[aria-pressed]').forEach(function(day){
+    day.addEventListener('click', function(){
+      document.querySelectorAll('.day[aria-pressed]').forEach(function(d){ d.setAttribute('aria-pressed','false'); });
+      day.setAttribute('aria-pressed','true');
+    });
+  });
+
+  // Slots → hold banner + countdown
+  var reserveBtn = document.getElementById('reserve-btn');
+  var holdBanner = document.getElementById('hold-banner');
+  var holdLabel = document.getElementById('hold-label');
+  var cd = document.getElementById('countdown');
+  var cd4 = document.getElementById('countdown-4');
+
+  function startCountdown(){
+    clearInterval(countdownTimer);
+    var remain = 15 * 60;
+    countdownTimer = setInterval(function(){
+      remain = Math.max(0, remain - 1);
+      var mm = String(Math.floor(remain/60)), ss = String(remain%60).padStart(2,'0');
+      cd.textContent = mm + ':' + ss; cd4.textContent = mm + ':' + ss;
+      if (remain === 0) clearInterval(countdownTimer);
+    }, 1000);
+  }
+
+  document.querySelectorAll('.slot:not(.taken)').forEach(function(slot){
+    slot.addEventListener('click', function(){
+      document.querySelectorAll('.slot').forEach(function(s){ s.setAttribute('aria-pressed','false'); });
+      slot.setAttribute('aria-pressed','true');
+      var day = document.querySelector('.day[aria-pressed="true"]');
+      var dayText = day ? day.textContent.replace(/\s+/g,' ').trim() : 'Monday Jul 20';
+      holdLabel.textContent = dayText + ' at ' + slot.textContent + ' CT';
+      holdBanner.hidden = false;
+      reserveBtn.disabled = false;
+      startCountdown();
+      sr.textContent = 'Time held for 15 minutes: ' + holdLabel.textContent;
+    });
+  });
+
+  // Payment: simulated verifying → confirmed (mirrors webhook-gated states)
+  document.getElementById('pay-btn').addEventListener('click', function(){
+    show(5);
+    clearInterval(countdownTimer);
+    setTimeout(function(){
+      document.getElementById('state-b').hidden = true;
+      document.getElementById('state-a').hidden = false;
+      sr.textContent = 'Payment verified. Consultation confirmed.';
+    }, 2600);
+  });
+
+  // Demo pre-selection matching the spec's example
+  document.getElementById('demo-slot').addEventListener('click', function(){
+    holdLabel.textContent = 'Tuesday, July 21 at 2:00 PM CT';
+  });
+})();
+</script>
+</body>
+</html>

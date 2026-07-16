@@ -19,6 +19,7 @@ const PAGES = {
   'firm-peugh-law': '/firms/peugh-law',
   'capture-sarah-roland-law': '/capture/sarah-roland-law',
   'capture-kelsey-law': '/capture/kelsey-law',
+  'capture-alagood-cartwright-burke': '/capture/alagood-cartwright-burke',
 };
 
 const get = async (url, retries = 3) => {
