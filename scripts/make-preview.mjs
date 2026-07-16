@@ -59,7 +59,10 @@ async function inlineAssets(html) {
     const href = tag.match(/href="([^"]+)"/)?.[1];
     if (!href) continue;
     const css = await get(BASE + href);
-    html = html.replace(tag, `<style data-inlined="${href}">\n${css}\n</style>`);
+    // Replacement MUST be a function: the minified bundles contain $&, $', $0
+    // sequences that String.replace would otherwise interpret in the
+    // replacement string, corrupting the output HTML.
+    html = html.replace(tag, () => `<style data-inlined="${href}">\n${css}\n</style>`);
   }
   // Inline scripts: <script ... src="/_next/..." ...></script>
   const scriptRe = /<script\b[^>]*src="([^"]+)"[^>]*>\s*<\/script>/g;
@@ -67,15 +70,35 @@ async function inlineAssets(html) {
   for (const [tag, src] of scripts) {
     const js = await get(BASE + src);
     const safe = js.replace(/<\/script/gi, '<\\/script');
-    html = html.replace(tag, `<script data-inlined="${src}">\n${safe}\n</script>`);
+    html = html.replace(tag, () => `<script data-inlined="${src}">\n${safe}\n</script>`);
   }
   return html;
+}
+
+function assertBalanced(name, html) {
+  // Naive tag counts false-positive on '<script' string literals inside
+  // inlined bundles. Instead, pair script blocks sequentially (inlined JS is
+  // pre-escaped so no body contains a real '</script>'), then verify that
+  // outside of script/style blocks there is no leftover minified code —
+  // the actual failure mode we are guarding against (browser shows JS as text).
+  const stripped = html
+    .replace(/<script\b[^>]*>[\s\S]*?<\/script>/g, '')
+    .replace(/<style\b[^>]*>[\s\S]*?<\/style>/g, '');
+  const leaks = [
+    ...stripped.matchAll(/.{200,}/g),
+  ].filter((m) => /\(function\(|=>|__webpack|next\/dist/.test(m[0]));
+  const openScripts = (stripped.match(/<script[\s>]/g) ?? []).length;
+  const problems = [];
+  if (openScripts > 0) problems.push(`${openScripts} unpaired <script> tags`);
+  if (leaks.length > 0) problems.push(`${leaks.length} block(s) of minified JS visible as page text`);
+  if (problems.length) throw new Error(`${name}: malformed HTML — ${problems.join('; ')}`);
 }
 
 await mkdir(OUT, { recursive: true });
 await waitForServer();
 for (const [name, path] of Object.entries(PAGES)) {
   const html = await inlineAssets(await get(BASE + path));
+  assertBalanced(name, html);
   const file = new URL(`${name}.html`, OUT);
   await writeFile(file, html);
   console.log(`preview/${name}.html  ${(html.length / 1024).toFixed(0)} KB  ← ${path}`);
