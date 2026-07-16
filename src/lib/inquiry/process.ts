@@ -2,8 +2,9 @@
  * Inquiry processing pipeline — the honest sequence:
  *   validate(400) → firm exists via getFirm (400 unknown firm) → honeypot non-empty
  *   (200 neutral, no sends) → rate limit (429 + retryAfterMs) → idempotency replay
- *   (200 duplicate:true, no re-send) → recipient from server-side allowlist
- *   (null → firm notification blocked, customer NOT sent) → classifyMatter →
+ *   (200 duplicate:true, no re-send) → classifyMatter (always, so blocked flows
+ *   still report the likely matter) → recipient from server-side allowlist
+ *   (null → firm notification blocked, customer NOT sent) →
  *   buildFirmNotification → provider.send → customer response only if the firm
  *   notification was accepted. Statuses are always truthful.
  *
@@ -132,7 +133,15 @@ export async function processInquiry(
       return { http: 200, body: { ...prior, duplicate: true } };
     }
 
-    // 6. Recipient comes ONLY from the server-side allowlist.
+    // 6. Deterministic classification — runs even when delivery is blocked, so
+    // the response honestly reports the likely matter in every outcome.
+    const classification = classifyMatter({
+      message: inquiry.message,
+      practiceFields: getFieldsForFirm(firm),
+      firmPracticeAreas: firm.practiceAreas,
+    });
+
+    // 7. Recipient comes ONLY from the server-side allowlist.
     const recipient = getFirmRecipient(inquiry.firmId, env);
     if (!recipient) {
       const body: InquiryResponseBody = {
@@ -146,28 +155,21 @@ export async function processInquiry(
           status: 'blocked',
           detail: 'not sent: firm notification not sent',
         },
-        classification: { primary: null, confidence: 'low', topics: [] },
+        classification,
       };
       idempotency.remember(idemKey, body, now);
       await audit(env, {
         ts: new Date(now).toISOString(),
         event: 'inquiry',
         firmId: inquiry.firmId,
-        primary: null,
-        confidence: 'low',
+        primary: classification.primary,
+        confidence: classification.confidence,
         firmStatus: 'blocked',
         customerStatus: 'blocked',
         idempotencyKeySha256: sha256(inquiry.idempotencyKey),
       });
       return { http: 200, body };
     }
-
-    // 7. Deterministic classification.
-    const classification = classifyMatter({
-      message: inquiry.message,
-      practiceFields: getFieldsForFirm(firm),
-      firmPracticeAreas: firm.practiceAreas,
-    });
 
     const templates = deps.templates ?? (await loadTemplates());
     const provider = deps.provider ?? getEmailProvider(env as NodeJS.ProcessEnv);
