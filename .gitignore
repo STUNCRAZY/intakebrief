@@ -1,0 +1,25 @@
+# dependencies
+node_modules/
+
+# next.js build output
+.next/
+out/
+
+# environment / secrets
+.env
+.env.*
+!.env.example
+
+# audit logs and runtime data (never committed)
+audit-logs/
+*.audit.log
+runtime-data/
+data/runtime/
+
+# build metadata
+*.tsbuildinfo
+next-env.d.ts
+
+# booking slot store (local runtime state)
+.runtime/
+

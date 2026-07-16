@@ -1,0 +1,47 @@
+{
+  "id": "biles-law",
+  "name": "Law Offices of David W. Biles, P.C.",
+  "lane": "estate",
+  "location": {"address": "7609 Rodeo Dr", "city": "Denton", "county": "Denton", "state": "TX", "zip": "76208"},
+  "email": null,
+  "phone": "(940) 566-0566",
+  "attorneys": [{"name": "David W. Biles", "role": "Attorney (firm's sole named lawyer)", "yearBeganPractice": 1984}],
+  "practiceAreas": ["Estate Planning", "Probate", "Wills and Powers of Attorney", "Family Law"],
+  "yearEstablished": 1987,
+  "notableCases": [],
+  "website": "https://www.bileslaw.com/",
+  "websiteQuality": {
+    "classification": "Adequate",
+    "rationale": "Modern WordPress/Avada rebuild (content updated May 2025) with HTTPS, a viewport meta tag, clear 'Request A Consultation' CTAs, a Gravity Forms contact form on the homepage and contact page, and strong Denton/North Texas local positioning. However it shows no online booking widget, no visible review/rating badges or board-certification trust signals, and publishes no street address ('appointment only'). Technical polish is mixed: the homepage title tag is malformed (leading '- '), multiple H1s appear on one page, and several images ship with empty alt attributes.",
+    "factors": {
+      "mobileUsability": "Viewport meta tag present and responsive Avada theme with srcset images; mobile-ready.",
+      "pageSpeed": "Not directly measured (no lab tooling). Inference: heavyweight page — 115 script tags and 77 external JS files from Avada, Gravity Forms, and Yoast — suggesting mediocre load performance despite image srcset optimization.",
+      "accessibility": "Several content images have empty alt attributes (alt with no value); multiple H1 headings on the homepage; logo does carry descriptive alt text.",
+      "visualCredibility": "Clean, recently updated (2025) design with current photography and dynamic copyright year; professional but generic stock imagery.",
+      "navigation": "Simple, clear top nav: Home, Firm Overview, Attorney Profile, Probate, Estate Planning, Wills and Powers of Attorney, Contact.",
+      "contentClarity": "Plain-language explanations of estate planning and probate services aimed at families; consistent 30+ years experience messaging.",
+      "callsToAction": "Repeated phone number in header and body, 'Request A Consultation' buttons, and 'Schedule a consultation today' prompts on every page.",
+      "contactFormQuality": "Gravity Forms contact form (name, phone, email, message) embedded on homepage and contact page; functional and prominent.",
+      "localPositioning": "Strong: 'Denton' in title tags, headings, and copy; 'serving clients across North Texas'; offices by appointment only.",
+      "trustSignals": "Weak on-site: no displayed Super Lawyers/Avvo badges, no client reviews or testimonials, no board certifications shown; attorney quote and 30+ years claims only.",
+      "appointmentBooking": "No online scheduling widget (no Calendly/Acuity); consultations requested via form or phone; video conferences offered."
+    }
+  },
+  "sources": [
+    {"url": "https://www.bileslaw.com/", "supports": "firm name; phone (940) 566-0566; estate planning/probate/wills and powers of attorney/family law practice areas; 30+ years experience claims; website quality assessment"},
+    {"url": "https://www.bileslaw.com/firm-overview/", "supports": "boutique self-description; estate planning and probate focus; services include wills, trusts, powers of attorney"},
+    {"url": "https://www.bileslaw.com/attorney-profile/", "supports": "David W. Biles as attorney; more than 30 years of experience; legal presence in Denton since 1987 (yearEstablished)"},
+    {"url": "https://www.bileslaw.com/probate/", "supports": "probate and estate administration services including will contests; phone number"},
+    {"url": "https://www.bileslaw.com/contact/", "supports": "phone number; contact form; 'Both Offices Are By Appointment Only'; video conferences; no street address published on site"},
+    {"url": "https://profiles.superlawyers.com/texas/denton/lawyer/david-w-biles/32fe75be-8a56-4c0f-a8e5-a535b1862919.html", "supports": "David W. Biles admitted to practice 1984 (yearBeganPractice); University of Houston Law Center 1984; office at 7609 Rodeo Dr, Denton, TX 76208; Super Lawyers selections 2010-2015 and 2019-2026; family law and estate planning & probate practice"},
+    {"url": "https://profiles.superlawyers.com/texas/denton/lawfirm/law-offices-of-david-w-biles-pc/3b41a587-783a-4d67-aa92-a3282c719fd7.html", "supports": "firm name; address 7609 Rodeo Dr, Denton, TX 76208; phone 940-566-0566; David W. Biles as listed attorney"},
+    {"url": "https://lawyers.justia.com/lawyer/david-biles-245912", "supports": "Denton, Texas attorney David Biles; legal practice includes family law; College of the State Bar of Texas Fellow (via search snippet; direct fetch blocked with HTTP 403)"}
+  ],
+  "unverified": [
+    "public business email (none published on firm site or found in directories)",
+    "street address on the firm's own website (site says only 'Serving Denton, TX'; 7609 Rodeo Dr address comes solely from Super Lawyers directory)",
+    "explicit firm founding date (1987 is derived from the site's 'legal presence in Denton since 1987' wording, not a stated founding year)"
+  ],
+  "notes": "Self-described boutique, solo practice of David W. Biles. Site's primary positioning is estate planning/probate; family law still appears in homepage headings and in Super Lawyers/Justia profiles, suggesting a legacy practice area. Firm name appears with both 'P.C.' and 'PC' styling. No notable case coverage found in public news or court sources.",
+  "researchedAt": "2026-07-16"
+}

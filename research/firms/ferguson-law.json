@@ -1,0 +1,50 @@
+{
+  "id": "ferguson-law",
+  "name": "Ferguson Law Firm LLC",
+  "lane": "business",
+  "location": {"address": "101 E. McKinney St., #88", "city": "Denton", "county": "Denton", "state": "TX", "zip": "76202"},
+  "email": "info@fergusonfirmtx.com",
+  "phone": "682-428-9220",
+  "attorneys": [
+    {"name": "Kenneth Daniel Ferguson", "role": "Attorney", "yearBeganPractice": 2022},
+    {"name": "Amber Michele Boyd-Cora", "role": "Attorney", "yearBeganPractice": 2011}
+  ],
+  "practiceAreas": ["Civil Litigation", "Real Estate Law", "Commercial Law", "Construction Law"],
+  "yearEstablished": null,
+  "notableCases": [],
+  "website": "https://fergusonfirmtx.com/",
+  "websiteQuality": {
+    "classification": "Strong",
+    "rationale": "Modern HTTPS WordPress/Kadence site with viewport meta, descriptive title and meta description, clear navigation (attorney bios, four practice-area pages, contact), and fresh signals: copyright 2026 and an active blog posting through July 2026. Conversion experience is good: header Call Today click-to-call buttons, a Schedule Your Consultation section with an embedded Lawmatics intake form on the homepage, and a contact page with full address, phone, email, and an embedded Google Map. Trust signals are solid (Super Lawyers badge, live Avvo client-rating badge, Texas Bar Foundation Fellow badge, Chamber of Commerce badge, client testimonials). Minor deductions: a stale Best of Denton County voting promo (closed Aug 13, 2025) still sits atop the homepage, several badge images lack alt text, and the site inconsistently shows zip 76201 in one block vs 76202 with the street address.",
+    "factors": {
+      "mobileUsability": "Responsive WordPress/Kadence theme with viewport meta tag and a dedicated mobile drawer menu; mobile Call Today button present in header.",
+      "pageSpeed": "Not directly measured (no lab tooling available). Inference from observable page weight: ~330 KB HTML homepage, 9 script tags, SiteGround Optimizer combined/minified CSS, and lazy-loaded images suggest reasonable optimization, though third-party badge/pixel scripts (Lawmatics, Super Lawyers, Avvo) add weight.",
+      "accessibility": "Most content images have descriptive alt text (logo, courthouse columns, chessboard, Best of Denton County graphic), but several recognition/badge images have empty or missing alt attributes; menu toggle uses aria-labels.",
+      "visualCredibility": "Clean modern design with firm logo, professional imagery, recognitions section with badges (Super Lawyers, Avvo rating, TX Bar Foundation Fellow, Chamber of Commerce), and client testimonial section.",
+      "navigation": "Clear top menu: Our Firm (Kenneth Ferguson, Amber Boyd-Cora), Civil, Real Estate, Commercial, Construction, Blog/In The News, Contact.",
+      "contentClarity": "Practice areas stated plainly with short definitions (Civil Litigation, Real Estate Law, Commercial Law, Construction Law); attorney pages list education, bar admissions, and courts.",
+      "callsToAction": "Prominent Call Today phone buttons in desktop and mobile headers; Schedule Your Consultation section with 'Secure Your Spot Now!' on homepage.",
+      "contactFormQuality": "Lawmatics online intake form embedded on the homepage; contact page itself has no fillable form fields in static HTML but lists full address, phone, email, and an embedded Google Map of Denton.",
+      "localPositioning": "Strong: 'Denton Civil & Business Attorney' title, 'located in the heart of Denton, Texas' messaging, Denton, TX address in footer, Google Map embed centered on Denton, Best of Denton County awards tie-in.",
+      "trustSignals": "Super Lawyers badge linking to Kenneth Ferguson's profile, live Avvo client-rating badge widget, Texas Bar Foundation Fellow badge, Chamber of Commerce business-directory badge, named client testimonial(s), Best of Denton County 2025 nomination graphic.",
+      "appointmentBooking": "Lawmatics intake/scheduling embed ('Schedule Your Consultation') on the homepage; no self-serve calendar widget observed."
+    }
+  },
+  "sources": [
+    {"url": "https://fergusonfirmtx.com/", "supports": "firm name, practice areas, phone 682-428-9220, email info@fergusonfirmtx.com, address 101 E. McKinney St. #88 Denton TX 76202, trust badges (Super Lawyers, Avvo, TX Bar Foundation Fellow, Chamber of Commerce), testimonials, Lawmatics intake CTA, copyright 2026, Best of Denton County 2025 nomination claim"},
+    {"url": "https://fergusonfirmtx.com/kenneth-ferguson/", "supports": "Kenneth Ferguson bio: St. Mary's School of Law J.D. May 2022, admitted Texas 2022 and New York 2025, practice areas, USMC veteran background"},
+    {"url": "https://fergusonfirmtx.com/amber-boyd-cora/", "supports": "Amber Boyd-Cora bio: Attorney role, real estate and construction law focus, State Bar of Texas and D.C. Bar admissions, J.D. Thurgood Marshall School of Law (Texas Southern University)"},
+    {"url": "https://fergusonfirmtx.com/contact/", "supports": "contact address 101 E. McKinney St. #88, Denton, TX 76202, phone, email, Google Maps embed"},
+    {"url": "https://www.texasbar.com/AM/Template.cfm?Section=Find_A_Lawyer&template=/Customsource/MemberDirectory/MemberDirectoryDetail.cfm&ContactID=369264", "supports": "Kenneth Daniel Ferguson full name, Bar Card 24124507, TX license date 10/12/2022 (yearBeganPractice 2022), firm The Ferguson Firm LLC, Denton address, phone 682-428-9220, New York licensure, no public disciplinary history"},
+    {"url": "https://www.texasbar.com/AM/Template.cfm?Section=Find_A_Lawyer&template=/Customsource/MemberDirectory/MemberDirectoryDetail.cfm&ContactID=319804", "supports": "Amber Michele Boyd-Cora full name, Bar Card 24078250, TX license date 11/04/2011 (yearBeganPractice 2011), practice areas (commercial litigation, real estate, construction, contracts), J.D. Texas Southern University 05/2009, no public disciplinary history"},
+    {"url": "https://fergusonfirmtx.com/in-the-news/", "supports": "active blog with posts through July 2026 (site freshness); contains no reported case results"}
+  ],
+  "unverified": [
+    "year firm established (not stated on firm site, State Bar profiles, or directories found)",
+    "Super Lawyers selection year and Rising Stars vs. Super Lawyers list status (profile page returns 403 to automated fetches; only the on-site badge was observable)",
+    "outcome of the firm's claimed Best of Denton County 2025 'Best Real Estate Attorney' nomination (only the nomination, stated on the firm's own site, could be seen)",
+    "any notable reported case results (no news or court coverage found; firm's 'In The News' page is a blog)"
+  ],
+  "notes": "Brand also styled 'The Ferguson Firm' (State Bar firm name: The Ferguson Firm, LLC); Kenneth Ferguson is billed as 'Sgt. Kenneth Ferguson' reflecting his USMC service. Seed correction: the firm is NOT a solo practice - two attorneys are listed (Kenneth Daniel Ferguson and Amber Michele Boyd-Cora); her State Bar record still shows a Houston primary practice location (PO Box 8467, Houston, TX 77288) and Houston affiliations, suggesting she may be of-counsel/remote while the firm markets her on the Denton site. Site zip inconsistency: one homepage/contact block shows 'Denton, TX 76201' while the footer address and State Bar record use 76202. Not to be confused with The Ferguson Law Firm, LLP of Beaumont, TX (a different personal-injury firm). Fetch note: fergusonfirmtx.com failed via both built-in fetch tools but was retrieved successfully with curl (HTTP 200); profiles.superlawyers.com and avvo.com returned 403 to curl, so Super Lawyers/Avvo details beyond the on-site badges could not be verified.",
+  "researchedAt": "2026-07-16"
+}

@@ -1,0 +1,39 @@
+/**
+ * Design tokens — "Docket & Ledger": an editorial law-journal aesthetic.
+ * Single source of truth for color, type, and rhythm across the app.
+ */
+:root {
+  /* palette */
+  --paper: #FAF7F0;
+  --ink: #1A1A2E;
+  --oxblood: #7A1E2B;
+  --brass: #B08D57;
+  --slate: #2E4057;
+  --line: #D8D2C4;
+
+  /* muted semantics */
+  --success: #2F6B4F;
+  --warning: #9A6B1E;
+  --danger: #8A2E2E;
+
+  /* surfaces */
+  --surface-card: #FFFFFF;
+  --surface-muted: #F3EEE3;
+
+  /* type */
+  --font-display: 'Iowan Old Style', 'Palatino Linotype', Palatino, Georgia, serif;
+  --font-ui: system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-mono: SFMono-Regular, Consolas, 'Liberation Mono', monospace;
+
+  /* rhythm */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+
+  --max-column: 72rem;
+}

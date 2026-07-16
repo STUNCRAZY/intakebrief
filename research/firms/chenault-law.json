@@ -1,0 +1,66 @@
+{
+  "id": "chenault-law",
+  "name": "Chenault Law Firm (Law Office of Gilland Chenault, PLLC)",
+  "lane": "estate",
+  "location": {"address": "1112 North Locust St.", "city": "Denton", "county": "Denton", "state": "TX", "zip": "76201"},
+  "email": null,
+  "phone": "(972) 591-0099",
+  "attorneys": [
+    {"name": "Gilland Chenault", "role": "Founding Attorney", "yearBeganPractice": 2004},
+    {"name": "Courtland Kristoferson", "role": "Attorney", "yearBeganPractice": 2016},
+    {"name": "John Narsutis", "role": "Of Counsel, Former District Judge", "yearBeganPractice": 1973}
+  ],
+  "practiceAreas": [
+    "Probate",
+    "Estate Administration",
+    "Estate Planning",
+    "Trusts",
+    "Trust Administration",
+    "Will Contest & Probate Litigation",
+    "Fiduciary Litigation",
+    "Heirship Determination",
+    "Muniment of Title Probates",
+    "Transfer On Death Deeds",
+    "Mediation Services",
+    "Local Counsel Services"
+  ],
+  "yearEstablished": 2011,
+  "notableCases": [],
+  "website": "https://chenaultlawfirm.com/",
+  "websiteQuality": {
+    "classification": "Adequate",
+    "rationale": "The site is a mobile-responsive WordPress/Avada build with HTTPS, a viewport meta tag, proper title and meta description, repeated phone and contact-form CTAs on every page, and solid trust signals (Super Lawyers and Avvo badge widgets, detailed attorney bios, a former district judge Of Counsel). It is held back by a template-heavy design, no online appointment booking (contact is form-or-phone only), and a heavy page payload from Slider Revolution and page-builder scripts. Local positioning is strong, with Denton and surrounding counties named throughout and a Google Maps embed on the contact page.",
+    "factors": {
+      "mobileUsability": "Responsive Avada theme with viewport meta tag (width=device-width, initial-scale=1); mobile-friendly Slider Revolution plugin in use.",
+      "pageSpeed": "Not directly measured (no lab tooling available). Inference: likely mediocre — 218KB of homepage HTML and 44 script tags including Avada builder, Slider Revolution, and Google Maps API suggest a heavy page.",
+      "accessibility": "Some ARIA labeling present (22 aria/role attributes); logo image has alt text but at least one decorative image has an empty alt; no obvious accessibility statement.",
+      "visualCredibility": "Professional but template-driven Avada design; attorney photos and an established-firm narrative; dynamic copyright year keeps footer fresh.",
+      "navigation": "Clear main nav: Home, Attorney Profiles, Practice Areas (11 listed areas), Probate, Resources, Contact/Map.",
+      "contentClarity": "Plain-language, well-organized explanations of probate, trusts, estate planning, mediation, and litigation topics aimed at lay clients.",
+      "callsToAction": "Repeated 'call 972.591.0099 or fill out the form' CTAs after every practice-area section; phone number displayed prominently in header/footer.",
+      "contactFormQuality": "Gravity Forms contact form (name, email, phone, 600-character message) with reCAPTCHA spam check; promises response in under 48 hours; no direct email address published.",
+      "localPositioning": "Strong — Denton, Denton County, and Dallas/Tarrant/Collin counties named throughout; Google Maps embed on contact page; separate DentonProbateAttorney.com microsite.",
+      "trustSignals": "Super Lawyers badge widget, Avvo badge linking to Gilland Chenault's profile, Super Lawyer 2021-2026 and Rising Star honors stated in bios, former district judge Of Counsel, court-appointed roles described.",
+      "appointmentBooking": "None — no Calendly or scheduling widget; consultations arranged by phone or contact form only."
+    }
+  },
+  "sources": [
+    {"url": "https://chenaultlawfirm.com/", "supports": "firm name, lane (probate/trust/estate/fiduciary litigation), phone (972) 591-0099, footer address 1112 North Locust St. Denton TX 76201, practice areas, mediation services"},
+    {"url": "https://chenaultlawfirm.com/gilland-chenault/", "supports": "Gilland Chenault bio; entered private practice 2004; established Chenault Law Firm January 2011; Super Lawyer 2021-2026, Rising Star 2015-2018; Baylor Law graduate"},
+    {"url": "https://chenaultlawfirm.com/attorney-profile/", "supports": "attorney roster: Gilland Chenault (Attorney), Courtland Kristoferson (Attorney), John Narsutis (Of Counsel, Former District Judge); contact form and phone"},
+    {"url": "https://chenaultlawfirm.com/courtland-kristoferson/", "supports": "Kristoferson bio; admitted to State Bar of Texas 2016; Rising Stars 2024-2026; SMU Dedman School of Law; probate/trust/fiduciary/guardianship focus"},
+    {"url": "https://chenaultlawfirm.com/john-narsutis/", "supports": "Narsutis Of Counsel bio; Baylor JD 1972; legal career beginning 1973 (Assistant City Attorney); former judge of 16th Judicial District Court"},
+    {"url": "https://profiles.superlawyers.com/texas/flower-mound/lawyer/courtland-j-kristoferson/4bffd8b5-5830-4171-825e-b7059222c43d.html", "supports": "Kristoferson admitted 2016, Rising Stars 2024-2026, Chenault Law Firm affiliation (corroboration)"},
+    {"url": "https://dentonbar.com/member/chenault-law-firm/", "supports": "Denton County Bar Association member listing; practice areas Real Estate, Wills-Trusts-Probate"},
+    {"url": "https://www.attorneysup.com/9159/chenault-law-firm", "supports": "corroboration: firm founded by Gilland Chenault, based in Denton County, probate/estate/trust litigation focus"},
+    {"url": "https://chenaultlawfirm.com/contact/", "supports": "contact form, phone (972) 591-0099, Google Maps embed (page 403s non-browser fetchers; retrieved with browser user agent)"}
+  ],
+  "unverified": [
+    "public business email (none published on firm site or directories checked)",
+    "State Bar of Texas bar-card records not independently pulled; admission years per firm site and Super Lawyers",
+    "publicly reported notable cases or verdicts (none found in news or court coverage)",
+    "whether the Flower Mound address (4315 Windsor Centre Trail, Suite 500, TX 75028) shown on Super Lawyers/Avvo is a current second office or a prior location"
+  ],
+  "notes": "Legal entity name 'Law Office of Gilland Chenault, PLLC' appears on the firm's Trusts page; the site brands itself as 'The Chenault Law Firm'. Firm also operates a probate microsite at DentonProbateAttorney.com. Avvo badge on the homepage links to a Gilland Chenault profile under zip 75028 (Flower Mound), matching the Super Lawyers listing address — the firm's own current footer shows 1112 North Locust St., Denton, TX 76201, so Flower Mound is likely a prior office. Several subpages (contact, Kristoferson profile) return 403 to plain automated fetches but load with a browser user agent. Seed facts verified: Denton location, phone, and all three named attorneys confirmed; no corrections needed beyond adding address detail.",
+  "researchedAt": "2026-07-16"
+}

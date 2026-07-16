@@ -1,0 +1,42 @@
+{
+  "id": "navarrette-bowen",
+  "name": "Navarrette Bowen, P.C.",
+  "lane": "family",
+  "location": {"address": "525 S. Locust Street, Ste. 100", "city": "Denton", "county": "Denton", "state": "TX", "zip": "76201"},
+  "email": null,
+  "phone": "940-566-0606",
+  "attorneys": [{"name": "Chrysandra S. Bowen", "role": "Attorney", "yearBeganPractice": 2008}],
+  "practiceAreas": ["Divorce", "Child Custody", "Visitation", "Modifications", "Marital Property Division", "Mediation", "Prenuptial & Postnuptial Agreements", "Asset Protection/Divorce Planning", "Business Owner Divorce", "High-Conflict Divorce", "Gray Divorce", "Enforcement of Orders", "Financial Restraining Orders", "Protective Orders", "Relocation Cases", "Establishing Paternity", "Grandparents Rights", "Domestic Violence", "Special Needs Children", "Parental Alienation", "Temporary Orders", "Business Valuations", "Social Media & Divorce", "Adoption"],
+  "yearEstablished": null,
+  "notableCases": [],
+  "website": "https://dtxfamilylaw.com/",
+  "websiteQuality": {
+    "classification": "Adequate",
+    "rationale": "Modern responsive WordPress/Divi site (WordPress 6.9.4) over HTTPS with a mobile viewport, strong phone and contact-form CTAs, testimonials, award badges, and Board Certification trust signals. Held back from Strong by sloppy duplicated homepage copy (the same 'How Can We Help You Reach Your Goals?' section appears three times verbatim), a generic 'Home - DTX Family Law' title tag with no meta description, no online scheduling widget, no published email, and a viewport that disables user zoom. Clearly maintained and conversion-oriented, so not Subpar.",
+    "factors": {
+      "mobileUsability": "Viewport meta tag present and Divi theme is responsive, but viewport sets maximum-scale=1.0 and user-scalable=0, blocking pinch zoom (minor usability/accessibility negative).",
+      "pageSpeed": "Not directly measured (no lab tooling). Inference from observable page weight: ~306 KB HTML, 36 script tags, and typical WordPress/Divi builder overhead suggest moderate load weight, partly mitigated by 12 lazy-loaded images.",
+      "accessibility": "All 19 homepage images carry alt attributes; however user scaling is disabled via viewport, the title tag is generic, and no ARIA/skip-navigation features were observed.",
+      "visualCredibility": "Contemporary Divi design with professional attorney photography, award badge slider, client testimonials with full names, and consistent branding; visual credibility is good.",
+      "navigation": "Clear persistent top nav (Home, Attorney, Divorce, Family Law, FAQs, Blogs, Contact) plus footer quick links and 'Areas of Focus' links; easy to traverse.",
+      "contentClarity": "Plain-language, client-focused copy and an on-page FAQ, but the homepage repeats one entire section three times verbatim, which reads as unfinished editing.",
+      "callsToAction": "Strong: click-to-call (940) 566-0606 buttons in the header, repeated 'Let's Talk' and 'Tell us about your goals' buttons anchoring to the contact form, and phone number repeated in footer.",
+      "contactFormQuality": "Divi contact form on homepage and attorney page collecting Name, Email, Phone, Legal Issue, referral source, and explicit SMS consent before a SEND button; no visible CAPTCHA or scheduling integration.",
+      "localPositioning": "Excellent: footer lists Denton street address; pages enumerate Denton/Collin/Wise/Tarrant/Cooke counties and dozens of named cities; community ties cited (CASA of Denton County, Denton County Bar Association Adoption Day).",
+      "trustSignals": "Board Certified in Texas Family Law claims, Super Lawyers Rising Stars, Best Lawyers, client testimonials with names, bar-association leadership roles, and links to Facebook/Instagram/LinkedIn profiles.",
+      "appointmentBooking": "No online scheduler (no Calendly-style widget) observed; booking is via paid-consultation offer through the contact form or by calling 940-566-0606."
+    }
+  },
+  "sources": [
+    {"url": "https://nbfamilylaw.com/", "supports": "Firm branding (DTX Family Law), phone 940-566-0606, practice areas, client testimonials, Board Certified claim, counties served; site redirects to/resolves as dtxfamilylaw.com"},
+    {"url": "https://dtxfamilylaw.com/attorney/", "supports": "Attorney Chrysandra S. Bowen bio (only attorney listed), law degree 2007 Texas Wesleyan, Board Certified in Texas Family Law, current address 525 S. Locust Street Ste. 100 Denton TX 76201, phone 940.566.0606, paid consultations, contact form"},
+    {"url": "https://dtxfamilylaw.com/family-law-attorney/", "supports": "Family-law-only focus and stated areas of focus (high-conflict divorce, gray divorce, protective orders, paternity, grandparents rights, domestic violence, etc.)"},
+    {"url": "https://profiles.superlawyers.com/texas/denton/lawyer/chrysandra-s-bowen/a9d4be07-974a-4b7c-80aa-28654038253f.html", "supports": "Chrysandra S. Bowen at DTX Family Law; First Admitted 2008, Texas (yearBeganPractice); Board Certified Family Law TBLS 2016; office 525 S Locust St Ste 100 Denton TX 76201; honors and bar-section leadership"},
+    {"url": "https://www.tafls.org/lawyer/chrysandra_62fe2", "supports": "Texas Academy of Family Law Specialists listing: Chrysandra S. Bowen, Denton, year of certificate 2017, office 940-566-0606, fax 940-566-0303, practice counties Collin/Cooke/Denton/Tarrant/Wise"},
+    {"url": "https://dentonbar.com/membership/family-law/", "supports": "Denton County Bar Association listing: firm name Navarrette Bowen, P.C., prior address 100 W Oak St. Ste. 301 Denton TX 76201, phone 940-566-0606, fax 940-566-0303, website nbfamilylaw.com, family practice area"},
+    {"url": "https://www.expertise.com/legal/child-support-lawyers/texas/denton", "supports": "Navarrette | Bowen, P.C. described as a boutique family law firm in Denton at 100 W. Oak St. Suite 301; child support/custody practice"}
+  ],
+  "unverified": ["public business email", "year firm established", "attorney role/title (site styles her only as 'Attorney', no founder/partner title stated)", "whether any additional attorneys currently practice at the firm (only Chrysandra S. Bowen is listed)", "any notable reported cases (none found in public news or court coverage)"],
+  "notes": "Firm brands itself as 'DTX Family Law'; assigned URL nbfamilylaw.com resolves to dtxfamilylaw.com. Address discrepancy resolved: Denton County Bar Association and older directories show 100 W. Oak St., Ste. 301 (seed address), while the firm's current site footer and Super Lawyers show 525 S. Locust Street, Ste. 100, Denton, TX 76201 — firm appears to have relocated; current address used. Do not confuse with the separate 'Navarrette Family Law' (nfamilylaw.com, Eric A. Navarrette, 940-243-5050), a different Denton firm. Fax 940-566-0303 per TAFLS/bar listings. Super Lawyers gives TBLS certification year 2016 while TAFLS lists year of certificate 2017. Avvo and Justia profile pages blocked automated fetches (403), so no email or reviews were taken from them.",
+  "researchedAt": "2026-07-16"
+}

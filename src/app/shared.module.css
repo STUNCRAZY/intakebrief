@@ -1,0 +1,66 @@
+/* Shared editorial primitives: rubber-stamp badges, ruled lines, placeholders. */
+
+.stamp {
+  display: inline-block;
+  font-family: var(--font-ui);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 0.15rem 0.55rem;
+  border: 1.5px solid currentColor;
+  border-radius: 2px;
+  transform: rotate(-1.2deg);
+  background: transparent;
+}
+
+.stampSuccess {
+  color: var(--success);
+}
+
+.stampWarning {
+  color: var(--warning);
+}
+
+.stampDanger {
+  color: var(--danger);
+}
+
+.stampSlate {
+  color: var(--slate);
+}
+
+.stampOxblood {
+  color: var(--oxblood);
+}
+
+/* 1px ink ruled line, as in a ledger. */
+.rule {
+  border: 0;
+  border-top: 1px solid var(--ink);
+  opacity: 0.85;
+  margin: var(--space-6) 0;
+}
+
+.docket {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  letter-spacing: 0.04em;
+  color: var(--oxblood);
+}
+
+.placeholder {
+  border: 1.5px dashed var(--line);
+  background: var(--surface-muted);
+  padding: var(--space-6);
+  margin: var(--space-6) 0;
+}
+
+.placeholderLabel {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--slate);
+}

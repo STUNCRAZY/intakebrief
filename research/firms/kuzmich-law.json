@@ -1,0 +1,58 @@
+{
+  "id": "kuzmich-law",
+  "name": "The Kuzmich Law Firm, P.C.",
+  "lane": "pi",
+  "location": {"address": "4315 Windsor Centre Trail, Suite 200", "city": "Flower Mound", "county": "Denton", "state": "TX", "zip": "75028"},
+  "email": "info@kuzmichlaw.com",
+  "phone": "(972) 434-1555",
+  "attorneys": [
+    {"name": "Steve Kuzmich", "role": "Founding Partner", "yearBeganPractice": 1994},
+    {"name": "Nicole Gordillo", "role": "Attorney", "yearBeganPractice": null},
+    {"name": "Sean J. Kilgore", "role": "Attorney", "yearBeganPractice": null}
+  ],
+  "practiceAreas": ["Personal Injury", "Car Accidents", "Motorcycle Accidents", "Wrongful Death", "Dog Bites", "Premises Liability", "Slip and Fall Accidents", "Child Injury", "Burn Injury", "Bus Accidents", "Catastrophic Injury", "Spinal Cord Injury", "Auto & Truck Accidents", "Defective Truck Brake Injuries", "Baby Formula Injuries", "GLP-1 Product Injuries"],
+  "yearEstablished": 1996,
+  "notableCases": [
+    {"name": "Auto accident-death case (parties not disclosed, firm-reported)", "outcome": "$10,000,000.00 awarded, per the firm's own case-results page", "sourceUrl": "https://kuzmichlaw.com/injury-case-results/"},
+    {"name": "Products liability case causing multiple arm surgeries (parties not disclosed, firm-reported)", "outcome": "$3,503,500.00 awarded, per the firm's own case-results page", "sourceUrl": "https://kuzmichlaw.com/injury-case-results/"},
+    {"name": "Burn injury case (parties not disclosed, firm-reported)", "outcome": "$2,000,000.00 awarded, per the firm's own case-results page", "sourceUrl": "https://kuzmichlaw.com/injury-case-results/"}
+  ],
+  "website": "https://kuzmichlaw.com/",
+  "websiteQuality": {
+    "classification": "Adequate",
+    "rationale": "Modern WordPress/Elementor site over HTTPS with a responsive viewport meta tag, title and meta description, clear navigation, a prominent 'Free Consultation' form and phone CTAs, fresh 2026 copyright, alt attributes on homepage images, and real trust signals (board-certification messaging, Google-review rating 4.9/89 in structured data, testimonials page, named case results). It is held back from Strong by the absence of any online appointment-booking widget (form and phone only), a heavy script load typical of Elementor page builders, and stale JSON-LD schema still describing the firm as located in Lewisville at its old 335 W Main St address while the visible footer correctly shows Flower Mound.",
+    "factors": {
+      "mobileUsability": "Responsive: viewport meta tag present, Elementor responsive layout with dedicated mobile nav breakpoints and burger menu.",
+      "pageSpeed": "Not directly measured (no lab tooling). Inferred mediocre-to-average: ~166 KB of HTML on the homepage alone plus roughly 69 script tags (Elementor, WordPress core, Facebook Pixel, ClickCease tracker), which suggests a heavy page likely to load slowly on mobile connections.",
+      "accessibility": "Nav uses aria-label/aria-expanded attributes and breadcrumb aria markup; all 8 homepage images carry alt attributes; tab-based attorney bios use ARIA roles. No obvious skip-links observed; overall reasonable but untested with assistive tech.",
+      "visualCredibility": "Professional hero messaging ('Only 1.2% of licensed lawyers in Texas are board certified in personal injury law'), consistent branding, attorney headshots, and a 2026 copyright date; design is conventional PI-template in style rather than distinctive.",
+      "navigation": "Clear horizontal main menu (Practice Areas, Our Firm, Attorneys, Case Results, Blog, Testimonials, Contact) with dropdowns and breadcrumbs on inner pages.",
+      "contentClarity": "Plain-language PI content organized by practice area with dedicated pages, a blog, and an FAQ-style structure; copy is marketing-forward but easy to scan.",
+      "callsToAction": "Repeated CTAs: 'Free Consultation' heading with form above the footer, 'SCHEDULE A FREE CONSULT' buttons, and clickable tel: links for (972) 434-1555 throughout.",
+      "contactFormQuality": "One 'Free Consultation' form on the homepage (name/contact/case details pattern typical of WordPress form plugins) plus a dedicated contact path; no chat widget observed.",
+      "localPositioning": "Strong local signals in visible content: 'SERVING CLIENTS STATEWIDE FROM OUR FLOWER MOUND, TEXAS OFFICE', a dedicated /flower-mound/ landing page, and Denton County attorney association mentions; undercut by stale Lewisville data in the site's JSON-LD schema.",
+      "trustSignals": "Board Certified (Personal Injury Trial Law, TBLS) messaging, Google-review aggregate rating of 4.9 from 89 reviews embedded in schema, testimonials page citing Google 5-star reviews, and a case-results page listing dollar outcomes.",
+      "appointmentBooking": "No online scheduling/booking widget (no Calendly/Acuity equivalent); intake is via contact form and a 24-hour answering service by phone."
+    }
+  },
+  "sources": [
+    {"url": "https://kuzmichlaw.com/", "supports": "firm name, Flower Mound address (footer), phone, email (in site structured data), homepage practice areas, board-certification claim, foundingDate 1996 (structured data), website-quality signals (CTAs, form, trust signals, copyright 2026)"},
+    {"url": "https://kuzmichlaw.com/our-firm/", "supports": "Steve Kuzmich as Founding Partner; Nicole Gordillo and Sean J. Kilgore as attorneys; Flower Mound base; 'over 30 years' history; alternate 1995 founding claim noted in notes"},
+    {"url": "https://kuzmichlaw.com/attorneys/steve-kuzmich/", "supports": "Steve Kuzmich bio: began practicing 1994 as insurance defense attorney, opened own practice 1996, J.D. Baylor 1994, B.S. Texas A&M 1991, Texas/California and federal court admissions, TBLS board certification"},
+    {"url": "https://kuzmichlaw.com/attorneys/nicole-gordillo/", "supports": "Nicole Gordillo bio: attorney at firm, bilingual (se habla espanol), J.D. SMU School of Law 2009, former firm paralegal since 2000, Texas and U.S. Court of Federal Claims admissions, Denton County Bar Association member"},
+    {"url": "https://kuzmichlaw.com/attorneys/sean-j-kilgore/", "supports": "Sean J. Kilgore bio: attorney at firm, J.D. Texas Tech 2005, former Denton County Criminal DA's Office prosecutor (joined May 2006), Texas and Eastern District of Texas admissions, Denton County Bar Association member"},
+    {"url": "https://kuzmichlaw.com/flower-mound/", "supports": "practice-area list (Personal Injury, Car Accidents, Motorcycle Accidents, Wrongful Death, Dog Bites, Premises Liability, Slip and Fall, Child Injury, Burn Injury, Bus Accidents, Catastrophic Injury, Spinal Cord Injury) and phone number"},
+    {"url": "https://kuzmichlaw.com/injury-case-results/", "supports": "firm-reported case outcomes used in notableCases (anonymized dollar awards)"},
+    {"url": "https://kuzmichlaw.com/contact/", "supports": "legacy office locations (Lewisville principal office, Denton and Plano satellite offices) and phone; evidence of the firm's pre-Flower Mound footprint cited in notes"},
+    {"url": "https://www.allusinjurylawyers.com/personal-injury-lawyers/texas/flower-mound/kuzmich-law-firm-p-c-personal-injury-law", "supports": "third-party directory corroboration of firm identity, PI-only focus, board-certification claim, and client reviews naming attorneys Nicole and Steve"}
+  ],
+  "unverified": [
+    "exact year firm established (firm's own site conflicts: /our-firm/ text says founded 1995 while site structured data and Steve Kuzmich's bio say 1996; no independent record retrieved)",
+    "year Nicole Gordillo and Sean J. Kilgore began practice (only law-school graduation years, 2009 and 2005 respectively, are published)",
+    "independent confirmation of Steve Kuzmich's TBLS board certification (State Bar of Texas / TBLS directory records not machine-accessible; claim sourced to firm's own site and one directory)",
+    "whether info@kuzmichlaw.com is actively monitored (it appears only in the site's structured data, not in visible page text)",
+    "third-party (news or court) reporting of the firm's case outcomes; all listed results are self-reported on the firm's website"
+  ],
+  "notes": "PI-only boutique now based in Flower Mound (Denton County) but with Lewisville roots: a legacy contact page still lists a principal office at 335 W Main St, Lewisville, TX 75057 plus Denton (1112 N Locust St) and Plano (7700 Windrose Ave, 3rd Floor) locations, and the site's JSON-LD schema has not been updated from the Lewisville address to Flower Mound. Steve Kuzmich's bio states he returned to Lewisville in 1996 to open his own practice after working as an insurance defense attorney, which aligns with the schema foundingDate of 1996; the /our-firm/ page instead says he founded the firm in 1995. Sean J. Kilgore is a former Denton County prosecutor; Nicole Gordillo is bilingual and started at the firm as a paralegal in 2000 before earning her J.D. Email info@kuzmichlaw.com is taken from the site's own structured data, not from visible page copy. Google-review aggregate rating 4.9 (89 reviews) appears in site structured data.",
+  "researchedAt": "2026-07-16"
+}

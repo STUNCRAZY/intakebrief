@@ -1,0 +1,46 @@
+{
+  "id": "caitlyn-ashley-law",
+  "name": "Caitlyn Ashley Law",
+  "lane": "estate",
+  "location": {"address": "620 Bolivar Street", "city": "Denton", "county": "Denton", "state": "TX", "zip": "76201"},
+  "email": "caitlyn@caitlynashleylaw.com",
+  "phone": "940-320-7496",
+  "attorneys": [{"name": "Caitlyn Ashley", "role": "Principal Owner", "yearBeganPractice": 2018}],
+  "practiceAreas": ["Estate Planning", "Probate", "Guardianship"],
+  "yearEstablished": 2021,
+  "notableCases": [],
+  "website": "https://www.caitlynashleylaw.com/",
+  "websiteQuality": {
+    "classification": "Adequate",
+    "rationale": "Modern Wix site over HTTPS with a viewport meta tag, mobile-responsive layout, descriptive homepage title ('Estate Planning | Caitlyn Ashley Law | Denton'), a meta description, alt text on all 7 homepage images, and a working contact form (name/email/phone) alongside a published email and phone number. Trust signals include three attributed AVVO client testimonials on the homepage and strong local positioning (Denton roots emphasized throughout). It is held back from Strong by a stale 2023 copyright footer, a generic 'My Site' site name surfacing in the contact-page title and og:site_name, no self-serve online booking widget (appointment by phone/form only), and heavy Wix script payload.",
+    "factors": {
+      "mobileUsability": "Responsive Wix template with viewport meta tag (width=device-width, initial-scale=1); mobile-ready.",
+      "pageSpeed": "Not directly measured (no lab tooling). Inference: likely mediocre-to-slow — homepage HTML is ~590 KB with ~60 script tags, typical of heavyweight Wix bundles.",
+      "accessibility": "html lang='en' set; all 7 homepage images have alt attributes; form inputs have placeholders and aria-invalid attributes; no skip-link or deeper ARIA auditing observed.",
+      "visualCredibility": "Clean, modern design with professional photography and consistent branding; undermined slightly by a stale 2023 copyright and generic 'My Site' name in page metadata.",
+      "navigation": "Simple, clear top-level nav: Home, About, Services, Blog, Contact (/contact-5). Contact page URL slug 'contact-5' is unpolished.",
+      "contentClarity": "Plain-language, empathetic copy explaining estate planning, probate, and guardianship; active blog with educational posts (2022-2024).",
+      "callsToAction": "Repeated 'call us now' / 'Call Caitlyn Ashley Law today' inline CTAs; phone number and form on contact page; no prominent button-style CTA or sticky header CTA observed.",
+      "contactFormQuality": "Working Wix form on the contact page with Name, Email (validated, required), and Phone fields plus submit confirmation ('Thanks for submitting!').",
+      "localPositioning": "Strong: 'Denton, Texas' in the title tag, address in footer/contact, five-generation Denton roots narrative, 'located in the heart of Denton'.",
+      "trustSignals": "Three named AVVO client testimonials on homepage; Super Lawyers Rising Stars 2023-2026 (per Super Lawyers profile); Denton County Bar Association member listing; Best of Denton County 2023 winner for Wills & Estate Planning Attorney; no board-certification or review-badge widgets embedded on site.",
+      "appointmentBooking": "No self-serve online booking widget visible; 'By Appointment Only' hours (Mon-Thu 9-5, Fri 9-12) with contact via phone, email, or form."
+    }
+  },
+  "sources": [
+    {"url": "https://www.caitlynashleylaw.com/", "supports": "firm name, address (620 Bolivar Street, Denton, TX 76201), phone 940-320-7496, email caitlyn@caitlynashleylaw.com (mailto link in page source), practice areas (estate planning, probate, guardianship), by-appointment hours, AVVO testimonials, website-quality signals"},
+    {"url": "https://www.caitlynashleylaw.com/about", "supports": "Caitlyn Ashley as principal owner, solo founder; firm established March 2021; Texas A&M University School of Law JD; prior role as lead probate attorney at Leigh Hilton, PLLC"},
+    {"url": "https://www.caitlynashleylaw.com/services", "supports": "practice areas as stated on firm site: Estate Planning (wills, trusts, powers of attorney, special needs trusts, etc.), Probate, Guardianship"},
+    {"url": "https://www.caitlynashleylaw.com/contact-5", "supports": "address, phone, email, by-appointment opening hours, working contact form"},
+    {"url": "https://profiles.superlawyers.com/texas/denton/lawyer/caitlyn-ashley/0e224add-c7b6-471f-bc03-ee9cee132df1.html", "supports": "Caitlyn Ashley admitted to practice in 2018 (yearBeganPractice), graduated Texas A&M University School of Law 2018, Rising Stars 2023-2026, Estate Planning & Probate focus"},
+    {"url": "https://dentonbar.com/member/caitlyn-ashley-law/", "supports": "Denton County Bar Association membership; corroborates address, phone, email; lists practice areas Elder Law, Wills-Trusts-Probate"},
+    {"url": "https://bestofdentoncounty.com/wp-content/uploads/2023/08/2023_BODC-Winners-1-1.pdf", "supports": "Best of Denton County 2023 winner, Wills & Estate Planning Attorney category (Caitlyn Ashley with Caitlyn Ashley Law)"}
+  ],
+  "unverified": [
+    "exact founding date (firm's about page states only 'March 2021')",
+    "State Bar of Texas bar record not checked directly; 2018 admission year relies on Super Lawyers profile",
+    "whether any staff or associate attorneys have joined since founding (site presents Caitlyn Ashley as sole attorney)"
+  ],
+  "notes": "Solo estate-planning/probate/guardianship practice founded March 2021 after ~3 years as lead probate attorney at Leigh Hilton, PLLC (Denton). Zip discrepancy: firm site and Denton County Bar list 76201; Super Lawyers lists 76207 (firm site used as authoritative). An outdated USAttorneys listing shows a prior address (918 N. Elm, Suite 100) and different phones — disregarded. Denton County Bar lists practice areas as 'Elder Law, Wills-Trusts-Probate'. Awards: Super Lawyers Rising Stars 2023-2026; Best of Denton County 2023 (Wills & Estate Planning Attorney). Community ties: Rotary Club of Cross Timbers, Habitat for Humanity volunteer.",
+  "researchedAt": "2026-07-16"
+}

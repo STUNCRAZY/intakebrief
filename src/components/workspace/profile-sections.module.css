@@ -1,0 +1,340 @@
+/* Firm profile page: ruled section headings, research record, concept preview,
+   contact-form preview, outreach draft. */
+
+.page {
+  max-width: 52rem;
+  margin: 0 auto;
+  padding: var(--space-8) var(--space-6) var(--space-16);
+}
+
+.breadcrumb {
+  font-size: 0.875rem;
+  margin: 0 0 var(--space-4);
+}
+
+.headerRow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+  margin-bottom: var(--space-3);
+}
+
+.title {
+  margin: 0 0 var(--space-3);
+  font-size: 2rem;
+}
+
+.meta {
+  margin: 0 0 var(--space-1);
+  font-size: 0.9375rem;
+  color: var(--slate);
+}
+
+.mono {
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+}
+
+/* Ruled section heading — ledger rule under every section title. */
+.ruledHeading {
+  font-size: 1.375rem;
+  margin: var(--space-8) 0 var(--space-3);
+  padding-bottom: var(--space-2);
+  border-bottom: 1px solid var(--ink);
+}
+
+.subHead {
+  font-size: 1rem;
+  margin: var(--space-6) 0 var(--space-2);
+}
+
+.muted {
+  color: var(--slate);
+  font-size: 0.9375rem;
+}
+
+.pending {
+  border: 1.5px dashed var(--line);
+  background: var(--surface-muted);
+  padding: var(--space-4) var(--space-6);
+  font-size: 0.9375rem;
+  color: var(--slate);
+}
+
+/* --- research record --- */
+
+.tableWrap {
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9375rem;
+}
+
+.table th {
+  text-align: left;
+  font-family: var(--font-ui);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--slate);
+  border-bottom: 1px solid var(--ink);
+  padding: var(--space-2) var(--space-3) var(--space-2) 0;
+}
+
+.table td {
+  border-bottom: 1px solid var(--line);
+  padding: var(--space-2) var(--space-3) var(--space-2) 0;
+  vertical-align: top;
+}
+
+.practiceList {
+  columns: 2;
+  margin: 0;
+  padding-left: var(--space-6);
+  font-size: 0.9375rem;
+}
+
+@media (max-width: 42rem) {
+  .practiceList {
+    columns: 1;
+  }
+}
+
+.caseList {
+  padding-left: var(--space-6);
+}
+
+.factorList {
+  margin: 0;
+}
+
+.factor {
+  border-bottom: 1px solid var(--line);
+  padding: var(--space-3) 0;
+}
+
+.factor dt {
+  font-weight: 700;
+  font-size: 0.8125rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--slate);
+  margin-bottom: var(--space-1);
+}
+
+.factor dd {
+  margin: 0;
+  font-size: 0.9375rem;
+}
+
+.sourceList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.sourceList li {
+  border-bottom: 1px solid var(--line);
+  padding: var(--space-2) 0;
+  word-break: break-all;
+}
+
+.sourceSupports {
+  margin: var(--space-1) 0 0;
+  font-size: 0.875rem;
+  color: var(--slate);
+  word-break: normal;
+}
+
+.unverified {
+  background: var(--surface-muted);
+  border-left: 3px solid var(--warning);
+  padding: var(--space-2) var(--space-4);
+  margin-top: var(--space-8);
+}
+
+.notes {
+  font-size: 0.9375rem;
+  white-space: pre-wrap;
+}
+
+/* --- website concept --- */
+
+.concept {
+  --concept-accent: var(--oxblood);
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--concept-accent);
+  background: var(--surface-card);
+  padding: var(--space-6);
+  margin-top: var(--space-4);
+}
+
+.conceptStamp {
+  color: var(--concept-accent);
+}
+
+.conceptHeadline {
+  font-size: 1.5rem;
+  margin: var(--space-4) 0 var(--space-2);
+}
+
+.conceptSub {
+  margin: 0 0 var(--space-4);
+  font-size: 1rem;
+  color: var(--slate);
+}
+
+.credList {
+  margin: 0 0 var(--space-4);
+  padding-left: var(--space-6);
+  font-size: 0.9375rem;
+}
+
+.credList li::marker {
+  color: var(--concept-accent);
+}
+
+.conceptBlock {
+  border-top: 1px solid var(--line);
+  padding: var(--space-3) 0;
+}
+
+.conceptBlock h4 {
+  margin: 0 0 var(--space-1);
+  font-size: 1rem;
+}
+
+.conceptBlock p {
+  margin: 0;
+  font-size: 0.9375rem;
+}
+
+.ctaPreview {
+  margin: var(--space-4) 0 0;
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+}
+
+.ctaLabel {
+  display: inline-block;
+  background: var(--concept-accent);
+  color: var(--paper);
+  font-weight: 700;
+  font-size: 0.9375rem;
+  padding: var(--space-2) var(--space-4);
+  border-radius: 2px;
+}
+
+.ctaNote {
+  font-size: 0.8125rem;
+  color: var(--slate);
+}
+
+/* --- custom contact form --- */
+
+.identity {
+  margin: 0 0 var(--space-4);
+  padding: var(--space-3) var(--space-4);
+  border-left: 4px solid var(--brass);
+  background: var(--surface-muted);
+  font-family: var(--font-display);
+  font-size: 1.0625rem;
+  font-style: italic;
+}
+
+.identity p {
+  margin: 0;
+}
+
+.fieldList {
+  list-style: none;
+  margin: 0 0 var(--space-6);
+  padding: 0;
+  border-top: 1px solid var(--ink);
+}
+
+.fieldRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: var(--space-4);
+  border-bottom: 1px solid var(--line);
+  padding: var(--space-2) 0;
+}
+
+.fieldLabel {
+  font-size: 0.9375rem;
+}
+
+.fieldMeta {
+  font-size: 0.8125rem;
+  color: var(--slate);
+  white-space: nowrap;
+}
+
+.fieldMeta code {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+}
+
+.testerLink {
+  display: inline-block;
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: var(--paper);
+  background: var(--ink);
+  border: 1px solid var(--ink);
+  padding: var(--space-3) var(--space-6);
+  text-decoration: none;
+}
+
+.testerLink:hover {
+  background: var(--oxblood);
+  border-color: var(--oxblood);
+  color: var(--paper);
+}
+
+.testerLink:focus-visible {
+  outline: 2px solid var(--oxblood);
+  outline-offset: 2px;
+}
+
+/* --- outreach draft --- */
+
+.outreachHeader {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+  margin-bottom: var(--space-3);
+}
+
+.outreachNote {
+  margin: 0;
+  font-size: 0.8125rem;
+  color: var(--slate);
+}
+
+.outreachSubject {
+  margin: 0 0 var(--space-3);
+  font-size: 0.9375rem;
+}
+
+.outreachBody {
+  font-family: var(--font-ui);
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  white-space: pre-wrap;
+  word-break: break-word;
+  background: var(--surface-card);
+  border: 1px solid var(--line);
+  padding: var(--space-4) var(--space-6);
+  margin: 0;
+  overflow-x: auto;
+}

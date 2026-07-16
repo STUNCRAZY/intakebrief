@@ -1,0 +1,44 @@
+{
+  "id": "youngberg-law",
+  "name": "Youngberg Law Firm",
+  "lane": "family",
+  "location": {"address": "2516 Lillian Miller Pkwy, Suite 110", "city": "Denton", "county": "Denton", "state": "TX", "zip": "76210"},
+  "email": "mike@youngbergfamilylaw.com",
+  "phone": "(940) 498-2929",
+  "attorneys": [{"name": "Michael (Mike) Youngberg", "role": "Founding Attorney", "yearBeganPractice": 2014}],
+  "practiceAreas": ["Divorce", "Child Custody", "Child Support (original cases, modifications, and enforcements)", "Property Division", "Spousal Maintenance", "Modifications of Existing Court Orders", "Enforcement Actions", "Adoption", "Domestic Violence", "Paternity", "Mediation", "Temporary Restraining Orders", "Protective Orders"],
+  "yearEstablished": null,
+  "notableCases": [],
+  "website": "https://youngbergfamilylaw.com/",
+  "websiteQuality": {
+    "classification": "Strong",
+    "rationale": "The site is mobile-ready (viewport meta, responsive grid), served over HTTPS, with clear title/meta description, prominent phone CTAs, a Calendly-powered 'Book Consultation' popup (60-minute slot), and a HubSpot-embedded contact form backed by a 24/7 answering service. Trust signals are solid: named client testimonials, Super Lawyers Rising Stars badge content, bar memberships, attorney bio with credentials, and a Google Maps office embed, plus explicit Denton County local positioning. Deductions: the homepage H1 is keyword-stuffed ('Family Law Lawyer Near Me'), some copy reads SEO-driven, the contact form depends on JavaScript (no server-rendered fallback), and the footer copyright year is a dynamically injected placeholder rather than visible static text.",
+    "factors": {
+      "mobileUsability": "Viewport meta tag present (width=device-width, initial-scale=1) and responsive Bootstrap-style grid classes observed in homepage HTML; mobile-ready.",
+      "pageSpeed": "Not directly measured (no lab tooling available). Inference only: homepage HTML is ~172 KB with 18 script tags, but the site uses NitroPack optimization (deferred/lazy-loaded images, iframes, and assets), suggesting deliberate performance work; actual load performance unverified.",
+      "accessibility": "All 14 homepage images carry alt attributes; main navigation has aria-label='Main Navigation' and role='navigation'. ARIA usage beyond that is sparse (only 2 aria- attributes on the homepage), so accessibility is basic but not neglected.",
+      "visualCredibility": "Professional attorney headshot, structured practice-area pages, named testimonials, and a maintained WordPress theme; credible, though the template design and keyword-stuffed H1 slightly cheapen the impression.",
+      "navigation": "Clear main navigation (About, attorney bio, Practice Areas with sub-pages, Contact) with an accessible labeled nav landmark; footer repeats contact info.",
+      "contentClarity": "Detailed plain-language explainers for each practice area, consultation-process pages, and FAQs; some homepage copy is awkwardly SEO-phrased ('family law attorney near me law firm').",
+      "callsToAction": "Frequent CTAs: 'Call Us Today For a Consultation', 'Contact us Today', 'Get Help Today', and repeated 'Book Consultation' buttons; phone number in header/footer with tel: link.",
+      "contactFormQuality": "Contact form is a HubSpot (hsforms) JavaScript embed — functional for normal users but no server-rendered <form> fallback; supplemented by 24/7 live answering service and tel: links. No email address published on the site itself.",
+      "localPositioning": "Excellent: exclusive Denton County focus stated repeatedly, named service cities (Denton, Flower Mound, Highland Village, Little Elm), proximity to Denton County courts, geo-targeted title tag, and embedded Google Map of the office.",
+      "trustSignals": "Named client testimonials, Super Lawyers Rising Stars 2021-2026 recognition (badge imagery on bio page), College of the State Bar of Texas and Denton County Bar Association memberships, Texas AG child-support background, and educational credentials.",
+      "appointmentBooking": "Yes — 'Book Consultation' buttons open a popup embedding a Calendly widget (calendly.com/youngbergfamilylaw/60min) for direct self-scheduling of a 60-minute consultation."
+    }
+  },
+  "sources": [
+    {"url": "https://youngbergfamilylaw.com/", "supports": "official firm name, phone, family-law practice areas (adoption, domestic violence, paternity, mediation, divorce, custody, support), testimonials, website-quality signals"},
+    {"url": "https://youngbergfamilylaw.com/contact/", "supports": "address (2516 Lillian Miller Pkwy, Suite 110, Denton, TX 76210), phone (940) 498-2929, 24/7 answering service, Calendly booking, consultation process"},
+    {"url": "https://youngbergfamilylaw.com/about/", "supports": "founding attorney Michael Youngberg, Denton County family-law focus, practice-area list, address, service-area cities, support staff"},
+    {"url": "https://youngbergfamilylaw.com/michael-youngberg/", "supports": "attorney name/role, Texas bar admission May 2014 (yearBeganPractice 2014), education, practice list, professional affiliations"},
+    {"url": "https://youngbergfamilylaw.com/practice-areas/", "supports": "practice areas as stated on firm site (divorce, child custody, child support, domestic violence, paternity, adoption, mediation)"},
+    {"url": "https://profiles.superlawyers.com/texas/denton/lawyer/michael-m-youngberg/4eba8b27-60e4-4bb6-b7c4-34148eaf40f5.html", "supports": "admitted to practice 2014, Rising Stars 2021-2026 selection, current office address confirmation"},
+    {"url": "https://dentonbar.com/member/youngberg/", "supports": "public business email mike@youngbergfamilylaw.com, phone/fax, Denton County Bar Association membership (note: listing shows outdated pre-move address 1402 Corinth St., circa 2016)"},
+    {"url": "https://www.24-7pressrelease.com/press-release/535481/youngberg-law-firm-shares-vision-for-the-future-of-legal-representation-in-denton", "supports": "licensed in Texas since 2014, prior Texas Attorney General child-support-division background (firm-issued press release, June 2026)"},
+    {"url": "https://dentonmainstreet.org/blogs/legal-services/youngberg-law-firm", "supports": "current address corroboration (lists alternate phone 940-213-6851 that conflicts with firm's published number)"}
+  ],
+  "unverified": ["year firm established (no founding year stated on firm site, directories, or press release)", "fax number currency (940-498-2932 appears only on the stale 2016-era bar listing)", "whether alternate phone 940-213-6851 (Denton Main Street Association listing) is current — firm's own site uses only (940) 498-2929", "public business email on the firm's own website (email found only via the Denton County Bar Association directory)"],
+  "notes": "Solo practice — about page states clients work directly with Michael Youngberg; staff listed are a paralegal (Sonja Hoke) and legal assistant (Shelby Rodriguez), not attorneys. Firm previously operated as 'Youngberg Family Law' at 1402 Corinth St., Ste. 116, Denton, TX 76208 (per circa-2016 bar listing) before moving to the current Lillian Miller Pkwy office. Seed facts verified as accurate: address, phone, solo attorney, and divorce/custody/support/adoption focus all confirmed. No notable cases found in news or court coverage searches. Email is published only on the Denton County Bar Association member page (which carries the old address), so its currency is probable but not confirmed by the firm's own site.",
+  "researchedAt": "2026-07-16"
+}

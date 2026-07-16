@@ -1,0 +1,85 @@
+.page {
+  max-width: var(--max-column);
+  margin: 0 auto;
+  padding: var(--space-8) var(--space-6) var(--space-16);
+}
+
+.header {
+  margin-bottom: var(--space-8);
+}
+
+.headerRow {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+}
+
+.wordmark {
+  font-family: var(--font-display);
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.tagline {
+  margin: var(--space-2) 0 0;
+  color: var(--slate);
+  font-size: 0.9375rem;
+}
+
+.grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(19rem, 1fr));
+  gap: var(--space-6);
+}
+
+.card {
+  display: block;
+  height: 100%;
+  background: var(--surface-card);
+  border: 1px solid var(--line);
+  border-top: 2px solid var(--ink);
+  padding: var(--space-4) var(--space-4) var(--space-6);
+  text-decoration: none;
+  color: inherit;
+  transition: box-shadow 120ms ease;
+}
+
+.card:hover {
+  box-shadow: 0 2px 0 0 var(--brass);
+}
+
+.cardTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-3);
+  margin-bottom: var(--space-3);
+}
+
+.firmName {
+  margin: 0 0 var(--space-2);
+  font-size: 1.25rem;
+}
+
+.meta {
+  margin: 0 0 var(--space-2);
+  font-size: 0.875rem;
+  color: var(--slate);
+}
+
+.phone {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  color: var(--ink);
+}
+
+.footer {
+  margin-top: var(--space-12);
+  font-size: 0.875rem;
+}

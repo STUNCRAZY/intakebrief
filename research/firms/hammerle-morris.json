@@ -1,0 +1,57 @@
+{
+  "id": "hammerle-morris",
+  "name": "Hammerle Morris Law Firm",
+  "lane": "estate",
+  "location": {"address": "2871 Lake Vista Dr, Suite 100", "city": "Lewisville", "county": "Denton", "state": "TX", "zip": "75067"},
+  "email": "contact@hammerle.com",
+  "phone": "(972) 436-9300",
+  "attorneys": [
+    {"name": "Virginia Hammerle", "role": "Founding & Managing Attorney", "yearBeganPractice": 1982},
+    {"name": "Robert Morris", "role": "Attorney", "yearBeganPractice": 1977},
+    {"name": "Mark Mayer", "role": "Attorney", "yearBeganPractice": 1999},
+    {"name": "Kendra Rey", "role": "Attorney", "yearBeganPractice": 1997},
+    {"name": "Samantha Stevenson", "role": "Attorney", "yearBeganPractice": 2022},
+    {"name": "Mandy Williams", "role": "Attorney", "yearBeganPractice": null}
+  ],
+  "practiceAreas": ["Business Law", "Banking Law", "Civil Litigation", "Elder Law", "Guardianship", "Probate", "Employment Law", "Family Law", "Estate Planning", "Personal Injury", "Real Estate Law"],
+  "yearEstablished": 1984,
+  "notableCases": [
+    {"name": "Meyer v. WMCO-GP, LLC, 211 S.W.3d 302 (Tex. 2006)", "outcome": "Outcome not stated in source; listed on the firm site as an appellate decision handled by attorney Robert Morris", "sourceUrl": "https://hammerle.com/our-team/robert-morris/"},
+    {"name": "Downey v. Denton County, Texas, 119 F.3d 381 (5th Cir. 1997)", "outcome": "Outcome not stated in source; listed on the firm site as an appellate decision handled by attorney Robert Morris", "sourceUrl": "https://hammerle.com/our-team/robert-morris/"},
+    {"name": "Gaskill v. Sneaky Enterprises, Inc., 997 S.W.2d 296 (Tex. App.-Fort Worth 1999)", "outcome": "Outcome not stated in source; listed on the firm site as an appellate decision handled by attorney Robert Morris", "sourceUrl": "https://hammerle.com/our-team/robert-morris/"}
+  ],
+  "website": "https://hammerle.com/",
+  "websiteQuality": {
+    "classification": "Strong",
+    "rationale": "Modern WordPress site served over HTTPS with a proper viewport meta tag, descriptive title and meta description, and clear mobile-responsive structure. Persistent 'Schedule a Consultation' CTAs route to an anchored Gravity Forms contact form, and click-to-call phone plus a published mailto email lower contact friction. Trust signals are abundant (Board Certification, Super Lawyers, Martindale AV rating, '19 certifications/memberships/honors', detailed attorney bios with bar years) and local positioning is explicit (Lewisville HQ, Denton County Bar, Denton satellite). Deductions: heavy page weight (71 script tags, ~200KB HTML, no lazy-loaded images) and no true online scheduler — booking is form/phone only.",
+    "factors": {
+      "mobileUsability": "Responsive viewport meta tag present; WordPress/BeTheme responsive layout with mobile menu",
+      "pageSpeed": "Not directly measured (no lab tooling); inferred moderate-to-heavy load from ~200KB HTML and 71 script tags including GTM and Gravity Forms, with no lazy-loading on images",
+      "accessibility": "Images mostly have alt attributes but several decorative images use empty alt; semantic heading structure present; no obvious ARIA issues observed",
+      "visualCredibility": "Professional design, attorney headshots, office tour photos, consistent branding; not dated",
+      "navigation": "Clear top navigation with practice-area dropdowns (estate planning, probate, guardianship, litigation, business, real estate), team, about, contact",
+      "contentClarity": "Detailed attorney bios with bar admissions and education; dedicated practice-area pages; active companion blog (Legal Talk Texas)",
+      "callsToAction": "Persistent 'Schedule a Consultation' buttons in header and body linking to contact form anchor; newsletter signup; online payment link for existing clients",
+      "contactFormQuality": "Gravity Forms contact form on contact page (#form anchor) with stated office hours and rates/fees page reference",
+      "localPositioning": "Explicit: Lewisville HQ address sitewide, 'Proudly Serving Lewisville... Denton...' service-area lists, Denton County Bar Association memberships",
+      "trustSignals": "Board Certified Civil Trial Law (TBLS), Accredited Estate Planner, Super Lawyers 2012-2022, Martindale-Hubbell AV rating, AVVO 10 rating, Texas Bar Foundation Fellows, named appellate decisions",
+      "appointmentBooking": "No embedded scheduler widget; consultation requests handled via contact form and phone"
+    }
+  },
+  "sources": [
+    {"url": "https://hammerle.com/", "supports": "firm name, phone (972) 436-9300, Lewisville HQ address, email contact@hammerle.com (mailto link), CTAs, trust-signal claims, website-quality assessment"},
+    {"url": "https://hammerle.com/about/", "supports": "year established 1984, practice-area list, AV-rated by Martindale-Hubbell, HQ Lewisville with satellite offices in Plano and Denton"},
+    {"url": "https://hammerle.com/our-team/", "supports": "attorney roster (6 attorneys), former name Hammerle Finley Law Firm"},
+    {"url": "https://hammerle.com/our-team/virginia-hammerle/", "supports": "Virginia Hammerle founder 1984, managing attorney, Texas bar 1982, Board Certified Civil Trial Law, practice focus"},
+    {"url": "https://hammerle.com/our-team/robert-morris/", "supports": "Robert Morris Texas bar 1977, elder law/probate/estate planning focus, notable appellate decisions"},
+    {"url": "https://hammerle.com/our-team/mark-mayer/", "supports": "Mark Mayer Texas bar 1999, litigation/business law practice"},
+    {"url": "https://hammerle.com/our-team/kendra-rey/", "supports": "Kendra Rey Texas bar 1997, estate planning/probate practice"},
+    {"url": "https://hammerle.com/our-team/samantha-stevenson/", "supports": "Samantha Stevenson Texas bar 2022, estate planning/business law/probate practice"},
+    {"url": "https://hammerle.com/our-team/mandy-williams/", "supports": "Mandy Williams attorney, guardianship/probate practice, JD 2012 Texas Wesleyan/Texas A&M"},
+    {"url": "https://hammerle.com/contact/", "supports": "contact form, office hours, Lewisville office, practice-area descriptions"},
+    {"url": "https://profiles.superlawyers.com/texas/lewisville/lawfirm/hammerle-morris-law-firm/454ddb87-ac29-434a-b7ce-b33744cb6745.html", "supports": "office address 2871 Lake Vista Drive Suite 100, Lewisville, TX 75067; attorneys Virginia Hammerle and Samantha Stevenson"}
+  ],
+  "unverified": ["street address of the Denton satellite office (existence stated on About page, address not published)", "street address of the Plano satellite office", "Mandy Williams Texas bar admission year (JD 2012 stated; bar year not published)", "distinct attorney title tiers (site lists all attorneys simply as 'Lawyer'; no partner/of-counsel designations published)"],
+  "notes": "Formerly Hammerle Finley Law Firm (renamed Hammerle Morris). HQ in Lewisville (Denton County) with stated satellite offices in Denton and Plano; only the Lewisville address is published on the site. Elder law/probate/guardianship is a core boutique focus alongside business law and civil litigation. Founder Virginia Hammerle writes a weekly Dallas Morning News column on senior issues; firm runs the Legal Talk Texas blog (legaltalktexas.hammerle.com). Seed facts verified correct.",
+  "researchedAt": "2026-07-16"
+}

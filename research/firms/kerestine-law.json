@@ -1,0 +1,43 @@
+{
+  "id": "kerestine-law",
+  "name": "Kerestine Law",
+  "lane": "family",
+  "location": {"address": "830 South Interstate 35 E", "city": "Denton", "county": "Denton", "state": "TX", "zip": "76205"},
+  "email": null,
+  "phone": "940-387-8719",
+  "attorneys": [{"name": "Julia Kerestine", "role": "Founding Attorney (solo practitioner)", "yearBeganPractice": 1984}],
+  "practiceAreas": ["Divorce / Uncontested Divorce", "Collaborative Law", "Child Custody & Visitation", "Child Support", "Spousal Support (Alimony)", "Property Division", "Post-Divorce Modifications", "Mediation", "Elder Law Mediation", "Paternity Disputes", "Adoption", "Guardianship", "CPS", "Pre-Nuptial & Post-Nuptial Agreements", "Grandparent Rights", "Parental Termination Rights"],
+  "yearEstablished": null,
+  "notableCases": [],
+  "website": "https://juliakerestine.com/",
+  "websiteQuality": {
+    "classification": "Adequate",
+    "rationale": "The site is a functional, mobile-responsive WordPress/Avada build with HTTPS, proper title/meta description, clear navigation, repeated 'Schedule A Consultation' CTAs, a short CAPTCHA-protected contact form, and genuine trust signals (Texas Bar College and Collaborative Divorce Texas badges, embedded AVVO review, Distinguished Mediator credential). It falls short of Strong because the design is dated, the homepage duplicates a hero heading, experience claims are inconsistent across pages (27 vs 35+ years), none of the homepage images have alt attributes, and there is no online appointment booking — contact is form-or-phone only.",
+    "factors": {
+      "mobileUsability": "Responsive: viewport meta tag present and Avada theme menu collapses to a mobile button (mobile-mode-collapse-to-button); footer content reflows for small screens.",
+      "pageSpeed": "Not directly measured (no lab tooling available). Inference from observable weight: heavyweight WordPress/Avada stack with ~30 script tags and ~176KB of homepage HTML suggests an average-to-slow load rather than a lean one.",
+      "accessibility": "Weak spot: none of the 8 homepage <img> tags carry alt attributes. Positives: labeled required form fields, skip-to-content link, CAPTCHA on forms.",
+      "visualCredibility": "Dated template design with stock-style imagery; a homepage section heading is visibly duplicated ('From Child Custody To Post Divorce Modification...' appears twice), which undercuts polish.",
+      "navigation": "Clear multi-level nav: Collaborative Law, Family Law Overview, practice-area pages (Modifications, Child Support, Custody & Visitation, Mediation, Property Division, Alimony), plus a 'Request Consultation' item.",
+      "contentClarity": "Plain-language explanations of family law processes and a mission statement; however experience claims are stale/inconsistent (attorney profile says 27 years, homepage says over 35 years).",
+      "callsToAction": "Frequent and explicit: 'Schedule A Consultation Today', click-to-call tel: link for 940-387-8719 in hero and body copy.",
+      "contactFormQuality": "Short Gravity-style form (name, email, phone, message, 600-char limit) protected by Google CAPTCHA, present on both homepage and contact page.",
+      "localPositioning": "Strong: 'Denton' in title tag and H1s, embedded Google Map with office coordinates, explicit list of cities served across Denton/Tarrant/Collin/Cooke/Wise counties.",
+      "trustSignals": "Texas Bar College badge, Collaborative Divorce Texas badge, 'Google Verified Customer Reviews' badge, embedded AVVO client review, TMCA Distinguished Mediator (2010) credential, bar association leadership roles.",
+      "appointmentBooking": "No online scheduling or calendar widget; intake is via contact form or phone call only."
+    }
+  },
+  "sources": [
+    {"url": "https://juliakerestine.com/", "supports": "firm name, family law lane, phone 940-387-8719, offices in Denton and Flower Mound, 35+ years experience, 1,500+ mediations, practice areas (divorce, paternity, custody/visitation, adoption, child support), AVVO client review, contact form, trust badges"},
+    {"url": "https://juliakerestine.com/attorney-profile/", "supports": "Julia Kerestine as founder/solo practitioner, practiced law since 1984, licensed in Texas/Colorado/Georgia, education (University of Georgia School of Law, University of North Texas), Distinguished Mediator TMCA 2010, Denton County Bar Association Director/CLE Director roles"},
+    {"url": "https://juliakerestine.com/firm-overview/", "supports": "practice areas including CPS, pre-nuptial/post-nuptial agreements, grandparent rights, parental termination rights, guardianship, elder mediation; collaborative law and mediation training; tried cases in all Denton County Courts"},
+    {"url": "https://juliakerestine.com/contact/", "supports": "main office address 830 South Interstate 35 E, Denton, TX 76205 (embedded map), Lantana office by appointment only, contact form, counties served, copyright 2026 freshness"},
+    {"url": "https://juliakerestine.com/denton-practice-areas/", "supports": "practice area list as stated on site: divorce/uncontested divorce, collaborative law, custody & visitation, child support, spousal support/alimony, property division, post-divorce modifications, mediation, elder law mediation"},
+    {"url": "https://collaborativedivorcedentoncounty.org/memprofile/julia-kerestine/", "supports": "corroborates office address 830 S Interstate 35, Denton, TX 76205 and phone (940) 387-8719; membership in Collaborative Divorce Denton County"},
+    {"url": "https://www.expertise.com/legal/child-support-lawyers/texas/denton", "supports": "corroborates firm operates in Denton, founding attorney Julia Kerestine, family law focus"},
+    {"url": "https://dentonbar.com/wp-content/uploads/2016/12/DCBA_12-01_January.pdf", "supports": "corroborates Julia Kerestine's Denton County Bar Association leadership (CLE Director / CLE Committee Chair)"}
+  ],
+  "unverified": ["public business email (no mailto or published address found anywhere on the site; profile page shows only an 'E-mail Me' form link)", "year firm established (not stated on site or directories)", "street address for the second office (footer says Flower Mound; contact page lists 'Lantana Office - By Appointment Only' with no address)", "exact State Bar of Texas admission date (site states only 'practiced law since 1984')"],
+  "notes": "Solo practice; site also styles the firm as 'KERESTINE LAW FIRM' on the attorney profile. Second office branding is inconsistent: footer and directory listings say Flower Mound, while the current contact page lists a 'Lantana Office - By Appointment Only' (Lantana is a Flower Mound-area community). Attorney is also licensed in Colorado and Georgia and admitted to the U.S. District Courts for N.D. Tex. (1989), D. Colo., N.D. Ga., and the 10th Circuit. Site copy has stale spots ('27 years' on older pages vs 'over 35 years' on homepage). Site built by BuildMySites.com, LLC. Seed fact check: 'collaborative law + mediation' confirmed; '30+ years' understated vs site's '35+ years' claim; Denton + Flower Mound offices and phone confirmed.",
+  "researchedAt": "2026-07-16"
+}

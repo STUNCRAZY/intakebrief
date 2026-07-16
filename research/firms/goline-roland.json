@@ -1,0 +1,53 @@
+{
+  "id": "goline-roland",
+  "name": "Goline & Roland Law Firm, PLLC",
+  "lane": "pi",
+  "location": {"address": "1413 E. McKinney St.", "city": "Denton", "county": "Denton", "state": "TX", "zip": "76209"},
+  "email": "rachel@grlawfirm.com",
+  "phone": "(940) 400-0475",
+  "attorneys": [
+    {"name": "Gregory C. Goline", "role": "Senior Partner", "yearBeganPractice": 2008},
+    {"name": "Theresa Blake Goline", "role": "Senior Partner", "yearBeganPractice": 2017},
+    {"name": "Rachel Roland", "role": "Partner", "yearBeganPractice": 2013}
+  ],
+  "practiceAreas": ["Family Law", "Criminal Defense", "Personal Injury"],
+  "yearEstablished": 2022,
+  "notableCases": [],
+  "website": "https://www.grlawfirm.com/",
+  "websiteQuality": {
+    "classification": "Adequate",
+    "rationale": "Modern, HTTPS-secured template site with a mobile-specific nav menu, viewport meta tag, LegalService schema (address, geo, phone), meta description, and prominent 'Contact Us Today' CTAs with click-to-call numbers for both offices. Trust signals include a results page, testimonials, Super Lawyers Rising Stars (Theresa Goline, 2023-2026) and an Avvo Client's Choice badge, though the badge is dated 2015 and only 16 of 28 homepage images carry alt attributes. There is no online appointment-booking widget — intake runs through a validated contact form (with SMS consent) and phone only — which keeps the site solid but short of a top-tier conversion experience.",
+    "factors": {
+      "mobileUsability": "Viewport meta present (initial-scale=1, though missing width=device-width); dedicated mobile nav element ('mbl-nv') and responsive utility classes throughout; click-to-call links in header.",
+      "pageSpeed": "Not directly measured (no lab tooling available). Inference only: ~173 KB homepage HTML with 13 script tags including third-party trackers (Facebook pixel, Google Maps embed) — moderate page weight, likely average real-world performance.",
+      "accessibility": "Partial image alt coverage (16 of 28 images have non-empty alt attributes); form fields have validation messages; no obvious skip-link or ARIA landmarks observed in header.",
+      "visualCredibility": "Polished modern legal-template design with animations, firm logo, attorney profile photos/pages and consistent branding; copyright notice current (© 2026).",
+      "navigation": "Clear header nav with practice-area hubs (Family Law, Criminal Defense, Personal Injury), Our Firm, Results, Testimonials, Blog, Contact; separate desktop and mobile menus.",
+      "contentClarity": "Plain-language practice pages with FAQ-style sections ('Is Hiring an Attorney Necessary...?'); bios are detailed and specific (trial counts, schools, career timeline).",
+      "callsToAction": "Repeated 'Contact Us Today' / 'Call today' CTAs, header and footer phone numbers for both offices, and CTA banners; strong CTA density.",
+      "contactFormQuality": "Contact page form collects name, phone, email, new-client status and message with field validation and an SMS-consent disclosure; no spam-captcha observed in extracted markup.",
+      "localPositioning": "Explicitly Denton-positioned: H1 'Denton Lawyers', Denton address and geo coordinates in LegalService schema, Google Maps link, plus a dedicated Sulphur Springs location page for Hopkins County.",
+      "trustSignals": "Results page (anonymized case outcomes), testimonials page, Avvo Client's Choice 2015 badge (dated), Super Lawyers Rising Stars 2023-2026 for Theresa Goline (external profile), attorney bios with 50+ jury-trial claim.",
+      "appointmentBooking": "No online scheduling/booking widget found; intake is via contact form and phone calls only."
+    }
+  },
+  "sources": [
+    {"url": "https://www.grlawfirm.com/", "supports": "firm name, Denton address (1413 E. McKinney St., Denton, TX 76209), phone (940) 400-0475, practice areas (Family Law, Criminal Defense, Personal Injury), Sulphur Springs second office, website-quality signals (schema, CTAs, copyright 2026)"},
+    {"url": "https://www.grlawfirm.com/our-firm/gregory-c-goline/", "supports": "Gregory C. Goline role (Senior Partner), practicing since 2008, founded predecessor firm Sept 2010, Goline | Roland formed August 2022 (yearEstablished)"},
+    {"url": "https://www.grlawfirm.com/our-firm/theresa-blake-goline/", "supports": "Theresa Blake Goline role (Senior Partner), JD from Texas A&M University School of Law 2016"},
+    {"url": "https://www.grlawfirm.com/our-firm/rachel-roland/", "supports": "Rachel Roland role (Partner), practicing law since 2013, Texas A&M (Texas Wesleyan) JD"},
+    {"url": "https://profiles.superlawyers.com/texas/denton/lawyer/theresa-blake-goline/0a54e9a7-e22b-4c2d-a0bc-9ffb8454389c.html", "supports": "Theresa Blake Goline licensed to practice in 2017 (yearBeganPractice), Rising Stars 2023-2026, firm address confirmation"},
+    {"url": "https://dentonbar.com/member/the-law-office-of-gregory-c-goline-pllc/", "supports": "published firm contact email rachel@grlawfirm.com (Denton County Bar Association member listing), firm name and address"},
+    {"url": "https://www.grlawfirm.com/contact/", "supports": "contact form existence and fields (website-quality assessment)"},
+    {"url": "https://www.grlawfirm.com/results/", "supports": "trust signals: anonymized case results page (no named notable cases)"},
+    {"url": "https://dentonrc.com/news/election_2020/three-way-race-for-family-court-judge-in-denton-county/article_61b25e96-7e21-544a-a89f-e0e823ee9232.html", "supports": "notes: Theresa Blake Goline ran for 367th District Court (family court) judge in 2022"},
+    {"url": "https://dentonrc.com/news/crime/families-still-feel-ripple-effects-from-jeffrey-mcbride-s-killing/article_9d8503c4-6c76-11ef-9076-830fbb9ea21b.html", "supports": "notes: Gregory Goline identified as custody attorney in McBride-case-related coverage (2024); no case outcome stated"}
+  ],
+  "unverified": [
+    "public general firm email address (only attorney email rachel@grlawfirm.com found, via Denton County Bar Association listing)",
+    "exact State Bar of Texas admission dates for Gregory C. Goline and Rachel Roland (practice-start years are firm-site bio claims)",
+    "named notable cases with reported outcomes (firm results page is anonymized; no news coverage of a named case with outcome found)"
+  ],
+  "notes": "Lane assigned as 'pi' but the firm is a three-practice boutique: family law, criminal defense, and personal injury; bios and site content lean family/criminal. Second office: 429 Main St., Sulphur Springs, TX 75482, (903) 418-5605 (dedicated /sulphur-springs-attorneys/ page). Current entity formed August 2022 when Gregory Goline merged his solo firm (The Law Office of Gregory C. Goline, PLLC, founded September 2010) with Theresa Blake Goline and Rachel Roland; DCBA listing still references the predecessor name and an older phone (940-465-9872). Theresa Blake Goline ran for 367th District Court judge in Denton County in 2022. Seed facts verified correct except: seeds listed only one phone; the older 940-465-9872 number belongs to the predecessor listing, current main line is (940) 400-0475.",
+  "researchedAt": "2026-07-16"
+}

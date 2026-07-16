@@ -1,0 +1,28 @@
+{
+  "name": "intakebrief",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Lead-capture and sales-research workspace for boutique law firms.",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "next": "^15.3.4",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "resend": "^4.0.1",
+    "stripe": "^17.7.0",
+    "zod": "^3.25.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.0",
+    "@types/react": "^19.1.0",
+    "@types/react-dom": "^19.1.0",
+    "typescript": "^5.8.3",
+    "vitest": "^3.1.4"
+  }
+}

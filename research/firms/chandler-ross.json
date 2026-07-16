@@ -1,0 +1,64 @@
+{
+  "id": "chandler-ross",
+  "name": "Chandler | Ross, Injury Attorneys",
+  "lane": "pi",
+  "location": {"address": "110 N Woodrow Ln Ste 120", "city": "Denton", "county": "Denton", "state": "TX", "zip": "76205"},
+  "email": "support@chandlerrosslaw.com",
+  "phone": "(940) 800-2500",
+  "attorneys": [
+    {"name": "Brent Chandler", "role": "Founding Partner", "yearBeganPractice": 2006},
+    {"name": "John \"Tony\" Ross, Jr.", "role": "Founding & Managing Partner", "yearBeganPractice": 2006},
+    {"name": "Nathaniel \"Nathan\" Miller", "role": "Of Counsel", "yearBeganPractice": null}
+  ],
+  "practiceAreas": [
+    "Personal Injury",
+    "Vehicle Accidents",
+    "Commercial Truck (18-Wheeler) Accidents",
+    "Premises Liability",
+    "Dram Shop",
+    "Workplace Accidents",
+    "Wrongful Death"
+  ],
+  "yearEstablished": null,
+  "notableCases": [
+    {"name": "Fatal Truck Accident (representative result, name not disclosed)", "outcome": "$14,000,000 recovered, as reported on firm website", "sourceUrl": "https://www.chandlerrosslaw.com/"},
+    {"name": "Fatal Construction Site Accident (representative result, name not disclosed)", "outcome": "$7,200,000 recovered, as reported on firm website", "sourceUrl": "https://www.chandlerrosslaw.com/"},
+    {"name": "Wrongful Death (representative result, name not disclosed)", "outcome": "$6,500,000 recovered, as reported on firm website", "sourceUrl": "https://www.chandlerrosslaw.com/"},
+    {"name": "Premises Liability (representative result, name not disclosed)", "outcome": "$4,600,000 recovered, as reported on firm website", "sourceUrl": "https://www.chandlerrosslaw.com/"}
+  ],
+  "website": "https://www.chandlerrosslaw.com/",
+  "websiteQuality": {
+    "classification": "Strong",
+    "rationale": "The site is HTTPS, mobile-responsive (viewport meta present), with a clear title and meta description, extensive practice-area navigation, and repeated 'Free Consultation' and phone CTAs. Trust signals are abundant: SuperLawyers, Martindale-Hubbell AV, AVVO 10/10, BBB A+, D Magazine and Best of Denton County badges (with alt text), 110+ 5-star Google review claims, named client testimonials, and LegalService schema with geo/address. A Gravity Forms contact form is embedded on the homepage, and the footer copyright is current (2026) with an accessibility statement. The main weakness is heavy page weight (~473 KB HTML, ~60 script tags) and no online appointment-booking widget — scheduling is via form or phone.",
+    "factors": {
+      "mobileUsability": "Responsive: viewport meta tag ('width=device-width, initial-scale=1.0') present; mobile-specific accolade imagery observed.",
+      "pageSpeed": "Not directly measured (no lab tooling available). Inference from observable signals: ~473 KB of HTML and roughly 60 script tags suggest a heavy, plugin-rich WordPress page that is likely mid-range on load performance.",
+      "accessibility": "Dedicated accessibility statement page and published accessibility commitment; images observed with alt attributes; contact-by-phone accommodation offered for accessibility issues.",
+      "visualCredibility": "Modern design with professional team imagery, accolade badge wall (SuperLawyers, AVVO 10/10, BBB A+, D Magazine, Fort Worth Magazine, Best of Denton County), and prominent recovered-amount figures.",
+      "navigation": "Extensive header navigation covering practice areas, city-specific pages, blog, FAQ, about, and contact; footer sitemap present.",
+      "contentClarity": "Clear positioning copy ('Local | Trusted', 'Serious Attorneys for Serious Injuries'); plain-language practice-area descriptions; FAQ page answers common intake questions.",
+      "callsToAction": "Repeated CTAs: free consultation banners, phone number (940) 800-2500 displayed sitewide, 'no fee unless we win' messaging, 24/7 availability claims.",
+      "contactFormQuality": "Embedded Gravity Forms contact form on the homepage (multi-field, AJAX submission); published email support@chandlerrosslaw.com and phone as alternates.",
+      "localPositioning": "Strong: Denton address in schema and on site, Denton/Dallas/Fort Worth office claims, Denton County statistics and 'Best of Denton County' awards, city-specific pages for many North Texas towns.",
+      "trustSignals": "Super Lawyers 2014-present (Ross), AV Preeminent Martindale-Hubbell, AVVO 10.0, BBB A+, named client testimonials, representative case results with disclaimer, 'over $120 Million Recovered' claim.",
+      "appointmentBooking": "No self-serve scheduling/booking widget observed; intake is via contact form, email, or phone."
+    }
+  },
+  "sources": [
+    {"url": "https://www.chandlerrosslaw.com/", "supports": "firm name, PI-only positioning, phone (940) 800-2500, address via LegalService schema (110 N Woodrow Ln Ste 120, Denton, TX 76205), practice areas list, representative case results, trust badges, website-quality signals (viewport meta, title, meta description, contact form, copyright 2026, alt attributes)"},
+    {"url": "https://www.chandlerrosslaw.com/about/", "supports": "published email support@chandlerrosslaw.com, phone, offices in Denton/Tarrant/Dallas counties, free consultation policy"},
+    {"url": "https://www.chandlerrosslaw.com/personnel/brent-chandler/", "supports": "Brent Chandler — founding partner, Texas law license 2006 (year began practice), practice focus"},
+    {"url": "https://www.chandlerrosslaw.com/personnel/john-ross-jr/", "supports": "John 'Tony' Ross, Jr. — attorney, licensed 2006, opened own firm 2007, awards and memberships"},
+    {"url": "https://www.chandlerrosslaw.com/personnel/nathaniel-miller/", "supports": "Nathaniel 'Nathan' Miller — Of Counsel, joined firm 2019"},
+    {"url": "https://profiles.superlawyers.com/texas/denton/lawyer/john-tony-ross/5faa8f79-1681-4cc2-b0d2-c510c4539e77.html", "supports": "John 'Tony' Ross — Founding & Managing Partner, first admitted to Texas Bar 2006, office address 110 N. Woodrow Ln Suite 120, Denton, TX 76205, Super Lawyers selections 2020-2025"},
+    {"url": "https://www.chandlerrosslaw.com/contact/", "supports": "footer copyright 2026, disclaimer, accessibility statement, recognition claims (Super Lawyers 2014-present, AVVO 10.0, AV Preeminent)"}
+  ],
+  "unverified": [
+    "year firm established (Chandler | Ross, PLLC formation year not stated publicly; Ross's predecessor solo firm dates to 2007)",
+    "Nathaniel Miller's year began practice / bar admission year (not stated on firm bio)",
+    "street addresses for the claimed Dallas and Fort Worth offices (only the Denton office address was verified)",
+    "public business email beyond the support@ address published on the firm site"
+  ],
+  "notes": "Firm is also styled 'Chandler | Ross, PLLC' on internal pages. Site claims offices in Denton, Dallas, and Fort Worth; Denton is the verified headquarters. Homepage claims 'Over $120 Million Recovered' and 110+ 5-star Google reviews. Super Lawyers profile lists an alternate phone (940) 247-2818; firm site consistently uses (940) 800-2500. Seed facts verified: Denton location, phone, both named attorneys, and PI-only boutique positioning (vehicle/truck accidents, wrongful death) all confirmed.",
+  "researchedAt": "2026-07-16"
+}

@@ -1,0 +1,49 @@
+{
+  "id": "peugh-law",
+  "name": "The Peugh Law Firm",
+  "lane": "criminal",
+  "location": {"address": "721 W Mulberry Street", "city": "Denton", "county": "Denton", "state": "TX", "zip": "76201"},
+  "email": "info@peughlawfirm.com",
+  "phone": "940-566-0271",
+  "attorneys": [{"name": "Daniel K. Peugh", "role": "Founding Attorney (solo practitioner)", "yearBeganPractice": 1998}],
+  "practiceAreas": ["Criminal Defense", "DWI/DUI Defense", "Juvenile Defense", "Drug Possession / Marijuana Charges", "Assault & Family Violence", "Theft, Fraud & Forgery", "Probation Violations", "Criminal Record Clearing / Expunctions"],
+  "yearEstablished": null,
+  "notableCases": [
+    {"name": "Cole's Case - Possession of Marijuana record clearing (anonymized client result published by firm)", "outcome": "Dismissal with conditions secured; after waiting period, expunction granted and record cleared", "sourceUrl": "https://peughlawfirm.com/drug-possession-lawyer-marijuana-attorney-denton/drug-offense-legal-code/"},
+    {"name": "Taylor's Case - Felony Possession of a Controlled Substance (anonymized client result published by firm)", "outcome": "Offer of 12 months of felony probation", "sourceUrl": "https://peughlawfirm.com/drug-possession-lawyer-marijuana-attorney-denton/drug-offense-legal-code/"}
+  ],
+  "website": "https://peughlawfirm.com/",
+  "websiteQuality": {
+    "classification": "Adequate",
+    "rationale": "The site is HTTPS-secured, mobile-ready (viewport meta present, Divi WordPress theme), with a proper title/meta description, clear navigation into dedicated practice-area pages, a working contact form, clickable tel: links, a published email address, footer address, and a fresh 2026 copyright. Trust signals include AVVO, Martindale peer-rating and Super Lawyers badges plus testimonials, though some badge assets are dated (alt text 'Peer Rated 2021'). Weaknesses: no online appointment booking/scheduler, heavy WordPress page payload, and a template-driven look. Solid but not best-in-class, hence Adequate.",
+    "factors": {
+      "mobileUsability": "Viewport meta tag present (width=device-width, initial-scale=1.0); responsive Divi theme; mobile usability appears supported.",
+      "pageSpeed": "Not directly measured (no lab tooling). Inferred as mediocre-to-average: homepage HTML alone is ~359 KB with ~22 script tags (WordPress/Divi + plugin assets), suggesting a moderately heavy page.",
+      "accessibility": "Images observed carry alt attributes (e.g. attorney photo, badge images); no accessibility statement; form fields use labels/required-field markers.",
+      "visualCredibility": "Professional but template-based (Divi child theme); consistent branding, attorney photos, and badge imagery; some badge assets dated 2021.",
+      "navigation": "Clear top nav (<nav id=\"top-menu-nav\">) with About, dedicated practice-area pages (DWI, juvenile, drug, assault, theft/fraud, probation violation, record clearing), FAQ, News, Recent Results, Contact.",
+      "contentClarity": "Extensive, plainly written content: practice-area explainers, FAQs, blog/news posts, and an anonymized recent-results section; messaging consistently emphasizes former-prosecutor experience.",
+      "callsToAction": "Repeated 'free consultation' CTAs, prominent phone number with tel: links, email link, and an email-capture lead magnet ('Five Questions to Avoid Hiring the Wrong Criminal Defense Attorney').",
+      "contactFormQuality": "Contact page hosts a working form (Name required, Email, Phone, Description of Legal Issue) plus a separate email-capture form; free consultation offered.",
+      "localPositioning": "Strongly Denton-localized: footer address 721 W Mulberry Street, Denton, TX 76201; copy targets Denton County courts, prosecutors, and judges throughout.",
+      "trustSignals": "AVVO rating 10.0 badge, Martindale-Hubbell Peer Rated and Client Champion badges, Super Lawyers selections 2021-2023 and 2025-2026 (per Super Lawyers profile), client testimonials, former-prosecutor credentials.",
+      "appointmentBooking": "No online scheduler (no Calendly/Acuity/etc. detected); booking is via phone, email, or contact form."
+    }
+  },
+  "sources": [
+    {"url": "https://peughlawfirm.com/", "supports": "firm name, phone 940-566-0271, footer address 721 W Mulberry Street Denton TX 76201, published email info@peughlawfirm.com, practice areas, CTAs, contact form, trust badges, 2026 copyright"},
+    {"url": "https://peughlawfirm.com/about/", "supports": "attorney Daniel K. Peugh bio; Texas bar admission 1998; former Chief Juvenile Prosecutor and Chief Misdemeanor Prosecutor, Denton County Criminal DA's Office; founding partner Tackett & Peugh LP 2002-2009; education"},
+    {"url": "https://profiles.superlawyers.com/texas/denton/lawyer/daniel-k-peugh/c60cee80-f1b7-43a1-8133-ac220a1ff3cb.html", "supports": "office address 721 W Mulberry St., Denton, TX 76201; admitted to practice 1998; Super Lawyers selections 2021-2023, 2025-2026; practice focus criminal defense / DUI-DWI / white collar"},
+    {"url": "https://probateattorneydenton.com/attorney-profile/", "supports": "secondary brand Mulberry Street Probate, Wills & Estates run by the same attorney Daniel K. Peugh; client testimonials; AVVO/Martindale badges"},
+    {"url": "https://peughlawfirm.com/drug-possession-lawyer-marijuana-attorney-denton/drug-offense-legal-code/", "supports": "notableCases: anonymized firm-published results (Cole's Case expunction; Taylor's Case felony probation offer)"},
+    {"url": "https://peughlawfirm.com/recent-results/", "supports": "additional firm-published anonymized case results (record non-disclosure, expunction, probation outcomes)"},
+    {"url": "https://www.attorneysup.com/17715/peugh-law-firm", "supports": "directory corroboration: former Denton County ADA, private practice history, criminal-defense focus"},
+    {"url": "https://www.dentoncounty.gov/DocumentCenter/View/9072/Bios-PDF", "supports": "Denton County speaker bio corroborating Texas bar 1998, Chief Juvenile Prosecutor 2000-2002, Chief Misdemeanor Prosecutor tenure"}
+  ],
+  "unverified": [
+    "year firm established (no founding year stated on site or directories; attorney's prior partnership Tackett & Peugh LP ran Jan 2002-Jul 2009, so solo firm likely dates from 2009, but this is not stated publicly)",
+    "firm headcount beyond the named attorney (testimonials mention a paralegal 'Cara'; no other attorneys listed)"
+  ],
+  "notes": "Seed corrections: the seed's 'former Chief Prosecutor Denton County Criminal DA's Office' is more precisely former Chief Juvenile Prosecutor (2000-2002) and former Chief Misdemeanor Prosecutor (1999-2000); '20+ years' is now stated as 25+ years on the current homepage (Texas bar 1998). Secondary brand: the same attorney operates probateattorneydenton.com as 'Mulberry Street Probate, Wills & Estates' / 'Law Office of Dan Peugh' from the same Mulberry Street office - recorded here per instructions, not treated as a separate firm. Prior firm: Tackett & Peugh, L.P. (founding partner, 2002-2009). Fetch note: peughlawfirm.com returned 403 to the FetchURL tool for some pages; content was verified via direct curl fetch with a browser user-agent (HTTP 200) and search snippets; Justia profile page also returned 403.",
+  "researchedAt": "2026-07-16"
+}

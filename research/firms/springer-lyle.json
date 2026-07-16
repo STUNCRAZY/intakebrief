@@ -1,0 +1,70 @@
+{
+  "id": "springer-lyle",
+  "name": "Springer Lyle Dameron & Harrison",
+  "lane": "pi",
+  "location": {"address": "1807 Westminster St", "city": "Denton", "county": "Denton", "state": "TX", "zip": "76205"},
+  "email": null,
+  "phone": "940-370-4033",
+  "attorneys": [
+    {"name": "Jeff Springer", "role": "Partner", "yearBeganPractice": 1985},
+    {"name": "Frank Lyle", "role": "Partner", "yearBeganPractice": 1986},
+    {"name": "Aubry Dameron", "role": "Partner", "yearBeganPractice": null},
+    {"name": "Jim Harrison", "role": null, "yearBeganPractice": null},
+    {"name": "Darby Dean", "role": null, "yearBeganPractice": null}
+  ],
+  "practiceAreas": [
+    "Personal Injury",
+    "Business Litigation",
+    "Probate Litigation",
+    "Real Estate Litigation",
+    "Family Law",
+    "Wills & Estates",
+    "Appeals",
+    "Mediation & ADR"
+  ],
+  "yearEstablished": null,
+  "notableCases": [],
+  "website": "https://springerlyledameron.com/",
+  "websiteQuality": {
+    "classification": "Strong",
+    "rationale": "Modern 2026 WordPress/Kadence redesign (credited to The Crouch Group, copyright 2026) that is mobile-responsive with a viewport meta tag and dedicated mobile drawer navigation. Clear CTAs throughout: sticky header phone number, CONTACT US button, and per-attorney contact forms with disclaimers and captcha. Strong trust signals (Best of Denton 2025 Winner badge, Avvo Clients' Choice 2025, Super Lawyers and Martindale AV Preeminent references, review widget) plus complete image alt text and LocalBusiness-style schema markup. Docked only for the absence of online appointment scheduling and an in-progress domain migration in which images and the footer search are still served from legacy springer-lyle.com.",
+    "factors": {
+      "mobileUsability": "Good: viewport meta tag present, responsive Kadence theme, separate mobile drawer navigation with aria-label.",
+      "pageSpeed": "Not directly measured (no lab tooling). Inference from observable page weight: homepage HTML is ~286 KB with 11 script tags, but images are lazy-loaded WebP, suggesting moderate weight and middling-to-acceptable performance.",
+      "accessibility": "Good baseline: 0 images without alt attributes, descriptive alt text, nav elements carry role=\"navigation\" and aria-labels, form fields are labeled.",
+      "visualCredibility": "Professional 2026 redesign, new firm logo (July 2026), real group photo of the attorneys, consistent branding; minor inconsistency from legacy-domain asset URLs.",
+      "navigation": "Clear primary nav with dropdowns per practice area and per attorney; footer nav mirrors structure; blog included.",
+      "contentClarity": "Plain-language positioning (advocacy firm for severe injuries, business disputes, probate, estate planning, real estate litigation) with detailed sub-pages for each practice area and an active blog.",
+      "callsToAction": "Header phone 940-370-4033 plus CONTACT US button on every page; 'Contact [attorney] Today' forms on each profile; free-consultation messaging on PI pages.",
+      "contactFormQuality": "Gravity Forms on homepage and contact page with required name/phone/email fields, contact-preference checkboxes, and issue description; profile-page forms add a disclaimer acknowledgment checkbox and captcha.",
+      "localPositioning": "Explicitly 'Denton, Texas based law firm serving North Texas'; lists Denton, Collin, Grayson, Tarrant, Dallas, Cooke, Montague and Wise counties; address in footer and schema; Best of Denton 2025 badge.",
+      "trustSignals": "Best of Denton 2025 Winner badge, Avvo Clients' Choice Award 2025 widget, Super Lawyers ratings on attorney profiles, Martindale-Hubbell AV Preeminent references, Google-style review widget, schema.org Organization markup.",
+      "appointmentBooking": "None: no online scheduler (no Calendly/similar widget); booking is by phone or contact form only."
+    }
+  },
+  "sources": [
+    {"url": "https://springerlyledameron.com/", "supports": "current firm name (title tag, copyright), positioning, phone 940-370-4033, website quality signals, copyright 2026"},
+    {"url": "https://springerlyledameron.com/attorney-profiles/", "supports": "attorney roster (Jeff Springer, Frank Lyle, Aubry Dameron, Jim Harrison, Darby Dean); Denton, Texas based firm"},
+    {"url": "https://springerlyledameron.com/attorney-profiles/jeff-springer/", "supports": "Jeff Springer partner role; admitted to bar November 5, 1985 (yearBeganPractice 1985)"},
+    {"url": "https://springerlyledameron.com/attorney-profiles/frank-lyle/", "supports": "Frank Lyle partner role; admitted to bar November 7, 1986 (yearBeganPractice 1986); AV Preeminent, Super Lawyer honors"},
+    {"url": "https://springerlyledameron.com/attorney-profiles/aubry-dameron/", "supports": "Aubry Dameron practice areas (probate litigation, estate planning, criminal and civil appeals, business litigation) and background"},
+    {"url": "https://springerlyledameron.com/attorney-profiles/jim-harrison/", "supports": "Jim Harrison background (family law, civil litigation, probate/guardianship; ex-managing partner of Harrison Law Firm)"},
+    {"url": "https://springerlyledameron.com/attorney-profiles/darby-dean/", "supports": "Darby Dean background (recent University of Oklahoma College of Law graduate; civil/business litigation, personal injury, probate, appeals)"},
+    {"url": "https://springerlyledameron.com/contact-us/", "supports": "address 1807 Westminster St, Denton, TX 76205; phone 940-370-4033; contact form; no published email; full practice-area navigation"},
+    {"url": "https://springerlyledameron.com/firm/", "supports": "firm overview, named-partner history of Jeff Springer and Frank Lyle"},
+    {"url": "https://www.vcstar.com/press-release/story/50696/aubry-dameron-named-partner-at-springer-lyle-dameron-2/", "supports": "Aubry Dameron named partner (April 2026); firm described as Martindale-Hubbell preeminent rated"},
+    {"url": "https://business.dentonchamber.org/list/member/springer-lyle-llp-5013042", "supports": "address and Denton County presence; legacy name Springer & Lyle, LLP; legacy phone (940) 387-0404"},
+    {"url": "https://www.harrisonlawfirm.net/about/", "supports": "Jim Harrison's prior firm (founded Harrison Law, Coppell, 2006) and Baylor Law background"},
+    {"url": "https://www.coramdeoacademy.org/business-directory", "supports": "published attorney email aubry@springer-lyle.com and legacy branding (noted only; not used as firm email)"}
+  ],
+  "unverified": [
+    "public business email (none published on firm website; site uses contact forms only)",
+    "year firm established (predecessor entities visible — Wood, Springer Lyle & Dameron P.C. 1991-1996 and Springer, Lyle & Watt L.L.P. 1998-2005 — but no consistent founding date stated)",
+    "bar admission year for Aubry Dameron (press release says she began her career with Springer & Lyle in 2016, but her firm CV lists a co-authored 2014 State Bar course publication)",
+    "bar admission year for Jim Harrison",
+    "bar admission year for Darby Dean",
+    "explicit partnership titles for Jim Harrison and Darby Dean (firm renamed to include 'Harrison' but site states no formal title)"
+  ],
+  "notes": "Firm recently rebranded: formerly Springer Lyle & Dameron, L.L.P. and earlier Springer & Lyle, LLP; current name per homepage title/copyright is 'Springer Lyle Dameron & Harrison' after Jim Harrison (ex-Harrison Law Firm, Coppell) joined. Legacy domain springer-lyle.com remains live and still serves site assets/search. Secondary phone (940) 312-7897 appears on the contact page; legacy number (940) 387-0404 persists in chamber/Justia listings. Daniel Abasolo (family law) formerly with the firm is no longer listed on the attorney roster. One firm blog post misstates the address as '1907 Westminster'; all other pages and schema confirm 1807 Westminster St. Attorney email aubry@springer-lyle.com was published in the Coram Deo Academy business directory but no general firm email is published.",
+  "researchedAt": "2026-07-16"
+}

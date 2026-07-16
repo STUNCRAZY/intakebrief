@@ -1,0 +1,111 @@
+{
+  "id": "little-logue",
+  "name": "Little & Logue, PLLC",
+  "lane": "family",
+  "location": {
+    "address": "4305 Windsor Centre Trail, Suite 100",
+    "city": "Flower Mound",
+    "county": "Denton",
+    "state": "TX",
+    "zip": "75028"
+  },
+  "email": null,
+  "phone": "(940) 204-5535",
+  "attorneys": [
+    {
+      "name": "Thomas Little",
+      "role": "Co-Founder & Family Law Attorney",
+      "yearBeganPractice": null
+    },
+    {
+      "name": "James Logue",
+      "role": "Co-Founder & Family Law Attorney",
+      "yearBeganPractice": 2012
+    }
+  ],
+  "practiceAreas": [
+    "Family Law",
+    "Divorce",
+    "Uncontested Divorce",
+    "Child Custody & Support",
+    "Adoption",
+    "Alimony",
+    "Divorce Mediation",
+    "Family Law Mediation",
+    "Fathers' Rights",
+    "Mothers' Rights",
+    "Modifications",
+    "Parental Rights",
+    "Grandparents' Rights",
+    "Paternity",
+    "Restraining Orders",
+    "Visitation Rights",
+    "Wills and Power of Attorney"
+  ],
+  "yearEstablished": 2023,
+  "notableCases": [],
+  "website": "https://www.llfamilylawyers.com/",
+  "websiteQuality": {
+    "classification": "Strong",
+    "rationale": "Modern agency-built legal site served over HTTPS with a viewport meta tag, responsive CSS, descriptive title/meta description, and all 33 homepage images carrying alt attributes. It has clear consultation CTAs with the phone number repeated across pages, contact forms on both the homepage and contact page, strong trust signals (Best of Denton County 2020-2025 badges, Super Lawyers, Avvo Clients' Choice, testimonials page), and excellent Denton County/Flower Mound local positioning with an active blog running into 2026 and a fresh 2026 copyright. The main gap is the absence of self-serve online appointment scheduling (contact is phone or form only), but the overall contact experience, content depth, and credibility signals justify Strong.",
+    "factors": {
+      "mobileUsability": "Viewport meta tag present (initial-scale=1) and responsive layout indicated by ~26 @media rules and bootstrap/divi-style classes; no mobile rendering test performed.",
+      "pageSpeed": "Not directly measured (no lab tooling). Inference only: ~149 KB HTML homepage with 14 script tags including third-party tracking (Facebook Pixel) suggests moderate page weight typical of agency-built legal sites; likely acceptable but not optimized to a verified standard.",
+      "accessibility": "All 33 homepage images have alt attributes; lang attribute set on html element; no dedicated accessibility statement or audit observed.",
+      "visualCredibility": "Professional design with attorney bios, awards scroller (Best of Denton County 2020/2021/2022/2024/2025, Super Lawyers, Avvo Clients' Choice), and a testimonials page.",
+      "navigation": "Clear top-level nav (About/Our Team, Family Law with per-topic subpages, Blog, Testimonials, Contact) plus site-map and site-search pages.",
+      "contentClarity": "Extensive plain-language practice-area content with FAQs; heavy SEO-style copy in places but organized and readable.",
+      "callsToAction": "Repeated prominent CTAs: 'Schedule an initial consultation by calling (940) 204-5535 or contacting us online' on homepage and practice pages.",
+      "contactFormQuality": "Contact forms present on both the homepage and the dedicated contact page; no email address published.",
+      "localPositioning": "Very strong: Flower Mound / Denton County referenced throughout, including Denton County Family Courts, local judges, and local mediation norms.",
+      "trustSignals": "Best of Denton County badges 2020-2025, Super Lawyers / Rising Stars selections, Avvo 10.0 rating and Clients' Choice, Best Lawyers in America (Logue 2021-2023), testimonials page, named attorney bios with education and credentials.",
+      "appointmentBooking": "No self-serve online booking widget observed; scheduling is via phone call or website contact form. Virtual appointments advertised as available."
+    }
+  },
+  "sources": [
+    {
+      "url": "https://www.llfamilylawyers.com/",
+      "supports": "Firm name, phone (940) 204-5535, street address 4305 Windsor Centre Trail Suite 100, practice areas, founders Thomas Little and James Logue, CTAs, trust signals, website-quality signals (HTTPS, viewport, alt attributes, 2026 copyright, blog activity)"
+    },
+    {
+      "url": "https://www.llfamilylawyers.com/contact-us/",
+      "supports": "Address 4305 Windsor Centre Trail, Suite 100, Flower Mound, TX 75028; contact form; no published email address"
+    },
+    {
+      "url": "https://www.llfamilylawyers.com/our-team/thomas-little/",
+      "supports": "Thomas Little, Founder; bio (St. Mary's J.D., Army service, trained mediator); awards (Super Lawyers Rising Star 2019-2025, Best Family Lawyer Denton County 2020, Avvo 10)"
+    },
+    {
+      "url": "https://www.llfamilylawyers.com/our-team/james-logue/",
+      "supports": "James Logue, Founder; firm formed in 2023; prior decade at KoonsFuller, P.C.; J.D. Texas Tech 2012; Rising Stars 2022/2023/2025; Best Lawyers in America 2021-2023"
+    },
+    {
+      "url": "https://www.llfamilylawyers.com/family-law/mothers-rights/",
+      "supports": "Attorney roles (Co-Founder & Family Law Attorney), co-founded in 2023, education and credential summaries, Denton County Family Courts practice"
+    },
+    {
+      "url": "https://profiles.superlawyers.com/texas/flower-mound/lawfirm/little-and-logue-pllc/002bc0e6-10b1-4e2f-be17-f758aab0f916.html",
+      "supports": "Firm name Little & Logue, PLLC; attorney roster (Thomas Little, James Logue); address 4305 Windsor Centre Trail Suite 100, Flower Mound, TX 75028; alternate listed phone 940-489-8440"
+    },
+    {
+      "url": "https://lawyers.findlaw.com/texas/flower-mound/5331860_1/",
+      "supports": "Directory listing for Little & Logue, PLLC in Flower Mound, TX at 4305 Windsor Centre Trail"
+    },
+    {
+      "url": "https://livelocalmagazines.com/dynamic-duo-of-family-law/",
+      "supports": "Founders' backgrounds; James Logue graduated law school (Texas Tech) in 2012 and began work as a family law attorney at KoonsFuller after passing the bar; Thomas Little graduated law school in 2013; firm focus on divorce, custody, and simple will/estate planning matters in Denton County"
+    },
+    {
+      "url": "https://bestofdentoncounty.com/wp-content/uploads/2025/05/2024_BODC-Winners.pdf",
+      "supports": "Little and Logue listed among 2024 Best of Denton County legal-services honorees (family law firm and wills & estate planning law firm categories)"
+    }
+  ],
+  "unverified": [
+    "public business email (none published on the firm website or directories reviewed)",
+    "Thomas Little's year he began practice / Texas bar admission year (only his 2013 law-school graduation is publicly reported)",
+    "exact founding date within 2023 (firm site states 2023; a local magazine profile described the partnership as approaching its first anniversary, a minor inconsistency)",
+    "notable reported cases or verdicts (no public news or court coverage found)"
+  ],
+  "notes": "Seed facts verified: Flower Mound (Denton County) location, phone (940) 204-5535, and founders Thomas Little and James Logue all confirmed. Correction/nuance to the 'family-law-only' seed: the firm is family-law-focused but also handles wills and power of attorney / simple estate planning per its site and local press. Team also includes paralegal Sharron Dowdle (not a licensed attorney). Super Lawyers directory lists a different phone number (940-489-8440) than the firm's own site; the firm-site number is treated as canonical. Firm previously associated with Thomas Little's prior solo brand 'Little Family Law'. Firm website rejects automated fetch tools (WAF block page) but served full HTML to a browser user-agent; assessment based on that HTML.",
+  "researchedAt": "2026-07-16"
+}

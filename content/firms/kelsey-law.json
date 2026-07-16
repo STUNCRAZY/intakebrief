@@ -1,0 +1,35 @@
+{
+  "firmId": "kelsey-law",
+  "identitySentence": "Kelsey Law Firm, PLLC is a Denton firm where attorney John Kelsey has guided local families and businesses through estate planning, elder law, real estate, guardianship, and probate matters since he began practicing alongside his father in 1995.",
+  "concept": {
+    "headline": "Plan your estate, protect a parent, or settle a loved one's affairs with a Denton attorney who has practiced here since 1995",
+    "subheadline": "Wills, trusts, guardianships, and probate raise hard questions at hard moments. Tell us what you are facing, and we will help you find a time to sit down with Attorney John E. Kelsey and talk it through.",
+    "credibilityPoints": [
+      "Licensed by the State Bar of Texas since May 1995",
+      "Joined his father Richard H. Kelsey's Denton practice, which began in 1967",
+      "Leadership roles in the Denton County Bar Association's real estate, probate, and trust section",
+      "Certified in guardianship matters"
+    ],
+    "accentColor": "#3F5D4C",
+    "ctaText": "Reserve Your Consultation",
+    "sections": [
+      {
+        "title": "Practice focus",
+        "body": "Kelsey Law Firm, PLLC handles estate planning, elder law, real estate, business law, mediation and arbitration, guardianships, and probate, trust, and guardianship law. Whether you are drafting a first will, navigating a guardianship for an aging parent, or probating an estate, the firm's work centers on these personal and closely held matters."
+      },
+      {
+        "title": "Denton roots",
+        "body": "The firm practices from a restored historic home at 2225 E. McKinney Street in Denton, and its local roots run deep: John E. Kelsey joined his father Richard's Denton practice in 1995, a practice that began in Denton County in 1967."
+      },
+      {
+        "title": "What to expect",
+        "body": "At a consultation, the firm will ask about your family, your property, and what you want to accomplish, and will give you an honest picture of your options. Bring your questions and any existing documents, and expect plain answers rather than pressure."
+      }
+    ],
+    "redesigns": []
+  },
+  "outreachDraft": {
+    "subject": "Proof matters more than promises: 15 days, 1 demo, and a Lead Capturer that can pay for itself before you ever have to.",
+    "body": "DRAFT — NOT SENT. Review and authorize before any outreach.\n\nDear Kelsey Law Firm, PLLC,\n\nYour firm has been part of Denton for a long time: John E. Kelsey has been licensed by the State Bar of Texas since May 1995, when he joined his father Richard's Denton practice, a practice that dates to 1967. That kind of continuity is rare, and it is exactly the kind of trust a potential client should feel the moment they reach out to you.\n\nYour practice areas — estate planning, elder law, guardianships, probate, real estate, and business law — tend to produce inquiries at stressful, often after-hours moments: a parent declining, a death in the family, a property dispute. Your website already does a solid job of educating those visitors and showing your testimonials and 30-plus years of experience. What it cannot yet do is answer each inquiry personally, at the moment it arrives, and turn it into a confirmed consultation on your calendar. That is the gap our Lead Capturer fills.\n\nWe have already built a custom version for your firm. It carries an identity sentence written from your verified history: \"Kelsey Law Firm, PLLC is a Denton firm where attorney John Kelsey has guided local families and businesses through estate planning, elder law, real estate, guardianship, and probate matters since he began practicing alongside his father in 1995.\" It also includes a custom contact form built around your practice areas, so a guardianship inquiry and a real estate inquiry are handled differently from the first reply.\n\nHere is how it works once it is live:\n\n- Every inquiry is emailed directly to your firm's inbox, with the matter type identified in the subject line.\n- The potential client automatically receives a topical response specific to their message — no staff action required.\n- That response presents your genuinely available consultation times.\n- A $50 reservation deposit confirms the appointment, so the times on your calendar are commitments, not maybes.\n\nWe do not promise revenue, and we will not claim results we cannot show you. Instead, we offer a 15-day proof period: test the complete experience yourself, end to end, before deciding anything.\n\nHow to test your Lead Capturer (15 minutes):\n\n1. Submit a clearly labeled TEST inquiry using a customer email you control.\n2. Do not enter confidential client information.\n3. Confirm the firm inbox receives a real email.\n4. Confirm the notification contains every displayed form field.\n5. Confirm the subject identifies the firm and likely matter type.\n6. Confirm Reply-To contains the submitted customer email.\n7. Confirm the system automatically generates a response specific to the TEST inquiry.\n8. Confirm the response is sent to the customer email without staff action.\n9. Confirm the customer receives it.\n10. Confirm it addresses the actual inquiry topic.\n11. Confirm genuine available consultation times are presented.\n12. Select a time.\n13. Confirm the $50 reservation requirement appears.\n14. Confirm the preparation list fits the matter.\n15. Confirm the prohibited-item list includes legal documents.\n16. In a payment sandbox, confirm the appointment locks only after a verified $50 payment event.\n\nIf any step fails, the test fails — contact us.\n\nIf every step works, you will have seen exactly what your potential clients will experience, and you can decide whether it earns a place at the firm.\n\nRespectfully,\nThe IntakeBrief Team\n[Physical mailing address: provided before any send]\n\nIf you would prefer not to hear from us again, reply with 'unsubscribe' and we will remove you immediately."
+  }
+}

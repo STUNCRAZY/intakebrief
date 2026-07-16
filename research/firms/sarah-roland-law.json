@@ -1,0 +1,73 @@
+{
+  "id": "sarah-roland-law",
+  "name": "Sarah Roland, Attorney at Law",
+  "lane": "criminal",
+  "location": {"address": "903 N Elm Street, Ste 101", "city": "Denton", "county": "Denton", "state": "TX", "zip": "76201"},
+  "email": "sarah@sarahroland.com",
+  "phone": "(940) 323-9305",
+  "attorneys": [
+    {"name": "Sarah E. Roland", "role": "Founding Attorney", "yearBeganPractice": 2006},
+    {"name": "George Roland III", "role": "Associate Lawyer", "yearBeganPractice": null}
+  ],
+  "practiceAreas": [
+    "DWI and DUI Offenses",
+    "Drug Offenses",
+    "Juvenile Defense",
+    "Child Injury",
+    "Assaultive Offenses",
+    "Sexual Offenses",
+    "Weapons Offenses",
+    "Homicide",
+    "Theft Crimes",
+    "Probation Revocations & Motions to Adjudicate",
+    "Nondisclosures and Expunctions",
+    "Early Release",
+    "Appeals",
+    "Tickets"
+  ],
+  "yearEstablished": null,
+  "notableCases": [
+    {
+      "name": "Michael Lorence v. The State of Texas (No. 02-15-00398-CR, Tex. App.—Fort Worth; Nancy Howard murder-for-hire prosecution)",
+      "outcome": "2015 aggravated assault conviction reversed on appeal in 2017; on retrial January 23, 2019 the client was found not guilty of Aggravated Assault with a Deadly Weapon.",
+      "sourceUrl": "https://caselaw.findlaw.com/tx-court-of-appeals/1874663.html"
+    }
+  ],
+  "website": "https://sarahroland.com/",
+  "websiteQuality": {
+    "classification": "Strong",
+    "rationale": "Modern, actively maintained WordPress 6.9.4/Elementor site with HTTPS, responsive viewport meta, fresh 2026 copyright, current blog content, and per-topic practice-area pages. Trust signals are excellent (Super Lawyer 2014-2026 badge, Avvo Superb, TCDLA leadership, client testimonial, Organization JSON-LD schema) and phone CTAs with a free-consultation offer appear on every page with an embedded Google Map for local positioning. The deliberate absence of a contact form or online booking (the firm states calls get faster answers) and mostly empty image alt attributes are the main weaknesses.",
+    "factors": {
+      "mobileUsability": "Responsive: viewport meta tag present and Elementor configured with additional custom breakpoints; navigation collapses to mobile menu.",
+      "pageSpeed": "Not directly measured (no lab tooling). Inferred moderate: ~104 KB HTML homepage built on WordPress + Elementor with Google Fonts and multiple page-builder scripts/stylesheets, typical of Elementor sites.",
+      "accessibility": "Weak-to-average: several images have empty alt attributes (only a few descriptive alts such as the Super Lawyers badge); no accessibility statement observed; not formally audited.",
+      "visualCredibility": "Professional modern design with attorney photography, recognition badges, and a featured client testimonial; content is current (2026 copyright, recent blog posts).",
+      "navigation": "Clear header nav with dropdowns for 14 practice areas, About/Meet the Team, Notable Cases, Blawg, and Contact; consistent footer with address, phone, email.",
+      "contentClarity": "Plain-language, client-focused explanations of charges and process; dedicated page per offense type plus educational blog content.",
+      "callsToAction": "Phone number in meta description, header, and repeated 'Call for a free consultation' CTAs across pages; contact page leads with the phone number.",
+      "contactFormQuality": "No contact form by design — the contact page states forms are too slow for criminal matters and directs visitors to call; email address published in footer.",
+      "localPositioning": "Strong: 'Denton County Criminal Defense Attorney' in titles, explicit Denton/Collin/Cooke county focus, embedded Google Map of the Elm Street office.",
+      "trustSignals": "Super Lawyer 2014-2026 (2026 badge), Avvo 'Superb' rating, America's Top 100 Criminal Defense Attorneys, TCDLA Voice editor/executive committee, Innocence Project of Texas board service, awards list, client testimonial, Organization/WebSite JSON-LD schema.",
+      "appointmentBooking": "None — no online scheduler or booking widget; intake is phone-first with a free consultation."
+    }
+  },
+  "sources": [
+    {"url": "https://sarahroland.com/", "supports": "Firm branding, phone (940) 323-9305, street address, published email (mailto), practice focus, trust signals, site technology and quality signals"},
+    {"url": "https://sarahroland.com/about/", "supports": "Attorneys (Sarah E. Roland, founding attorney; George Roland III, associate lawyer), Texas bar admission November 2006, awards and professional associations, 100% criminal defense practice"},
+    {"url": "https://sarahroland.com/areas-of-practice/", "supports": "Practice-area list and footer contact block: 903 N Elm Street, Ste 101, Denton, TX 76201; (940) 323-9305; Sarah@sarahroland.com; 2026 copyright"},
+    {"url": "https://sarahroland.com/contact/", "supports": "Phone (940) 323-9305, Denton/Collin/Cooke county focus, no-contact-form phone-first policy"},
+    {"url": "https://sarahroland.com/notable-cases/", "supports": "Notable case outcomes including Lorence appeal link and not-guilty retrial result, plus anonymized dismissals/acquittals"},
+    {"url": "https://caselaw.findlaw.com/tx-court-of-appeals/1874663.html", "supports": "Michael Lorence v. State: 2017 Fort Worth Court of Appeals opinion reversing the aggravated assault conviction (Nancy Howard murder-for-hire case from Denton County)"},
+    {"url": "https://law.justia.com/cases/texas/second-court-of-appeals/2020/02-20-00004-cr.html", "supports": "Ex parte Michael Lorence (2020): search snippet states that on retrial January 23, 2019 Lorence was found not guilty of Aggravated Assault with a Deadly Weapon (direct fetch of this page returned 403; snippet used)"},
+    {"url": "https://profiles.superlawyers.com/texas/denton/lawyer/sarah-e-roland/499f769b-e570-450a-92e0-9aafbdf6f8ec.html", "supports": "Super Lawyers profile: honors (Rising Star 2012, Hal Jackson Award 2014), 903 N Elm St office, 100% criminal defense trial and appellate practice"},
+    {"url": "https://www.expertise.com/legal/criminal-lawyers/texas/denton", "supports": "Third-party directory claim that the firm has served Denton since 2011 and that Sarah Roland is an active Texas attorney (used as unverified corroboration only)"},
+    {"url": "https://www.keranews.org/news/2023-06-14/texas-lawmakers-budgeted-a-lot-of-money-to-help-inmates-waiting-for-psych-beds-but-is-it-enough", "supports": "KERA News coverage quoting Sarah Roland as a Denton criminal defense attorney representing competency-restoration clients"}
+  ],
+  "unverified": [
+    "year firm established (Expertise.com says 'serving Denton since 2011', but the firm's own site does not state a founding year)",
+    "year George Roland III began practice",
+    "State Bar of Texas profile page (not directly fetched; bar-admission date taken from the firm's own About page)"
+  ],
+  "notes": "Site brands the firm simply as 'Sarah Roland' while its own embedded Google Maps listing and directories use 'Sarah Roland, Attorney at Law'; also styled 'Law Office of Sarah Roland' on the About page. Seed fact 'solo' is outdated — the firm's About page lists associate George Roland III (Sarah's brother). Super Lawyers profile lists a different phone (940-222-2006); the current site uses (940) 323-9305. Sarah's late father George Roland was also a Denton criminal defense lawyer, referenced on the About page. KERA News (2023) quoted Roland regarding a client awaiting competency restoration — newsworthy but unnamed, so not listed as a notable case.",
+  "researchedAt": "2026-07-16"
+}

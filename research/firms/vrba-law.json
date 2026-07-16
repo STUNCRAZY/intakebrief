@@ -1,0 +1,51 @@
+{
+  "id": "vrba-law",
+  "name": "VRBA Law, PLLC",
+  "lane": "criminal",
+  "location": {"address": "121 W Hickory St #115", "city": "Denton", "county": "Denton", "state": "TX", "zip": "76201"},
+  "email": null,
+  "phone": "(469) 240-9080",
+  "attorneys": [
+    {"name": "Rudy \"Glynn\" Vrba", "role": null, "yearBeganPractice": null},
+    {"name": "Lindsey Pruitt", "role": null, "yearBeganPractice": 2008}
+  ],
+  "practiceAreas": ["DWI/DUI", "Assault", "Domestic/Family Violence", "Drug Possession", "Theft", "Felony Defense", "Misdemeanor Defense", "Expunction/Non-Disclosure", "Traffic Tickets"],
+  "yearEstablished": null,
+  "notableCases": [],
+  "website": "https://www.vrbalaw.com/",
+  "websiteQuality": {
+    "classification": "Adequate",
+    "rationale": "Modern responsive WordPress site served over HTTPS with a current 2026 copyright, strong Denton/Denton County local positioning, a prominent 'call us now' phone CTA, and a working Gravity Forms contact form. Trust signals include client testimonials, Google reviews and Justia rating badge images, a State Bar of Texas badge, and Denton County Criminal Defense Lawyers Association membership. It falls short of Strong because it leans on licensed Canva stock imagery (disclosed in the footer), several image alt attributes are generic ('about-img', 'rudy-glynn-img'), and there is no online appointment-booking widget.",
+    "factors": {
+      "mobileUsability": "Viewport meta tag (width=device-width, initial-scale=1) present; mobile sticky logo and responsive WordPress theme assets indicate mobile readiness.",
+      "pageSpeed": "Not directly measured (no lab tooling). Homepage HTML is ~86KB with typical WordPress script/style tags and schema markup; moderate page weight suggests average, not obviously bloated, load performance.",
+      "accessibility": "Most images carry alt attributes, but several are generic ('about-img', 'rudy-glynn-img', 'association'); no deeper ARIA or keyboard-nav audit performed.",
+      "visualCredibility": "Clean, modern layout with real attorney photos, but heavy reliance on licensed Canva stock images (acknowledged in footer disclaimer).",
+      "navigation": "Clear nav with Practice Areas, Lawyers (per-attorney bios), Client Reviews, and Contact Us; dedicated Denton-focused page per charge type (DWI, assault, drug, theft, felony, misdemeanor, traffic tickets).",
+      "contentClarity": "Plain-language bios and practice pages; unambiguous positioning statement that the practice is '100% Criminal Defense'.",
+      "callsToAction": "Sticky 'call us now' phone CTA, tel: links for (469) 240-9080, and 'Contact Me' prompts on practice pages.",
+      "contactFormQuality": "Gravity Forms AJAX contact form (gform_3) on the Contact Us page with standard name/email/message fields.",
+      "localPositioning": "Strong: title tag and meta description target 'Denton Criminal Defense Lawyer & DWI Defense Law Firm', Denton County references throughout, and per-charge 'Denton ... lawyer' landing pages.",
+      "trustSignals": "Client testimonials on attorney pages, Google reviews and Justia lawyer rating badge images, State Bar of Texas badge image, Justia firm-profile and Yelp links, Facebook and LinkedIn links.",
+      "appointmentBooking": "No online scheduling or booking widget observed; intake is via phone call or contact form only."
+    }
+  },
+  "sources": [
+    {"url": "https://www.vrbalaw.com/", "supports": "firm name, attorneys (Rudy \"Glynn\" Vrba, Lindsey Pruitt), address 121 W Hickory St #115 Denton TX 76201, phone (469) 240-9080, criminal-defense positioning, website-quality signals"},
+    {"url": "https://www.vrbalaw.com/practice-areas/", "supports": "practice areas (DWI/DUI, assault, possession, family violence, theft, expunction/non-disclosure, traffic tickets) and '100% Criminal Defense' statement"},
+    {"url": "https://www.vrbalaw.com/lawyers/rudy-glynn-vrba/", "supports": "Rudy \"Glynn\" Vrba attorney bio and client testimonials; Denton County Criminal Defense Lawyers Association membership"},
+    {"url": "https://www.vrbalaw.com/lawyers/lindsey-pruitt/", "supports": "Lindsey Pruitt attorney bio and her statement that she became a licensed attorney in 2008"},
+    {"url": "https://www.vrbalaw.com/contact-us/", "supports": "address 121 W Hickory St #115, Denton, TX 76201; phone 469-240-9080; contact form; copyright 2026"},
+    {"url": "https://www.attorneyatlaw.com/firms/vrba-law-pllc", "supports": "corroborates address (121 W Hickory St, Denton, TX 76201) and practice focus (criminal defense, DUI)"},
+    {"url": "https://www.lawyers.com/denton/texas/rudy-glynn-vrba-168592396-a/", "supports": "corroborates Rudy Glynn Vrba practices at VRBA Law, PLLC in Denton, TX (search snippet; page itself not fetched)"}
+  ],
+  "unverified": [
+    "public business email (none published on firm site or directories reviewed)",
+    "year firm established",
+    "Rudy \"Glynn\" Vrba's exact bar-admission year (directories cite '14 years' experience without a fixed reference date)",
+    "attorney job titles/roles (site does not state founder/partner designations)",
+    "notable/reported case results (no news or court-opinion coverage found)"
+  ],
+  "notes": "Seed facts verified: address, phone, both attorney names, and criminal-defense-only focus all confirmed by the firm's own site; the practice-areas page explicitly states the practice is '100% Criminal Defense'. Attorney Lindsey Pruitt's bio mentions prior family-law experience, but the firm markets itself exclusively as criminal defense. Justia (lawyers.justia.com) and Avvo blocked automated fetches with HTTP 403; their data was corroborated only via search snippets and the firm's own pages.",
+  "researchedAt": "2026-07-16"
+}

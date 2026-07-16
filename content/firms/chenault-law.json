@@ -1,0 +1,35 @@
+{
+  "firmId": "chenault-law",
+  "identitySentence": "Chenault Law Firm is a Denton practice founded in 2011 that helps North Texas families with probate, estate planning, trusts, and fiduciary litigation.",
+  "concept": {
+    "headline": "Probate, Trust, and Estate Planning Counsel Rooted in Denton County",
+    "subheadline": "Probate usually arrives during grief, and estate questions rarely wait for a convenient moment. Chenault Law Firm helps Denton County families understand what comes next, starting with a straightforward initial consultation.",
+    "credibilityPoints": [
+      "Founded in Denton in 2011 by Gilland Chenault, who has practiced law since 2004",
+      "Gilland Chenault named a Super Lawyer from 2021 through 2026",
+      "Of Counsel John Narsutis, former judge of the 16th Judicial District Court, whose legal career began in 1973",
+      "Attorney Courtland Kristoferson, admitted to the State Bar of Texas in 2016 and a Rising Stars honoree for 2024 through 2026"
+    ],
+    "accentColor": "#6D3A3A",
+    "ctaText": "Schedule Your Initial Consultation",
+    "sections": [
+      {
+        "title": "Practice focus",
+        "body": "Chenault Law Firm concentrates on probate, estate administration, estate planning, trusts, and trust administration, along with will contests, fiduciary litigation, and heirship determinations. The firm also handles muniment of title probates and transfer on death deeds, and offers mediation services and local counsel services for matters in the area."
+      },
+      {
+        "title": "Denton roots",
+        "body": "Founded in Denton in January 2011, the firm is based at 1112 North Locust St. and serves families across Denton, Dallas, Tarrant, and Collin counties. Its Denton County probate focus runs deep enough that the firm maintains a separate probate resource site at DentonProbateAttorney.com."
+      },
+      {
+        "title": "What to expect",
+        "body": "At an initial consultation, the attorney will ask about the estate, any existing will or trust, and the family situation, then explain in plain language what the process is likely to require. You will leave knowing your options, whether that means probate, a simpler path, or planning ahead."
+      }
+    ],
+    "redesigns": []
+  },
+  "outreachDraft": {
+    "subject": "Proof matters more than promises: 15 days, 1 demo, and a Lead Capturer that can pay for itself before you ever have to.",
+    "body": "DRAFT — NOT SENT. Review and authorize before any outreach.\n\nTo the team at Chenault Law Firm,\n\nGilland Chenault began practicing law in 2004 and founded Chenault Law Firm in Denton in January 2011, building a probate, trust, and estate planning practice that now includes a former judge of the 16th Judicial District Court serving Of Counsel. That depth of experience is exactly what a potential client should encounter the moment they reach out.\n\nYour website already does many things well. It is mobile-responsive, carries your Super Lawyers and Avvo credentials, and explains probate and estate planning in plain language. What it cannot do today is answer an inquiry the moment it arrives. A family searching for a Denton probate attorney can call or fill out your form and wait for a response within 48 hours, with no way to book a consultation online. Many of those families are grieving and comparing firms at the same time.\n\nWe built the Lead Capturer for Chenault Law Firm to close that gap. It is a custom intake page written for your firm alone. Its identity sentence reads: \"Chenault Law Firm is a Denton practice founded in 2011 that helps North Texas families with probate, estate planning, trusts, and fiduciary litigation.\" Its contact form was built around your practice areas, so a will contest inquiry and a trust administration inquiry are treated as the different matters they are.\n\nHere is what happens once a potential client submits the form:\n\n- The inquiry is emailed directly to the firm's inbox, with every form field included.\n- The potential client automatically receives a response specific to the topic of their message, without anyone on your staff lifting a finger.\n- That response presents your available consultation times.\n- A $50 reservation deposit confirms the appointment, so the time your attorneys set aside is time people actually keep.\n\nWe would rather you judge it on evidence than on our description. We are offering a 15-day proof period: we set up the complete experience for Chenault Law Firm, you test it end to end, and if it does not earn its place, you walk away.\n\nHow to test your Lead Capturer (15 minutes):\n\n1. Submit a clearly labeled TEST inquiry using a customer email address you control.\n2. Do not enter any confidential client information.\n3. Confirm the firm inbox receives a real email.\n4. Confirm the notification contains every displayed form field.\n5. Confirm the subject line identifies Chenault Law Firm and the likely matter type.\n6. Confirm the Reply-To address contains the submitted customer email.\n7. Confirm the system automatically generates a response specific to your TEST inquiry.\n8. Confirm the response is sent to the customer email with no action from your staff.\n9. Confirm the customer email account actually receives it.\n10. Confirm the response addresses the actual topic of the inquiry.\n11. Confirm genuine available consultation times are presented.\n12. Select a time.\n13. Confirm the $50 reservation requirement appears.\n14. Confirm the preparation list fits the matter you described.\n15. Confirm the prohibited-item list includes legal documents.\n16. In a payment sandbox, confirm the appointment locks only after a verified $50 payment event.\n\nIf any step fails, the test fails — contact us and we will make it right or part ways.\n\nFifteen days, one demonstration, and a Lead Capturer that can pay for itself before you ever have to pay for it. We would welcome the chance to show you.\n\nThe IntakeBrief Team\n[Physical mailing address: provided before any send]\n\nIf you would prefer not to hear from us again, reply with 'unsubscribe' and we will remove you immediately."
+  }
+}

@@ -1,0 +1,261 @@
+/* Dashboard workspace: header, search + filter toolbar, firm card grid. */
+
+.page {
+  max-width: var(--max-column);
+  margin: 0 auto;
+  padding: var(--space-8) var(--space-6) var(--space-16);
+}
+
+.header {
+  margin-bottom: var(--space-6);
+}
+
+.headerRow {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+}
+
+.wordmark {
+  font-family: var(--font-display);
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.tagline {
+  margin: var(--space-2) 0 0;
+  color: var(--slate);
+  font-size: 0.9375rem;
+}
+
+.footer {
+  margin-top: var(--space-12);
+  font-size: 0.875rem;
+}
+
+/* --- controls toolbar --- */
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: var(--space-4) var(--space-8);
+  margin-bottom: var(--space-4);
+}
+
+.searchGroup {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  min-width: 16rem;
+  flex: 1 1 16rem;
+  max-width: 26rem;
+}
+
+.searchLabel {
+  font-family: var(--font-ui);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--slate);
+}
+
+.searchInput {
+  font: inherit;
+  color: var(--ink);
+  background: var(--surface-card);
+  border: 1px solid var(--line);
+  border-top: 2px solid var(--ink);
+  padding: var(--space-2) var(--space-3);
+}
+
+.searchInput:focus-visible {
+  outline: 2px solid var(--oxblood);
+  outline-offset: 1px;
+}
+
+.chipGroup {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.chipLegend {
+  font-family: var(--font-ui);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--slate);
+  margin-bottom: var(--space-1);
+}
+
+.chip {
+  font: inherit;
+  font-size: 0.8125rem;
+  color: var(--ink);
+  background: var(--surface-muted);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 0.2rem 0.75rem;
+  cursor: pointer;
+}
+
+.chip:hover {
+  border-color: var(--brass);
+}
+
+.chip[aria-pressed='true'] {
+  background: var(--ink);
+  color: var(--paper);
+  border-color: var(--ink);
+}
+
+.chip:focus-visible {
+  outline: 2px solid var(--oxblood);
+  outline-offset: 2px;
+}
+
+.chipCount {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  margin-left: var(--space-1);
+  opacity: 0.75;
+}
+
+.resultCount {
+  margin: 0 0 var(--space-4);
+  font-size: 0.875rem;
+  color: var(--slate);
+}
+
+/* --- card grid --- */
+
+.grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(19rem, 1fr));
+  gap: var(--space-6);
+}
+
+.grid > li {
+  display: block;
+}
+
+.card {
+  display: block;
+  height: 100%;
+  background: var(--surface-card);
+  border: 1px solid var(--line);
+  border-top: 2px solid var(--ink);
+  padding: var(--space-4) var(--space-4) var(--space-6);
+  text-decoration: none;
+  color: inherit;
+  transition: box-shadow 120ms ease;
+}
+
+.card:hover {
+  box-shadow: 0 2px 0 0 var(--brass);
+}
+
+.card:focus-visible {
+  outline: 2px solid var(--oxblood);
+  outline-offset: 2px;
+}
+
+.cardTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-3);
+  margin-bottom: var(--space-3);
+}
+
+.firmName {
+  margin: 0 0 var(--space-2);
+  font-size: 1.25rem;
+}
+
+.meta {
+  margin: 0 0 var(--space-2);
+  font-size: 0.875rem;
+  color: var(--slate);
+}
+
+.laneRow {
+  margin: 0 0 var(--space-2);
+}
+
+.phone {
+  margin: 0 0 var(--space-2);
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  color: var(--ink);
+}
+
+.practices {
+  margin: 0;
+  font-size: 0.8125rem;
+  color: var(--slate);
+  border-top: 1px solid var(--line);
+  padding-top: var(--space-2);
+}
+
+/* --- empty state --- */
+
+.emptyState {
+  border: 1.5px dashed var(--line);
+  background: var(--surface-muted);
+  padding: var(--space-8) var(--space-6);
+  text-align: center;
+}
+
+.emptyState p {
+  margin: 0 0 var(--space-4);
+  font-family: var(--font-display);
+  font-size: 1.125rem;
+}
+
+.clearButton {
+  font: inherit;
+  font-size: 0.875rem;
+  color: var(--paper);
+  background: var(--ink);
+  border: 1px solid var(--ink);
+  padding: var(--space-2) var(--space-4);
+  cursor: pointer;
+}
+
+.clearButton:hover {
+  background: var(--oxblood);
+  border-color: var(--oxblood);
+}
+
+.clearButton:focus-visible {
+  outline: 2px solid var(--oxblood);
+  outline-offset: 2px;
+}
+
+@media (max-width: 42rem) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .searchGroup {
+    max-width: none;
+  }
+}

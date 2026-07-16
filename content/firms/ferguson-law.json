@@ -1,0 +1,35 @@
+{
+  "firmId": "ferguson-law",
+  "identitySentence": "Ferguson Law Firm LLC is a Denton civil and business law firm helping property owners, contractors, and local businesses resolve real estate, construction, commercial, and civil disputes.",
+  "concept": {
+    "headline": "We Shoulder the Dispute, You Keep Running Your Business",
+    "subheadline": "A contract fight, a construction conflict, or a real estate dispute can pull you away from the work that pays you. Ferguson Law Firm LLC helps Denton businesses and property owners resolve civil, real estate, commercial, and construction matters efficiently, so you can get back to business.",
+    "credibilityPoints": [
+      "Attorneys Kenneth Daniel Ferguson (licensed in Texas since 2022) and Amber Michele Boyd-Cora (licensed in Texas since 2011)",
+      "Kenneth Ferguson is a U.S. Marine Corps veteran admitted to practice in both Texas and New York",
+      "Firm site displays Super Lawyers, Avvo client-rating, and Texas Bar Foundation Fellow recognitions",
+      "Offices at 101 E. McKinney St. in the heart of Denton, Texas"
+    ],
+    "accentColor": "#8C6A2F",
+    "ctaText": "Schedule Your Consultation",
+    "sections": [
+      {
+        "title": "Practice focus",
+        "body": "The firm represents clients in civil litigation including contract disputes, employment disputes, and construction conflicts. Its real estate practice serves property owners, landlords, investors, contractors, property managers, banks, and mortgage companies, while the commercial and construction practices handle matters such as breach of contract, deceptive trade practices, breach of fiduciary duty, and disputes involving homeowners, builders, and contractors."
+      },
+      {
+        "title": "Denton roots",
+        "body": "Ferguson Law Firm LLC is located in the heart of Denton, Texas at 101 E. McKinney St., and was nominated for Best Real Estate Attorney in the 2025 Best of Denton County Awards."
+      },
+      {
+        "title": "What to expect",
+        "body": "Your consultation is a straightforward conversation about your dispute: what happened, what documents exist, and what outcome you need. The firm will ask direct questions and give you an honest read on your options before you commit to anything."
+      }
+    ],
+    "redesigns": []
+  },
+  "outreachDraft": {
+    "subject": "Proof matters more than promises: 15 days, 1 demo, and a Lead Capturer that can pay for itself before you ever have to.",
+    "body": "DRAFT — NOT SENT. Review and authorize before any outreach.\n\nTo the team at Ferguson Law Firm LLC,\n\nYour firm already does the hard part right: a modern site, plain-language pages for civil litigation, real estate, commercial, and construction law, and a consultation form front and center on the homepage. That is exactly why we built your Lead Capturer. Even a strong site loses potential clients when an evening inquiry sits unanswered until morning, and your current setup notifies you of a lead but does not respond, schedule, or confirm the appointment for you.\n\nYour Lead Capturer is a custom contact experience written in your firm's voice, with a custom contact form built around the matters you actually handle. It opens with your own positioning: \"Ferguson Law Firm LLC is a Denton civil and business law firm helping property owners, contractors, and local businesses resolve real estate, construction, commercial, and civil disputes.\"\n\nHere is what it does for your practice:\n- Each inquiry is emailed directly to your firm's inbox, with the likely matter type identified in the subject line and the sender's address in Reply-To.\n- The potential client automatically receives a topical response specific to their message, so a construction dispute gets a different reply than a commercial contract conflict.\n- The response presents your available consultation times.\n- A $50 reservation deposit confirms the appointment, so your calendar holds only committed consultations.\n\nWe would rather prove it than promise it. Test the complete experience for 15 days, end to end, before deciding anything.\n\nHow to test your Lead Capturer (15 minutes):\n1. Submit a clearly labeled TEST inquiry using a customer email you control.\n2. Do not enter confidential client information.\n3. Confirm your firm inbox receives a real email.\n4. Confirm the notification contains every displayed form field.\n5. Confirm the subject identifies your firm and the likely matter type.\n6. Confirm Reply-To contains the submitted customer email.\n7. Confirm the system automatically generates a response specific to the TEST inquiry.\n8. Confirm the response is sent to the customer email without any staff action.\n9. Confirm the customer actually receives it.\n10. Confirm it addresses the actual inquiry topic.\n11. Confirm genuine available consultation times are presented.\n12. Select a time.\n13. Confirm the $50 reservation requirement appears.\n14. Confirm the preparation list fits the matter.\n15. Confirm the prohibited-item list includes legal documents.\n16. In a payment sandbox, confirm the appointment locks only after a verified $50 payment event.\n\nIf any step fails, the test fails — contact us.\n\nThe IntakeBrief Team\n[Physical mailing address: provided before any send]\n\nIf you would prefer not to hear from us again, reply with 'unsubscribe' and we will remove you immediately."
+  }
+}

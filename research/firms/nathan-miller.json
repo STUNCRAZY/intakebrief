@@ -1,0 +1,126 @@
+{
+  "id": "nathan-miller",
+  "name": "The Law Offices of Nathan Miller, PLLC",
+  "lane": "criminal",
+  "location": {
+    "address": "1701 N. Locust St",
+    "city": "Denton",
+    "county": "Denton",
+    "state": "TX",
+    "zip": "76201"
+  },
+  "email": null,
+  "phone": "(940) 580-4287",
+  "attorneys": [
+    {
+      "name": "Nathan Miller",
+      "role": "Managing Attorney",
+      "yearBeganPractice": 2008
+    },
+    {
+      "name": "Courtney Mowdy",
+      "role": "Associate Attorney",
+      "yearBeganPractice": null
+    }
+  ],
+  "practiceAreas": [
+    "Criminal Trial Law",
+    "Pretrial Diversion",
+    "DWI",
+    "DWI Record Sealing",
+    "Sealing Records",
+    "Drug Crimes",
+    "Theft Crimes",
+    "Assault and Family Violence",
+    "Sex Crimes",
+    "Weapons Crimes"
+  ],
+  "yearEstablished": 2010,
+  "notableCases": [
+    {
+      "name": "Assault Causing Bodily Injury (Class A Misdemeanor)",
+      "outcome": "Dismissed after case was set for trial (firm-reported)",
+      "sourceUrl": "https://www.nathanmillerlaw.com/case-results/"
+    },
+    {
+      "name": "Felony Theft (Theft of Property < $1500 with 2+ priors)",
+      "outcome": "Declined by the District Attorney's Office before grand jury review; case dismissed (firm-reported)",
+      "sourceUrl": "https://www.nathanmillerlaw.com/case-results/"
+    },
+    {
+      "name": "Juvenile Felony Robbery",
+      "outcome": "Dismissed after further witness investigation convinced prosecutor (firm-reported)",
+      "sourceUrl": "https://www.nathanmillerlaw.com/case-results/"
+    },
+    {
+      "name": "DWI",
+      "outcome": "Reduced to Obstruction of a Highway, a non-intoxication offense, before jury trial (firm-reported)",
+      "sourceUrl": "https://www.nathanmillerlaw.com/case-results/"
+    },
+    {
+      "name": "Boating While Intoxicated",
+      "outcome": "Hung jury; no conviction despite blood test 50% over legal limit (firm-reported)",
+      "sourceUrl": "https://www.nathanmillerlaw.com/case-results/"
+    },
+    {
+      "name": "DWI with BAC .15 or Higher",
+      "outcome": "Reduced charge with time served after two jury trials ended in mistrials (firm-reported)",
+      "sourceUrl": "https://www.nathanmillerlaw.com/case-results/"
+    }
+  ],
+  "website": "https://www.nathanmillerlaw.com/",
+  "websiteQuality": {
+    "classification": "Strong",
+    "rationale": "The site is HTTPS, mobile-ready (viewport meta present), with a clear practice-area navigation, a persistent 'Call Us Today! 940-580-4287' header CTA, contact forms on every page, and a Calendly 'Schedule a Consultation' booking widget (calendly.com/nathanmillerlaw). Trust signals are abundant: Avvo 10.0 and Clients Choice badges, National Trial Lawyers Top 100, TCDLA membership, a dedicated Case Results page, and client testimonials. Accessibility and freshness signals are good (skip-to-content link, alt attributes on all 33 homepage images, JSON-LD structured data, 2026 copyright). It falls short of flawless only because page speed could not be lab-measured and the multi-layer mega-menu is somewhat dense.",
+    "factors": {
+      "mobileUsability": "Viewport meta tag present; responsive layout with mobile menu and click-to-call header observed in fetched HTML.",
+      "pageSpeed": "Not directly measured (no lab tooling available). Inference only: ~145 KB homepage HTML with 14 script tags including third-party Calendly widget suggests moderate page weight, likely acceptable but not optimized to the bone.",
+      "accessibility": "Skip-to-content link present; all 33 homepage images carry alt attributes; semantic heading structure with clear H1.",
+      "visualCredibility": "Modern design with attorney/staff photography, award badges (Avvo, National Trial Lawyers, TCDLA), and consistent branding.",
+      "navigation": "Clear multi-level navigation: practice areas, Meet Our Team, Case Results, Resources, Blog, Contact; slightly dense mega-menu.",
+      "contentClarity": "Plain-language criminal-defense messaging, per-charge practice pages (DWI, drug, theft, assault, sex crimes, weapons), and 'benefits of hiring a former prosecutor' explainer.",
+      "callsToAction": "Persistent 'Call Us Today! 940-580-4287' header, free-consultation CTAs throughout, 'Make a Payment' link, and Calendly scheduling badge.",
+      "contactFormQuality": "Short contact forms (name/phone/email/message) embedded on homepage, contact, team, and practice pages, plus detailed DWI Case Consultation and Criminal Case Consultation intake forms.",
+      "localPositioning": "Strong: 'Denton Criminal Defense Attorneys' H1, Denton County references throughout, 1701 N. Locust St Denton address, and a stated second office in Southlake serving Grapevine/Colleyville/Keller/Westlake/Trophy Club.",
+      "trustSignals": "Case Results page with outcomes, client testimonials, Avvo 10.0 rating (2012-2018 per bio), National Trial Lawyers Top 100, Fort Worth Texas Magazine 'Top Attorney', TCDLA board membership, Super Lawyers 2025 selection (per Super Lawyers profile).",
+      "appointmentBooking": "Calendly badge widget ('Schedule a Consultation', calendly.com/nathanmillerlaw) embedded sitewide, plus detailed online intake forms."
+    }
+  },
+  "sources": [
+    {
+      "url": "https://www.nathanmillerlaw.com/",
+      "supports": "Official firm branding, phone (940) 580-4287, practice areas, Calendly booking widget, trust badges, 2026 copyright, Denton + Southlake offices"
+    },
+    {
+      "url": "https://www.nathanmillerlaw.com/staff-profiles/nathan-miller/",
+      "supports": "Nathan Miller role (Managing Attorney), former Denton County prosecutor, firm founded in private practice in 2010, education (Baylor, Texas Wesleyan), awards and memberships"
+    },
+    {
+      "url": "https://www.nathanmillerlaw.com/meet-our-team/",
+      "supports": "Team roster: Nathan Miller (Managing Attorney), Courtney Mowdy (Associate Attorney), Rebecca Scott (Paralegal), Donna Miller (Office Manager)"
+    },
+    {
+      "url": "https://www.nathanmillerlaw.com/case-results/",
+      "supports": "All notableCases entries (firm-reported dismissals, reductions, hung jury)"
+    },
+    {
+      "url": "https://www.nathanmillerlaw.com/contact-us/",
+      "supports": "Address 1701 N. Locust St, Denton, TX 76201; phone 940-580-4287; contact form fields"
+    },
+    {
+      "url": "https://profiles.superlawyers.com/texas/denton/lawyer/nathan-miller/61817a7b-64a3-479d-80eb-b2667c7aed2c.html",
+      "supports": "Legal entity name 'The Law Offices of Nathan Miller, PLLC', address, Nathan Miller admitted to practice 2008, Texas Wesleyan University School of Law 2008, Super Lawyers 2025 selection"
+    },
+    {
+      "url": "https://lawyers.law.cornell.edu/lawyer/nathan-miller-1490410",
+      "supports": "Founder of firm, former Denton County prosecutor, criminal-law practice focus, professional association memberships"
+    }
+  ],
+  "unverified": [
+    "public business email (no email address published on the firm website or directories reviewed)",
+    "Courtney Mowdy's year began practice (no public bio or bar profile found)",
+    "exact year the PLLC entity was registered with the State Bar of Texas (2010 founding year comes from the firm's own bio)"
+  ],
+  "notes": "Site brands itself as 'Law Office of Nathan Miller' while the registered entity per Super Lawyers/TCDLA is 'The Law Offices of Nathan Miller, PLLC'. Second office in Southlake, TX serving Grapevine, Colleyville, Keller, Westlake, and Trophy Club. Seed facts verified: Denton location, (940) 580-4287, and former Denton County Assistant DA background all confirmed; DWI/criminal trial focus confirmed. No independently reported (news/court opinion) notable cases found; all case outcomes are firm-reported.",
+  "researchedAt": "2026-07-16"
+}

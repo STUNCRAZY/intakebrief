@@ -1,0 +1,53 @@
+{
+  "id": "earl-dobson",
+  "name": "The Law Office of Earl Dobson",
+  "lane": "criminal",
+  "location": {"address": "1415 North Locust Street", "city": "Denton", "county": "Denton", "state": "TX", "zip": "76201"},
+  "email": "earl@dobsoncrimlaw.com",
+  "phone": "(940) 591-7097",
+  "attorneys": [
+    {"name": "Earl Dobson", "role": "Firm Principal", "yearBeganPractice": 1993},
+    {"name": "Gina Morgan", "role": "Attorney", "yearBeganPractice": null}
+  ],
+  "practiceAreas": ["Aggravated Assault", "Computer Crimes", "Domestic Violence Defense", "Drug Crimes", "DWI", "Expunction", "Felony DWI", "Marijuana", "Probation Violations", "Sex Crimes", "Theft Crimes", "Violent Crimes"],
+  "yearEstablished": null,
+  "notableCases": [
+    {"name": "Carmell v. Texas, 529 U.S. 513 (2000)", "outcome": "U.S. Supreme Court reversed and remanded the Texas appellate judgment, holding that retroactive application of the amended Tex. Code Crim. Proc. art. 38.07 violated the Ex Post Facto Clause; Dobson was the trial prosecutor in the underlying case while at the Denton County DA's office.", "sourceUrl": "https://www.law.cornell.edu/supct/html/98-7540.ZO.html"}
+  ],
+  "website": "https://www.dobsoncrimlaw.com/",
+  "websiteQuality": {
+    "classification": "Adequate",
+    "rationale": "The site is a mobile-responsive WordPress build (viewport meta present, custom 'earldobson' theme) with localized title/meta description, dedicated pages for 12 practice areas, attorney bios, blog/FAQ, and persistent phone-plus-form CTAs with a current (c) 2026 footer. Trust signals include Board Certification claims, 30-year trial experience, and local Denton County positioning throughout. It falls short of Strong because there is no online appointment booking, the viewport tag disables user zoom (maximum-scale=1.0, user-scalable=no), several image alt attributes are non-descriptive filenames (e.g. 'hm-attrny-img'), and the page ships 39 script tags with stock Canva imagery.",
+    "factors": {
+      "mobileUsability": "Viewport meta tag present and WordPress theme is responsive; however the tag sets maximum-scale=1.0 and user-scalable=no, which blocks pinch zoom and hurts low-vision users.",
+      "pageSpeed": "Not directly measured (no lab tooling). Inference only: ~120 KB HTML document with 39 script tags and multiple third-party assets suggests a moderately heavy page typical of WordPress marketing sites; no obvious red flags but unlikely to be performance-tuned.",
+      "accessibility": "Mixed: images carry alt attributes but several are meaningless filenames (e.g. 'defng-rite-img', 'hm-attrny-img'); user scaling is disabled in the viewport tag; form fields appear labeled.",
+      "visualCredibility": "Clean but generic legal-template look; imagery is licensed stock from Canva (disclosed in footer); attorney photos and award imagery present.",
+      "navigation": "Clear top navigation with dropdowns: Home, Attorneys (Earl Dobson, Gina Morgan), Practice Areas (12 entries), Resources (Blog, FAQs), Contact Us.",
+      "contentClarity": "Plain-language copy focused on consequences of conviction and free consultations; dedicated page per practice area plus FAQ and blog resources.",
+      "callsToAction": "Strong and repeated: 'Call Us Today! 940.591.7097', 'Contact Us At Any Time, 24/7', 'Free Office or Phone Consultations Available', 'Get A free Consultation' blocks in footer/sidebar.",
+      "contactFormQuality": "Full contact form (name, last name, email, phone, 'How We Can Help You?') with mandatory attorney-client disclaimer checkbox; no live chat or scheduling widget.",
+      "localPositioning": "Very strong: title tag 'Denton, TX Criminal Defense Attorney & Law Firm', copy emphasizes Denton County courts, prosecutors and judges, 'located near Downtown Denton', and links to Denton County resources.",
+      "trustSignals": "Board Certified in Criminal Law (Texas Board of Legal Specialization) claim on site; 30 years experience and hundreds of jury trials stated; Super Lawyers 2011-2026 selection on his Super Lawyers profile; attorney bios detail prosecutor backgrounds.",
+      "appointmentBooking": "None observed; contact is via phone, fax, or the web form only."
+    }
+  },
+  "sources": [
+    {"url": "https://www.dobsoncrimlaw.com/", "supports": "firm name, criminal-defense lane, Denton location, 30-year career claim, homepage quality signals (title, meta description, CTAs, WordPress build)"},
+    {"url": "https://www.dobsoncrimlaw.com/attorney-profile/", "supports": "Earl Dobson bio: Baylor JD 1993, Board Certified in Criminal Law by Texas Board of Legal Specialization, 12 years as Denton County Chief Felony Prosecutor, trial prosecutor in Carmell v. Texas, Denton County Bar Association board service"},
+    {"url": "https://www.dobsoncrimlaw.com/attorney-gina-morgan/", "supports": "Gina Morgan as second attorney at the firm and her background (Texas A&M JD, former Denton County prosecutor)"},
+    {"url": "https://www.dobsoncrimlaw.com/practice-areas/", "supports": "practice areas list and firm positioning"},
+    {"url": "https://www.dobsoncrimlaw.com/contact-us/", "supports": "street address, phone (940) 591-7097, fax (940) 382-6505, contact form details, current copyright year, attorney navigation"},
+    {"url": "https://dentonbar.com/member/law-office-of-earl-dobson/", "supports": "public business email earl@dobsoncrimlaw.com, address and phone confirmation via Denton County Bar Association member listing"},
+    {"url": "https://profiles.superlawyers.com/texas/denton/lawyer/earl-dobson/e91a4a7a-c199-408d-8d9c-ad323e9284e4.html", "supports": "Earl Dobson practicing law since 1993 (yearBeganPractice), Baylor Law 1993, Super Lawyers selection 2011-2026, office address"},
+    {"url": "https://www.law.cornell.edu/supct/html/98-7540.ZO.html", "supports": "Carmell v. Texas outcome (Texas Court of Appeals judgment reversed and remanded by U.S. Supreme Court, May 1, 2000)"}
+  ],
+  "unverified": [
+    "year firm established (no founding date stated on firm site, bar listing, or Super Lawyers firm profile)",
+    "Gina Morgan's year she began practicing law / bar admission year (bio gives degrees and a 2015 'Rookie of the Year' prosecutor award but no license year)",
+    "Board Certification independently confirmed in the Texas Board of Legal Specialization directory (claimed on firm site and consistent with Denton County court appointment materials, but TBLS listing not directly fetched)",
+    "any notable case names or outcomes beyond Carmell v. Texas (site references an unnamed 'last death penalty case in Denton County' as lead trial prosecutor, not included for lack of a case name)"
+  ],
+  "notes": "Seed facts mostly verified: address, phone, Board Certified criminal law claim, and ~30 years experience all confirmed on the firm's own site; however the seed's 'solo' description is outdated -- the site now lists a second attorney, Gina Morgan (former Denton County prosecutor). Public email comes from the Denton County Bar Association member listing, not the firm's own site (no email is published on dobsoncrimlaw.com). Fax line (940) 382-6505 also published. Carmell v. Texas was a prosecution-side case from Dobson's DA-office years; the Supreme Court reversed the relevant convictions on Ex Post Facto grounds.",
+  "researchedAt": "2026-07-16"
+}

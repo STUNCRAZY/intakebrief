@@ -1,0 +1,122 @@
+{
+  "id": "alagood-cartwright-burke",
+  "name": "Alagood Cartwright Burke PC",
+  "lane": "business",
+  "location": {
+    "address": "319 W. Oak Street",
+    "city": "Denton",
+    "county": "Denton",
+    "state": "TX",
+    "zip": "76201"
+  },
+  "email": "rwebster@dentonlaw.com",
+  "phone": "940-891-0003",
+  "attorneys": [
+    {
+      "name": "R. Scott Alagood",
+      "role": "Founding Attorney / Shareholder",
+      "yearBeganPractice": 1992
+    },
+    {
+      "name": "Brian T. Cartwright",
+      "role": "Founding Attorney / Partner",
+      "yearBeganPractice": 1987
+    },
+    {
+      "name": "Samuel B. Burke",
+      "role": "Shareholder / Partner",
+      "yearBeganPractice": 1998
+    },
+    {
+      "name": "Ryan T. Webster",
+      "role": "Associate",
+      "yearBeganPractice": null
+    }
+  ],
+  "practiceAreas": [
+    "General Civil Practice",
+    "Civil Litigation",
+    "Corporate & Business Law",
+    "Commercial & Banking Law",
+    "Condemnation & Eminent Domain",
+    "Commercial & Residential Real Estate",
+    "Landlord Tenant",
+    "Construction Law",
+    "Employment & Labor Law",
+    "Personal Injury (Motor Vehicle Accidents, Motorcycle Accident, Truck Accidents, Medical Malpractice & Nursing Home Negligence)",
+    "Insurance Law",
+    "Mediation & Arbitration Services",
+    "Non-Compete Agreement",
+    "Trade Secret Misappropriation",
+    "Power Line Dispute",
+    "Wills & Probate",
+    "Severance Agreement"
+  ],
+  "yearEstablished": 2003,
+  "notableCases": [],
+  "website": "https://www.dentonlaw.com/",
+  "websiteQuality": {
+    "classification": "Strong",
+    "rationale": "Modern, well-maintained WordPress site (current 2026 copyright, fresh 2025-2026 blog content) with HTTPS, responsive viewport, LocalBusiness/Attorney schema (address, geo, areaServed), and excellent local positioning ('Denton, TX' in the title tag, numerous Denton-specific practice pages). Clear repeated 'Schedule a consultation' CTAs, a Gravity Forms intake form on the homepage and contact page, and strong trust signals (Super Lawyers selections, Martindale-Hubbell AV ratings, Texas Board of Legal Specialization certifications, Best of Denton award, testimonials). Deductions: viewport disables pinch-zoom (maximum-scale=1.0, user-scalable=no), a moderately heavy page (~155 KB HTML, 36 script tags), and no true online appointment-booking widget.",
+    "factors": {
+      "mobileUsability": "Viewport meta tag present and theme appears responsive, but viewport sets maximum-scale=1.0 and user-scalable=no, which prevents pinch-zoom on mobile.",
+      "pageSpeed": "Not directly measured (no lab tooling available). Inference only: ~155 KB homepage HTML with 36 script tags and 8 stylesheets (WordPress 7.0.1 + Gravity Forms) indicates moderate page weight; images served as webp, so likely adequate but not lean.",
+      "accessibility": "lang='en-US' declared; 28 of 31 images carry alt attributes; form required fields marked. Negative: user-scalable=no harms low-vision users.",
+      "visualCredibility": "Custom branded theme with professional logo, attorney photos, and modern webp imagery; stock images are licensed and disclosed in the footer.",
+      "navigation": "Clear top navigation (Home, About, Practice Areas with ~17 entries and Personal Injury sub-menu, News & Articles, Blog, Contact) repeated in footer; breadcrumb schema present.",
+      "contentClarity": "Plain-language explanations of each practice area, detailed attorney bios with credentials, and an active educational blog.",
+      "callsToAction": "Repeated 'Schedule a consultation' buttons on the homepage plus phone number (940-891-0003) in header/footer and practice pages.",
+      "contactFormQuality": "Gravity Forms intake form embedded directly on the homepage and again on the contact page; required fields marked with asterisks.",
+      "localPositioning": "Title tag reads 'Denton, TX Real Estate, Civil Litigation & Personal Injury Attorney'; LocalBusiness schema lists Denton address, geo-coordinates, and areaServed (Denton, Celina, Gainesville, Lewisville, Pilot Point, Prosper, Wise County); many 'Denton <practice>' landing pages.",
+      "trustSignals": "Texas Super Lawyers selections (2003-2024), Martindale-Hubbell AV Preeminent ratings, three board-certified attorneys (Texas Board of Legal Specialization), Best of Denton 2012 award, testimonials section, and links to Facebook/Twitter/LinkedIn in schema sameAs.",
+      "appointmentBooking": "No online booking widget (no Calendly or similar); scheduling is via the contact intake form or phone call only."
+    }
+  },
+  "sources": [
+    {
+      "url": "https://www.dentonlaw.com/",
+      "supports": "Firm name, practice area summary, phone 940-891-0003, address 319 W. Oak St Denton TX 76201 (LocalBusiness schema), trust signals, copyright 2026, and all website-quality HTML observations (viewport, title, meta description, forms, scripts, alt attributes, schema types)"
+    },
+    {
+      "url": "https://www.dentonlaw.com/about/",
+      "supports": "Attorney roster (Alagood, Cartwright, Burke), board certifications for all three named partners, Super Lawyers / Martindale / Best of Denton awards"
+    },
+    {
+      "url": "https://www.dentonlaw.com/alagood-r-scott/",
+      "supports": "R. Scott Alagood role as founder; firm formed as Alagood & Cartwright, P.C. in 2003 and renamed Alagood Cartwright Burke PC in 2014 (yearEstablished 2003); his 1992 law degree (yearBeganPractice); board certification in Residential and Commercial Real Estate Law"
+    },
+    {
+      "url": "https://www.dentonlaw.com/cartwright-brian-t/",
+      "supports": "Brian T. Cartwright founding partner role, board certification in Personal Injury Trial Law (2009-present), 1987 Texas Tech law degree followed by JAG service then private practice (yearBeganPractice), past President of Denton County Bar Association"
+    },
+    {
+      "url": "https://www.dentonlaw.com/burke-samuel-b/",
+      "supports": "Samuel B. Burke shareholder role (joined 2013), board certification in Civil Trial Law, 1998 Texas Tech law degree (yearBeganPractice)"
+    },
+    {
+      "url": "https://www.dentonlaw.com/contact/",
+      "supports": "Office address 319 W. Oak Street, Denton, TX 76201; contact intake form; full practice-area navigation list used for practiceAreas"
+    },
+    {
+      "url": "https://www.dentonlaw.com/news-and-articles/why-not-diy-legal-by-ryan-t-webster/",
+      "supports": "Ryan T. Webster is an associate at the firm; published email rwebster@dentonlaw.com"
+    },
+    {
+      "url": "https://profiles.superlawyers.com/texas/denton/lawfirm/alagood-cartwright-burke-pc/04cd4b31-6aed-434e-be72-ba713bc7fede.html",
+      "supports": "Third-party confirmation of office address 319 W. Oak Street, Denton, TX 76201 and attorney roster including Brian T. Cartwright and Ryan T. Webster"
+    },
+    {
+      "url": "https://www.lawyers.com/all-legal-issues/denton/texas/law-firms/",
+      "supports": "Directory confirmation of address 319 W. Oak Street, Denton, TX 76201 and firm size of 4 lawyers"
+    }
+  ],
+  "unverified": [
+    "General firm-wide public business email (only individual attorney email rwebster@dentonlaw.com is published; no info@-style address found)",
+    "Exact State Bar of Texas admission years (yearBeganPractice values are inferred from law-school graduation years stated in firm bios)",
+    "Notable case names and outcomes (no public news reports or court opinions with outcomes found for the firm)",
+    "Ryan T. Webster's current title and start year (no profile page on the current site; described as 'associate' in a 2024 firm article and listed as an employee in the site's schema)",
+    "Fax number"
+  ],
+  "notes": "Firm history: founded as Alagood & Cartwright, P.C. in 2003 by R. Scott Alagood and Brian T. Cartwright; Samuel B. Burke joined as shareholder in 2013 and the firm became Alagood Cartwright Burke PC in 2014. Ryan T. Webster appears in the site's schema as an employee and authored a 2024 firm blog post, but the current About page lists only the three named partners - status worth confirming before outreach. A Denton Chamber of Commerce listing still shows an outdated address (401 N. Elm Street) and old name; the confirmed current address is 319 W. Oak Street. Three partners are board-certified by the Texas Board of Legal Specialization (Alagood: Residential & Commercial Real Estate; Cartwright: Personal Injury Trial Law; Burke: Civil Trial Law). Seed facts otherwise verified: address, phone, attorney names, practice mix, and 2003 founding all confirmed.",
+  "researchedAt": "2026-07-16"
+}

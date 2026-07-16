@@ -1,0 +1,70 @@
+{
+  "id": "bouschor-law",
+  "name": "Law Office of David S. Bouschor, II, P.C.",
+  "lane": "family",
+  "location": {"address": "217 E. Oak Street", "city": "Denton", "county": "Denton", "state": "TX", "zip": "76201"},
+  "email": null,
+  "phone": "(940) 202-8323",
+  "attorneys": [
+    {"name": "David S. Bouschor II", "role": "Founding Attorney - Board Certified in Family Law (Texas Board of Legal Specialization)", "yearBeganPractice": 1991},
+    {"name": "Jennifer Ramos", "role": "Attorney", "yearBeganPractice": 1994},
+    {"name": "Caitlin S. Martinez", "role": "Attorney", "yearBeganPractice": null}
+  ],
+  "practiceAreas": [
+    "Family Law",
+    "Divorce",
+    "Collaborative Divorce",
+    "High-Asset Divorce",
+    "Child Custody",
+    "Child Support",
+    "Spousal Maintenance (Alimony)",
+    "Modifications",
+    "Enforcements",
+    "Paternity",
+    "Grandparents' Rights",
+    "Premarital Agreements",
+    "Mediation / Divorce Mediation",
+    "Probate",
+    "Probate Litigation",
+    "Guardianship"
+  ],
+  "yearEstablished": 2000,
+  "notableCases": [],
+  "website": "https://www.dsblegal.com/",
+  "websiteQuality": {
+    "classification": "Strong",
+    "rationale": "The site is a modern, mobile-responsive legal website (viewport meta present, responsive CSS) with deep locally-targeted content: dedicated pages for 16+ practice areas, FAQs, a video center, a blog, and a Spanish-language family law page. Trust signals are extensive and current (Board Certified TBLS, Super Lawyers 2011-2025, Best Lawyers, U.S. News Best Law Firms Tier 1 2018-2024, Martindale-Hubbell AV Preeminent, Avvo 10.0, testimonials, LegalService JSON-LD with address and geo). CTAs and a validated contact form with SMS-consent disclosure are on every page; minor gaps are the absence of an online scheduling widget, live chat, and a published email address.",
+    "factors": {
+      "mobileUsability": "Responsive: viewport meta tag (initial-scale=1) present, responsive CSS media queries, mobile navigation; Google Maps 'Map & Directions' link in footer.",
+      "pageSpeed": "Not directly measured (no lab tooling available). Inference only: homepage HTML is ~187 KB with 15 script tags including Facebook Pixel and PPC tracking/cookie scripts, suggesting moderate page weight and likely average (not lean) load performance.",
+      "accessibility": "All 55 homepage images carry alt attributes; contact form fields have explicit labels and validation messages; no dedicated accessibility statement observed.",
+      "visualCredibility": "Professionally designed, consistent branding with attorney photos and a large awards-badge wall; the badge carousel is slightly busy but credible and current.",
+      "navigation": "Clear primary navigation with dropdowns (About Us with attorney/staff bios, Family Law with 13 subpages, Probate, Guardianship, Mediation, Video Center, Resources, Blog, Contact); footer repeats key links; site map and site search present.",
+      "contentClarity": "Plain-language, well-organized copy with FAQ sections on practice pages, detailed attorney biographies with education/memberships/awards, and Spanish-language content (Derecho Familiar; 'Se Habla Espanol').",
+      "callsToAction": "Phone number with tel: links repeated across pages, 'Schedule a Consultation' and 'contact us online' CTAs throughout, flat-fee consultation offer prominently stated.",
+      "contactFormQuality": "Dedicated contact form with field validation, new/existing-client selector, message field, and TCPA-style SMS-consent disclosure; also a header search form; no live chat observed.",
+      "localPositioning": "Very strong: 'Denton Divorce Lawyers' title and H1s, footer NAP (217 East Oak Street, Denton, TX 76201), LegalService JSON-LD schema with PostalAddress and GeoCoordinates, Denton County court/clerk local-resources section, DFW/Collin County service-area references.",
+      "trustSignals": "Board Certified in Family Law (TBLS) since 1995, Super Lawyers 2011-2025, Best Lawyers in America (recognized since 2013), U.S. News Best Law Firms Family Law Tier 1 (2018-2024), Martindale-Hubbell AV Preeminent, Avvo 10.0, Expertise 'Best of' awards, client testimonials, client portal.",
+      "appointmentBooking": "No embedded scheduler/calendar widget; appointments are booked via phone or the contact form; flat-fee consultations advertised; existing clients have a client portal login."
+    }
+  },
+  "sources": [
+    {"url": "https://www.dsblegal.com/", "supports": "firm name, attorney roster (Bouschor/Ramos/Martinez), phone (940) 202-8323, established 2000, practice mix (family law, divorce, probate, guardianship, mediation, collaborative divorce), trust-signal awards, footer address 217 East Oak Street, Denton, TX 76201, website-quality observations"},
+    {"url": "https://www.dsblegal.com/about-us/", "supports": "firm established 2000 ('Serving Denton & the Surrounding Areas Since 2000'), three-attorney roster and roles"},
+    {"url": "https://www.dsblegal.com/about-us/david-s-bouschor-ii/", "supports": "David S. Bouschor II: 1991 SMU Dedman School of Law graduate, State Bar of Texas member 1991-present, Board Certified in Family Law since 1995, opened the P.C. in Denton January 2000, awards (Super Lawyers 2011-2025, Best Lawyers since 2013, U.S. News Tier 1, AV Preeminent)"},
+    {"url": "https://www.dsblegal.com/about-us/jennifer-ramos/", "supports": "Jennifer Ramos: attorney role, JD Baylor University School of Law April 1994, admitted in Texas, over 25 years of experience, began career at Legal Aid of West Texas, launched private practice 2012, fluent Spanish, Best Lawyers 2021-present"},
+    {"url": "https://www.dsblegal.com/about-us/caitlin-s-martinez/", "supports": "Caitlin S. Martinez: attorney role, JD UNT Dallas College of Law, admitted in Texas and Oklahoma, joined the firm in 2017 after almost a decade in the public sector, Best Lawyers: Ones to Watch 2025, TYLA Outstanding Young Lawyer of Texas 2024-2025"},
+    {"url": "https://www.dsblegal.com/family-law/", "supports": "practice areas as stated by firm: alimony, child custody, child support, divorce, enforcements, grandparents' rights, guardianship, modifications, paternity, premarital agreements"},
+    {"url": "https://www.dsblegal.com/contact-us/", "supports": "contact form with validation and SMS-consent text, phone number, address/Map & Directions (217 East Oak Street, Denton, TX 76201), absence of a published email"},
+    {"url": "https://profiles.superlawyers.com/texas/denton/lawyer/david-s-bouschor-ii/6b09954b-5dd9-40b2-b2ab-ed59f7f574fb.html", "supports": "corroborates David S. Bouschor II Super Lawyers selection, 1991 SMU law graduation, Board Certification since 1995, firm opened January 2000, family law/guardianship/probate practice"},
+    {"url": "https://www.lawyers.com/all-legal-issues/denton/texas/law-firms/", "supports": "corroborates firm address 217 E. Oak Street, Denton, TX 76201 and that the firm has 3 lawyers"}
+  ],
+  "unverified": [
+    "public business email (none published on firm site; directory profiles not fetchable or none shown)",
+    "year Caitlin S. Martinez began practice (JD year not stated; site says she joined the firm in 2017)",
+    "exact Texas bar-admission year for Jennifer Ramos (site states JD April 1994 and 25+ years of experience; 1994 used as practice-start year)",
+    "notable/reported case outcomes (no news coverage, court opinions, or firm-published case results found)"
+  ],
+  "notes": "Seed facts verified and confirmed (address, phone, attorney roster, practice mix); no 403 block on the firm's own site - only one attorney subpage briefly rejected a FetchURL request (WAF) but loaded fine via browser-like request, and Justia directory pages block automated fetches (403). Firm branding mixes 'Since 1991' (Bouschor's practice start, SMU JD 1991) with 'Established 2000' (the P.C. opened January 2000); 2000 used for yearEstablished. Spanish-language services advertised ('Se Habla Espanol', Derecho Familiar page). Staff includes a TBLS Board Certified Paralegal (Caitlin Harris) per site nav. Client portal offered for existing clients. Super Lawyers profile confirms key bio facts independently.",
+  "researchedAt": "2026-07-16"
+}

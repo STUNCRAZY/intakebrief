@@ -1,0 +1,81 @@
+{
+  "id": "shanklin-law",
+  "name": "Law Office of Kimberly Shanklin, PLLC",
+  "lane": "criminal",
+  "location": {
+    "address": "1517 Centre Place Drive, Ste #320",
+    "city": "Denton",
+    "county": "Denton",
+    "state": "TX",
+    "zip": "76205"
+  },
+  "email": null,
+  "phone": "940-382-8216",
+  "attorneys": [
+    {
+      "name": "Kimberly Nicole Shanklin",
+      "role": "Founding Attorney (solo practitioner)",
+      "yearBeganPractice": 2002
+    }
+  ],
+  "practiceAreas": ["Family Law", "Criminal Law"],
+  "yearEstablished": null,
+  "notableCases": [],
+  "website": "https://shanklinlawfirm.com/",
+  "websiteQuality": {
+    "classification": "Adequate",
+    "rationale": "Modern WordPress/Elementor 4.x build served over HTTPS with a viewport meta tag, a clear hero CTA ('Request a Consultation'), a testimonials section fed by a Google Reviews widget, an accessibility widget, and strong Denton County positioning. It falls short of Strong because there is no meta description, no online appointment scheduler, no published email, a very compact navigation menu that does not surface the attorney bio page, a footer with no copyright year, and aggressive bot protection that returned 403/interstitial responses on several subpages during research.",
+    "factors": {
+      "mobileUsability": "Responsive: viewport meta tag (width=device-width, initial-scale=1) present and site built with Elementor responsive breakpoints; renders as a modern mobile-ready layout.",
+      "pageSpeed": "Not directly measured (no lab tooling available). Inference: moderate page weight (~85 KB HTML) with LiteSpeed cache combining JS and only 4 script tags (jQuery, Google Reviews widget, Elementor a11y widget, one bundled file), suggesting reasonable optimization, though the slider/hero imagery and third-party review widget add load.",
+      "accessibility": "Positive signal: Elementor a11y (accessibility) widget script loaded with role/aria attributes managed in markup; one of three homepage images has an empty alt attribute, a minor gap.",
+      "visualCredibility": "Clean contemporary design with hero imagery, custom typography, firm-logo alt text, and client testimonials; professional and credible for a solo practice.",
+      "navigation": "Very compact menu: Home, Criminal Law, Family Law, Contact; the About and attorney bio pages exist but were not linked in the homepage HTML, making key trust content harder to discover.",
+      "contentClarity": "Clear, client-focused messaging: 'Family Law' and 'Criminal Law' practice lanes, 'exclusively work on cases in Denton county', and a plain-language solo-practitioner value proposition.",
+      "callsToAction": "Strong hero CTA ('Request a Consultation' button) plus 'Contact Us' prompts repeated on homepage and About page; consistent consultation framing.",
+      "contactFormQuality": "Dedicated contact page with a structured form (name, email, phone, county of matter, referral source, message; key fields required) plus phone, fax, hours, and address; a raw Elementor template shortcode appears in extracted page text, suggesting a minor template glitch.",
+      "localPositioning": "Explicit Denton County focus: title tag 'Denton County Lawyer', 'exclusively work on cases in Denton county' on About page, full street address, and county field in the contact form.",
+      "trustSignals": "Google Reviews widget and testimonials section on homepage; bio claims clients voted firm best Criminal Law Office in Denton County for 10 years (Expertise.com corroborates Best of Denton County awards 2015-2020); Birdeye shows 4.9 stars across 39 reviews; Lead Counsel Verified badge via LawInfo.",
+      "appointmentBooking": "No online scheduling widget; consultation requests go through the contact form or by phone, and the office states it works 'by appointment only'."
+    }
+  },
+  "sources": [
+    {
+      "url": "https://shanklinlawfirm.com/",
+      "supports": "Official firm name, practice areas (Family Law, Criminal Law), canonical website URL, website-quality signals (HTTPS, viewport meta, title tag, CTAs, testimonials section, footer, scripts)"
+    },
+    {
+      "url": "https://shanklinlawfirm.com/about/",
+      "supports": "Firm focuses exclusively on Denton County family law and criminal law cases; office address and contact number listing"
+    },
+    {
+      "url": "https://shanklinlawfirm.com/contact/",
+      "supports": "Phone 940-382-8216, fax 940-382-8218, address 1517 Centre Place Drive Ste #320, Denton, TX 76205, office hours, contact form structure, 'by appointment only'"
+    },
+    {
+      "url": "https://shanklinlawfirm.com/team/kimberly-shanklin/",
+      "supports": "Kimberly Shanklin as solo practitioner who began practicing in 2002; 13 prior years at a larger firm; Best Criminal Law Office award claim; education (University of Oklahoma, Texas Wesleyan School of Law)"
+    },
+    {
+      "url": "https://www.lawinfo.com/lawfirm/texas/denton/law-office-of-kimberly-shanklin-pllc/aed7dddd-0263-4411-82e3-e5c3ab493fb1.html",
+      "supports": "Attorney full name Kimberly Nicole Shanklin; Lead Counsel Verified in Criminal Defense, Divorce, and DUI (since 2021); firm phone 940-382-8216 and Denton, TX 76205 location"
+    },
+    {
+      "url": "https://www.expertise.com/legal/criminal-lawyers/texas/denton",
+      "supports": "Kimberly Shanklin as founder/principal practicing law since 2002; criminal defense specifics (felonies, misdemeanors, theft, assault, drug possession, expungements, non-disclosures); Best of Denton County awards 2015-2020"
+    },
+    {
+      "url": "https://reviews.birdeye.com/law-office-of-kimberly-shanklin-pllc-168837163837517",
+      "supports": "Address 1517 Centre Pl Dr Suite #320, Denton, TX 76205; 4.9-star rating across 39 reviews; office hours matching firm site"
+    }
+  ],
+  "unverified": [
+    "public business email (none published on firm site or directories reviewed)",
+    "year firm established (attorney began practicing in 2002 and later moved to solo practice, but the PLLC's founding date is not published)",
+    "State Bar of Texas bar admission date/bar number (2002 start is per firm bio and Expertise.com, not a bar-card record; texasbar.com directory is form-based and could not be queried)",
+    "current suite number (firm contact page and Birdeye say Ste #320; firm About page and LawInfo say Suite 250)",
+    "notable cases (no news coverage, court opinions, or firm-published case results found)"
+  ],
+  "notes": "Solo practice; firm's own About page and LawInfo list the address as Suite 250 while the firm's Contact page and Birdeye list Ste #320 at the same street address — likely an office move, with 320 appearing more current. Firm states it works exclusively on Denton County cases in family law and criminal law. LawInfo's Lead Counsel verification adds Divorce and DUI as verified practice areas. No published email; intake is by phone or website form. Unrelated name collision to avoid: Brody Shanklin is a Denton County district judge, not affiliated with this firm. Firm subpages aggressively block automated fetches (403/interstitial), though all cited firm pages were successfully retrieved during research.",
+  "researchedAt": "2026-07-16"
+}

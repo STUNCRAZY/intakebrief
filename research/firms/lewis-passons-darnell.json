@@ -1,0 +1,71 @@
+{
+  "id": "lewis-passons-darnell",
+  "name": "Lewis, Passons & Darnell, P.C.",
+  "lane": "family",
+  "location": {"address": "509 S. Carroll Blvd., Suite A", "city": "Denton", "county": "Denton", "state": "TX", "zip": "76201"},
+  "email": "andrew@dentonfamilyattorneys.com",
+  "phone": "940-591-1191",
+  "attorneys": [
+    {"name": "Andrew Passons", "role": "Managing Partner", "yearBeganPractice": 2001},
+    {"name": "Sarah Darnell", "role": "Partner", "yearBeganPractice": 2006},
+    {"name": "Melanie Hogan", "role": "Associate Attorney", "yearBeganPractice": null},
+    {"name": "Sarah Cary", "role": "Associate Attorney", "yearBeganPractice": null},
+    {"name": "Mark Lewis", "role": "Founding Partner (Retired)", "yearBeganPractice": null}
+  ],
+  "practiceAreas": [
+    "Divorce",
+    "Child Custody & Visitation",
+    "Complex Property Division",
+    "Post-Divorce Modification",
+    "Child Support Enforcement",
+    "Adoption",
+    "Paternity",
+    "Mediation",
+    "Collaborative Law"
+  ],
+  "yearEstablished": null,
+  "notableCases": [],
+  "website": "https://www.dentonfamilyattorneys.com/",
+  "websiteQuality": {
+    "classification": "Adequate",
+    "rationale": "Mobile-ready WordPress (Avada) site with HTTPS, viewport meta, clear family-law navigation, contact forms on every page, and solid trust signals (TBLS board certifications, Super Lawyers badge, testimonials, attorney CV, bar-association leadership). It falls short of Strong because the page is heavy (126 script tags, ~170KB HTML), there is no online appointment booking (phone/form only), several images lack alt text, and stale elements remain (legacy 'Lewis & Passons, P.C.' title tag on the contact page, a dated COVID-19 notice, yearless copyright footer).",
+    "factors": {
+      "mobileUsability": "Responsive viewport meta tag present; Avada/Fusion responsive theme renders mobile navigation and click-to-call links.",
+      "pageSpeed": "Not directly measured (no lab tooling available). Inferred mediocre-to-heavy: homepage HTML alone is ~170KB with 126 script tags from the Avada builder and plugins, suggesting significant render-blocking payload.",
+      "accessibility": "Skip-to-content link present; however 5 of 13 homepage images lack alt attributes; no ARIA landmarks audit performed.",
+      "visualCredibility": "Professional template design with attorney photos and consistent branding, but dated elements persist (COVID-19 accommodation text, legacy firm name in contact-page title tag, copyright footer without a year).",
+      "navigation": "Clear persistent menu: Home, About Us (per-attorney subpages, staff), Practice Areas (9 subpages), Testimonials, Blog, Contact, Denton/Celina office pages.",
+      "contentClarity": "Focused Denton County family-law messaging; detailed attorney bios with credentials; dedicated practice-area pages plus FAQ and blog.",
+      "callsToAction": "Phone number in header on every page, 'Contact Our Office' blocks with forms sitewide, 'Contact our office today to schedule a consultation' copy on homepage.",
+      "contactFormQuality": "Gravity Forms (name, email, phone, message, disclaimer-consent checkbox, Google CAPTCHA) embedded on contact page and site-wide sidebar; form action posts to the site itself.",
+      "localPositioning": "Strong: Denton County emphasis throughout, footer lists 20+ served North Texas cities, dedicated Celina satellite-office page, Google Maps link to office.",
+      "trustSignals": "TBLS Board Certified claims (Passons 2010, Darnell 2012), Super Lawyers badge/profile links, testimonials page, Avvo testimonial quotes, downloadable attorney CV, Denton County Bar leadership roles listed.",
+      "appointmentBooking": "No online scheduling widget (no Calendly/Clio/Lawmatics etc.); booking is phone or contact-form only; Skype/video consultations available by request; LawPay payment link present."
+    }
+  },
+  "sources": [
+    {"url": "https://www.dentonfamilyattorneys.com/", "supports": "official firm name, family-law lane, board-certification claims, homepage website-quality signals, phone in header"},
+    {"url": "https://www.dentonfamilyattorneys.com/contact/", "supports": "address 509 S. Carroll Blvd., Suite A, Denton, TX 76201; phone 940-591-1191; contact form presence"},
+    {"url": "https://www.dentonfamilyattorneys.com/about/", "supports": "attorney roster and roles: Andrew Passons (Managing Partner), Sarah Darnell (Partner), Melanie Hogan (Associate Attorney), Sarah Cary (Associate Attorney), Mark Lewis (Founding Partner)"},
+    {"url": "https://www.dentonfamilyattorneys.com/andrew-passons/", "supports": "Andrew Passons bio: licensed in Texas 2001, TBLS Board Certified in Family Law 2010, Managing Partner, accolades"},
+    {"url": "https://www.dentonfamilyattorneys.com/sarah-darnell/", "supports": "Sarah Darnell bio: Partner, licensed in Texas 2006, TBLS Board Certified in Family Law 2012, joined firm 2020"},
+    {"url": "https://www.dentonfamilyattorneys.com/melanie-hogan/", "supports": "Melanie Hogan, Associate Attorney; 2022 Texas A&M School of Law graduate (license year not stated)"},
+    {"url": "https://www.dentonfamilyattorneys.com/sarah-cary/", "supports": "Sarah Cary, Associate Attorney; prior Collin County DA Family Justice/CPS and Denton family-law firm experience"},
+    {"url": "https://www.dentonfamilyattorneys.com/mark-lewis/", "supports": "Mark Lewis, Founding Partner, retired September 2019 after ~40 years of practice; SMU law graduate 1980"},
+    {"url": "https://www.dentonfamilyattorneys.com/practice-areas/", "supports": "practice areas list (Divorce, Child Custody & Visitation, Complex Property Division, Post-Divorce Modification, Child Support Enforcement, Adoption, Paternity, Mediation, Collaborative Law); Celina satellite office note"},
+    {"url": "https://www.dentonfamilyattorneys.com/wp-content/uploads/2020/01/AP-Curriculum-Vitae-2020.pdf", "supports": "public business email andrew@dentonfamilyattorneys.com; firm lineage (Law Office of Mark Lewis; Lewis & Passons, P.C. 2010-2019; Lewis, Passons & Darnell, P.C. 2020-present); fax 940-383-0557"},
+    {"url": "https://profiles.superlawyers.com/texas/denton/lawfirm/lewis-passons-and-darnell-pc/a5528899-6855-495d-92fe-468f9422626a.html", "supports": "independent directory confirmation of firm name, address, and attorneys (Passons, Darnell, Cary)"},
+    {"url": "https://dentonbar.com/membership/family-law/", "supports": "Denton County Bar Association Family Law Section listing for Sarah Darnell at the firm with address, phone, fax, and sarah@dentonfamilyattorneys.com"},
+    {"url": "https://www.dentonfamilyattorneys.com/celina-family-law-divorce-attorneys/", "supports": "Celina satellite office (by appointment only), notes field"}
+  ],
+  "unverified": [
+    "year firm established (lineage documented: Law Office of Mark Lewis -> Lewis & Passons, P.C. from 2010 -> renamed Lewis, Passons & Darnell, P.C. in 2020, but no single founding year is published)",
+    "general firm-wide business email (only attorney-specific emails published: andrew@ and sarah@dentonfamilyattorneys.com)",
+    "Melanie Hogan's year of bar admission (site states 2022 JD only)",
+    "Sarah Cary's year of bar admission",
+    "Mark Lewis's year of bar admission (site states SMU JD 1980 and ~40 years of practice before retiring 2019)",
+    "notable/reportable cases (none found in public sources)"
+  ],
+  "notes": "Denton County family-law boutique, formerly Lewis & Passons, P.C. (renamed Lewis, Passons & Darnell, P.C. in 2020 when Sarah Darnell joined); firm descends from the Law Office of Mark Lewis. Both named partners are Board Certified in Family Law by the Texas Board of Legal Specialization per the firm site. Second location: Celina, TX satellite office, by appointment only (no street address published on the Celina page). Fax 940-383-0557 per CV PDF and DCBA listing. Caveat: the Denton County Bar Association directory still shows a stale entry placing associate Sarah Cary at Koons Fuller Family Law (scary@koonsfuller.com), but she does not appear on KoonsFuller's current attorney roster and the firm's own About page (updated Feb 2026) lists her as Associate Attorney — treated the firm site as current. Contact-page title tag still references the old 'Lewis & Passons, P.C.' name. Andrew J. Passons is listed as responsible for site content.",
+  "researchedAt": "2026-07-16"
+}

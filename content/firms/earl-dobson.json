@@ -1,0 +1,35 @@
+{
+  "firmId": "earl-dobson",
+  "identitySentence": "The Law Office of Earl Dobson is a Denton criminal defense firm led by a Board Certified criminal law attorney who spent twelve years as a Denton County Chief Felony Prosecutor and has tried cases in local courts since 1993.",
+  "concept": {
+    "headline": "Arrested in Denton County? Get Answers From a Former Chief Felony Prosecutor.",
+    "subheadline": "A criminal charge puts your freedom, your record, and your reputation at risk, and the hours after an arrest are confusing. The Law Office of Earl Dobson offers free, confidential consultations, in the office or by phone, so you can understand exactly where you stand before you make another decision.",
+    "credibilityPoints": [
+      "Practicing law in Texas since 1993",
+      "Board Certified in Criminal Law by the Texas Board of Legal Specialization",
+      "Twelve years as a Denton County Chief Felony Prosecutor",
+      "Hundreds of criminal jury trials in Denton County courts"
+    ],
+    "accentColor": "#7a1f2b",
+    "ctaText": "Request Your Free Consultation",
+    "sections": [
+      {
+        "title": "Practice focus",
+        "body": "The firm defends clients across the full range of Texas criminal charges, from DWI, felony DWI, marijuana, and drug crimes to theft, aggravated assault, sex crimes, and violent offenses. It also handles domestic violence defense, probation violations, computer crimes, and expunctions for people working to clear their records."
+      },
+      {
+        "title": "Denton roots",
+        "body": "The office sits on North Locust Street near Downtown Denton, and both attorneys built their careers inside the Denton County criminal justice system, including years as Denton County prosecutors. Your case is handled by lawyers who know the local courts, prosecutors, and judges."
+      },
+      {
+        "title": "What to expect",
+        "body": "Your first conversation is a free, confidential consultation, in the office or by phone. The firm will ask about the charge, the circumstances of the arrest, and any upcoming court dates, then give you a straightforward assessment of your options."
+      }
+    ],
+    "redesigns": []
+  },
+  "outreachDraft": {
+    "subject": "Proof matters more than promises: 15 days, 1 demo, and a Lead Capturer that can pay for itself before you ever have to.",
+    "body": "DRAFT — NOT SENT. Review and authorize before any outreach.\n\nTo: The Law Office of Earl Dobson\n\nMr. Dobson and Ms. Morgan,\n\nTwelve years as a Denton County Chief Felony Prosecutor before sitting down on the defense side of the table is a background very few attorneys in this county can offer, and it is exactly why someone arrested for DWI, a drug charge, or a violent crime in Denton should reach your office first. The question is whether they actually can, at 2 a.m. on a Sunday, when most arrests happen and most offices are dark.\n\nYour website already does a great deal right: dedicated pages for each of your practice areas, a full contact form, and prominent free-consultation messaging throughout. What it cannot do yet is answer a prospective client the moment they write in, offer them a real consultation time, and hold that time with a deposit. That gap is the only thing the Lead Capturer fills.\n\nWe have already built your Lead Capturer around your firm. It opens with your own positioning sentence: \"The Law Office of Earl Dobson is a Denton criminal defense firm led by a Board Certified criminal law attorney who spent twelve years as a Denton County Chief Felony Prosecutor and has tried cases in local courts since 1993.\" Behind it sits a custom contact form shaped to criminal-defense intake, so the details you actually need, such as charge type and upcoming court dates, arrive organized in the very first message.\n\nHere is how it works once it is live:\n\n- Every inquiry is emailed directly to your firm's inbox. Nothing is diverted, stored elsewhere, or filtered by a third party.\n- The potential client automatically receives a response specific to the topic of their message. A DWI inquiry reads differently than an expunction inquiry.\n- That response presents your available consultation times.\n- A $50 reservation deposit confirms the appointment, so the time is held for a committed caller.\n\nWe are not asking you to take any of this on faith. We offer a 15-day proof period: the complete experience, live, at no cost to you. We make no promises about revenue, only about what the system does, and you can verify every part of it yourself, step by step, in about fifteen minutes.\n\nHow to test your Lead Capturer (15 minutes):\n\n1. Submit a clearly labeled TEST inquiry using a customer email address you control.\n2. Do not enter any confidential client information.\n3. Confirm your firm inbox receives a real email.\n4. Confirm the notification contains every field displayed on the form.\n5. Confirm the subject line identifies your firm and the likely matter type.\n6. Confirm the Reply-To address contains the customer email you submitted.\n7. Confirm the system automatically generates a response specific to your TEST inquiry.\n8. Confirm that response is sent to the customer email without any staff action.\n9. Confirm the customer inbox actually receives it.\n10. Confirm it addresses the actual topic of your inquiry.\n11. Confirm genuine available consultation times are presented.\n12. Select a time.\n13. Confirm the $50 reservation requirement appears.\n14. Confirm the preparation list fits the matter type you described.\n15. Confirm the prohibited-item list includes legal documents.\n16. In a payment sandbox, confirm the appointment locks only after a verified $50 payment event.\n\nIf any step fails, the test fails. Contact us and we will make it right before you owe anything.\n\nYou handle the defense. Let the first response handle itself.\n\nThe IntakeBrief Team\n[Physical mailing address: provided before any send]\n\nIf you would prefer not to hear from us again, reply with 'unsubscribe' and we will remove you immediately."
+  }
+}

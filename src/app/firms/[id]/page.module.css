@@ -1,0 +1,133 @@
+.page {
+  max-width: 52rem;
+  margin: 0 auto;
+  padding: var(--space-8) var(--space-6) var(--space-16);
+}
+
+.header {
+  margin-bottom: var(--space-8);
+}
+
+.breadcrumb {
+  font-size: 0.875rem;
+  margin: 0 0 var(--space-4);
+}
+
+.headerRow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+  margin-bottom: var(--space-3);
+}
+
+.title {
+  margin: 0 0 var(--space-3);
+  font-size: 2rem;
+}
+
+.meta {
+  margin: 0 0 var(--space-1);
+  font-size: 0.9375rem;
+  color: var(--slate);
+}
+
+.mono {
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+}
+
+.sectionTitle {
+  font-size: 1.375rem;
+  margin: var(--space-8) 0 var(--space-3);
+  padding-bottom: var(--space-2);
+  border-bottom: 1px solid var(--line);
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9375rem;
+}
+
+.table th {
+  text-align: left;
+  font-family: var(--font-ui);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--slate);
+  border-bottom: 1px solid var(--ink);
+  padding: var(--space-2) var(--space-3) var(--space-2) 0;
+}
+
+.table td {
+  border-bottom: 1px solid var(--line);
+  padding: var(--space-2) var(--space-3) var(--space-2) 0;
+  vertical-align: top;
+}
+
+.practiceList {
+  columns: 2;
+  margin: 0;
+  padding-left: var(--space-6);
+  font-size: 0.9375rem;
+}
+
+.caseList {
+  padding-left: var(--space-6);
+}
+
+.factorList {
+  margin: 0;
+}
+
+.factor {
+  border-bottom: 1px solid var(--line);
+  padding: var(--space-3) 0;
+}
+
+.factor dt {
+  font-weight: 700;
+  font-size: 0.8125rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--slate);
+  margin-bottom: var(--space-1);
+}
+
+.factor dd {
+  margin: 0;
+  font-size: 0.9375rem;
+}
+
+.sourceList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.sourceList li {
+  border-bottom: 1px solid var(--line);
+  padding: var(--space-2) 0;
+  word-break: break-all;
+}
+
+.sourceSupports {
+  margin: var(--space-1) 0 0;
+  font-size: 0.875rem;
+  color: var(--slate);
+  word-break: normal;
+}
+
+.unverified {
+  background: var(--surface-muted);
+  border-left: 3px solid var(--warning);
+  padding: var(--space-2) var(--space-4);
+  margin-top: var(--space-8);
+}
+
+.notes {
+  font-size: 0.9375rem;
+  white-space: pre-wrap;
+}

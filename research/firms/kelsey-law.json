@@ -1,0 +1,85 @@
+{
+  "id": "kelsey-law",
+  "name": "Kelsey Law Firm, PLLC",
+  "lane": "business",
+  "location": {
+    "address": "2225 E. McKinney Street",
+    "city": "Denton",
+    "county": "Denton",
+    "state": "TX",
+    "zip": "76209"
+  },
+  "email": null,
+  "phone": "940-387-9551",
+  "attorneys": [
+    {
+      "name": "John E. Kelsey",
+      "role": "Attorney (solo practitioner; firm led by him per firm site)",
+      "yearBeganPractice": 1995
+    }
+  ],
+  "practiceAreas": [
+    "Estate Planning",
+    "Elder Law",
+    "Real Estate",
+    "Business Law",
+    "Mediation & Arbitration",
+    "Guardianships",
+    "Probate, Trust and Guardianship Law"
+  ],
+  "yearEstablished": 1995,
+  "notableCases": [],
+  "website": "https://www.dentontexaslawyers.com/",
+  "websiteQuality": {
+    "classification": "Adequate",
+    "rationale": "The site is a modern Wix build served over HTTPS with a viewport meta tag, a keyword-rich title and meta description, clear navigation (Home/About/Attorney/Practice areas/Blog/Contact), a multi-field intake form, client testimonials, and a 'Since 1995 / 30+ years' trust signal. However, it is very heavy (~1.9 MB of HTML with ~80 script tags), phone numbers are plain text with no tel: click-to-call links, there is no online appointment-booking widget, and social links still point to a former brand name (Kelsey Kelsey Hickey PLLC). Solid and usable, but not polished enough to be Strong.",
+    "factors": {
+      "mobileUsability": "Responsive Wix template with <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">; mobile layouts are standard for this platform.",
+      "pageSpeed": "Not directly measured (no lab tooling available). Inference from observable signals: homepage HTML alone is ~1.9 MB with roughly 80 <script> tags (typical Wix bloat), so load performance is likely mediocre, especially on mobile connections.",
+      "accessibility": "All 20 observed <img> tags carry alt attributes; 100+ aria-label attributes and semantic header/nav/main/footer landmarks are present via the Wix framework.",
+      "visualCredibility": "Clean, current design with professional logo, team photos, and client testimonials; footer copyright reads 2025. Social icons link partly to a defunct predecessor brand, which slightly undercuts polish.",
+      "navigation": "Clear top navigation covering practice areas, about, attorney bio, blog, and contact; practice-area cards on the homepage link to detail pages.",
+      "contentClarity": "Plain-language explanations of each practice area (estate planning, elder law, real estate, business law, mediation/arbitration, guardianships) plus an active blog with educational posts.",
+      "callsToAction": "Repeated 'Contact Us' / 'Schedule Your Initial Consultation' prompts and phone number in hero and about pages; CTAs are present but phone is not hyperlinked for tap-to-call.",
+      "contactFormQuality": "Multi-field intake form (name, email, phone, state/zip, 'Brief Description of Your Legal Issue') on homepage and contact page; labeled fields. No email address is published anywhere on the site.",
+      "localPositioning": "Strong local framing: 'Denton Texas Lawyers' title, 'Hometown Attorney' section citing firm roots in Denton County since the 1960s, historic-home office story, and Denton address/phone displayed prominently.",
+      "trustSignals": "Homepage testimonials (three 5/5 reviews), 'Since 1995 / 30+ years of experience' banner, detailed attorney bio (bar admission 1995, education, Denton County Bar Association roles), and online payment links on the contact page.",
+      "appointmentBooking": "No self-serve scheduling/booking widget found; booking-related strings in the HTML are internal Wix framework code only. Intake is via contact form or phone call."
+    }
+  },
+  "sources": [
+    {
+      "url": "https://www.dentontexaslawyers.com/",
+      "supports": "Official firm name, practice areas (estate planning, elder law, real estate, business law, mediation & arbitration, guardianships, probate/trust/guardianship law), '30+ years of experience / Since 1995', claim that firm dates to 1960s in Denton County, team roster (John E. Kelsey, attorney; Victoria McKenzie, R.P., paralegal), testimonials, website-quality signals (viewport meta, meta description, script/image counts, form fields, footer year, social links)"
+    },
+    {
+      "url": "https://www.dentontexaslawyers.com/about",
+      "supports": "'Since 1995' establishment claim, father Richard H. Kelsey began practicing in Denton in 1967 and John joined him in 1995, consultation CTA and phone 940-387-9551"
+    },
+    {
+      "url": "https://www.dentontexaslawyers.com/contact",
+      "supports": "Street address 2225 E. McKinney Street, Denton, TX 76209; mailing address P.O. Box 918, Denton, TX 76202-0918; phone 940-387-9551; fax 940-387-9553; online payment links; footer copyright 2025"
+    },
+    {
+      "url": "https://www.dentontexaslawyers.com/attorney/john-e-kelsey/",
+      "supports": "Attorney bio: licensed by State Bar of Texas in May 1995 (yearBeganPractice 1995), B.A. economics UNT 1992, J.D. Texas Wesleyan 1994, practiced with father Richard H. Kelsey, bar admissions (Texas 1995; E.D. Tex.), areas of practice, DCBA Real Estate/Probate/Trust section leadership, guardianship certifications"
+    },
+    {
+      "url": "https://lawyers.justia.com/lawyer/john-eliot-kelsey-212094",
+      "supports": "Directory corroboration of attorney full name (John Eliot Kelsey), Denton location, and phone (940) 387-9551 via search snippet; page itself returned HTTP 403 to automated fetch"
+    },
+    {
+      "url": "https://lawyers.findlaw.com/texas/denton/2564282_1/",
+      "supports": "Directory corroboration of John E. Kelsey as Denton elder law/guardianship attorney with phone 940-387-9551 via search snippet; page itself returned HTTP 403 to automated fetch"
+    }
+  ],
+  "unverified": [
+    "public business email (none published on firm site; directories that might list one blocked automated fetch with 403)",
+    "exact legal formation year of the PLLC entity (site's 'Since 1995' refers to start of John E. Kelsey's practice with his father, not necessarily PLLC registration)",
+    "claim that the practice 'dates back to the 1960s in Denton County' (firm's own marketing statement; only specific anchor is father's 1967 Denton practice start, also from the firm site)",
+    "notable reported cases, verdicts, or settlements (none found in public news or court coverage)",
+    "ratings/reviews on Avvo, Super Lawyers, or Martindale-Hubbell (no verifiable profiles or ratings located)"
+  ],
+  "notes": "Site and social profiles reference a former brand, 'Kelsey & Hickey, PLLC' / 'Kelsey Kelsey Hickey PLLC' (Facebook/Twitter handles still use KKHLawTX), indicating a prior partnership that has since become a solo practice under Kelsey Law Firm, PLLC. Attorney page title also retains 'Kelsey & Hickey, PLLC'. Firm operates from a restored historic home in Denton. Justia snippet miscategorizes practice areas (mentions bankruptcy/employment) and appears stale; firm-site practice areas were used instead.",
+  "researchedAt": "2026-07-16"
+}

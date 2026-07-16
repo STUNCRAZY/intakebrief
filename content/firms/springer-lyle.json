@@ -1,0 +1,35 @@
+{
+  "firmId": "springer-lyle",
+  "identitySentence": "Springer Lyle Dameron & Harrison is a Denton, Texas advocacy firm that helps people who have suffered severe injuries and businesses involved in serious legal disputes, led by partners Jeff Springer and Frank Lyle, who began practicing law in 1985 and 1986.",
+  "concept": {
+    "headline": "Severe injury or serious dispute in Denton County? Talk to advocates who have practiced here since 1985.",
+    "subheadline": "After a wreck, a business conflict, or a fight over a family estate, waiting days for a callback is the hardest part. Share what happened and receive real consultation times from a Denton advocacy firm.",
+    "credibilityPoints": [
+      "Partners Jeff Springer and Frank Lyle admitted to the bar in 1985 and 1986",
+      "Best of Denton 2025 Winner",
+      "Martindale-Hubbell AV Preeminent rated",
+      "Denton-based firm serving Denton and seven surrounding North Texas counties"
+    ],
+    "accentColor": "#7B2D26",
+    "ctaText": "Reserve Your Consultation",
+    "sections": [
+      {
+        "title": "Practice focus",
+        "body": "The firm handles personal injury, business litigation, probate and real estate litigation, family law, wills and estates, appeals, and mediation. It describes itself as an advocacy firm that does not accept more work than it can handle and pursues what it accepts aggressively, with the attorneys working as a team on each case."
+      },
+      {
+        "title": "Denton roots",
+        "body": "The firm is based at 1807 Westminster St in Denton and serves clients across Denton, Collin, Grayson, Tarrant, Dallas, Cooke, Montague, and Wise counties. Its Best of Denton 2025 Winner recognition reflects those local roots."
+      },
+      {
+        "title": "What to expect",
+        "body": "After you reach out, the firm will ask what happened, who is involved, and what outcome you need. You will receive a response with available consultation times, and a $50 reservation deposit confirms your appointment so the attorneys can give your matter their full attention."
+      }
+    ],
+    "redesigns": []
+  },
+  "outreachDraft": {
+    "subject": "Proof matters more than promises: 15 days, 1 demo, and a Lead Capturer that can pay for itself before you ever have to.",
+    "body": "DRAFT — NOT SENT. Review and authorize before any outreach.\n\nDear Springer Lyle Dameron & Harrison,\n\nYour firm's new website already does a great deal right: a 2026 redesign, a Best of Denton 2025 Winner badge, and contact forms on every attorney profile. One thing it cannot yet do is schedule. A potential client who reaches out at 9 p.m. after a serious car wreck still waits for a phone call back during business hours.\n\nWe built the IntakeBrief Lead Capturer for exactly that gap, and we built one specifically for your firm. It is a single, focused intake page for Springer Lyle Dameron & Harrison that opens with your own positioning: \"Springer Lyle Dameron & Harrison is a Denton, Texas advocacy firm that helps people who have suffered severe injuries and businesses involved in serious legal disputes, led by partners Jeff Springer and Frank Lyle, who began practicing law in 1985 and 1986.\" Behind it sits a custom contact form shaped around your practice: personal injury, business litigation, probate and real estate litigation, family law, wills and estates, appeals, and mediation.\n\nHere is how it works. Every inquiry is emailed directly to your firm's inbox with the full contents of the form. The moment an inquiry arrives, the potential client automatically receives a response specific to the topic they described, so an injury question reads differently than a probate dispute. That response presents your genuinely available consultation times. When the person selects a time, a $50 reservation deposit confirms the appointment, so your calendar fills with committed consultations rather than maybes.\n\nWe would like you to test the complete experience before you decide anything. We are offering a 15-day proof period: use the Lead Capturer exactly as a client would, and judge it on what it actually does. If it earns its place, keep it. If not, walk away.\n\nHow to test your Lead Capturer (15 minutes):\n\n1. Submit a clearly labeled TEST inquiry using a customer email address you control.\n2. Do not enter any confidential client information.\n3. Confirm your firm inbox receives a real email.\n4. Confirm the notification contains every field displayed on the form.\n5. Confirm the subject line identifies your firm and the likely matter type.\n6. Confirm the Reply-To address contains the customer email you submitted.\n7. Confirm the system automatically generates a response specific to your TEST inquiry.\n8. Confirm that response is sent to the customer email without any staff action.\n9. Confirm the customer email account actually receives it.\n10. Confirm it addresses the actual topic of your inquiry.\n11. Confirm it presents genuine available consultation times.\n12. Select one of those times.\n13. Confirm the $50 reservation requirement appears.\n14. Confirm the preparation list fits the matter you described.\n15. Confirm the prohibited-item list includes legal documents.\n16. In the payment sandbox, confirm the appointment locks only after a verified $50 payment event.\n\nIf any step fails, the test fails — contact us and we will make it right.\n\nRespectfully,\nThe IntakeBrief Team\n[Physical mailing address: provided before any send]\n\nIf you would prefer not to hear from us again, reply with \"unsubscribe\" and we will remove you immediately."
+  }
+}

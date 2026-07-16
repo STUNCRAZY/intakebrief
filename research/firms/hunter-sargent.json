@@ -1,0 +1,98 @@
+{
+  "id": "hunter-sargent",
+  "name": "Hunter Sargent, PLLC",
+  "lane": "business",
+  "location": {
+    "address": "319 W Oak St",
+    "city": "Denton",
+    "county": "Denton",
+    "state": "TX",
+    "zip": "76201"
+  },
+  "email": "hunter@dentonlegacy.com",
+  "phone": "(940) 594-7754",
+  "attorneys": [
+    {
+      "name": "Hunter Sargent",
+      "role": "Founding Attorney",
+      "yearBeganPractice": 2014
+    }
+  ],
+  "practiceAreas": [
+    "Estate Planning",
+    "Probate",
+    "Wills",
+    "Trusts",
+    "Asset Protection Planning",
+    "Business Planning",
+    "LLC Planning",
+    "S-Corp Planning",
+    "Partnerships",
+    "Professional Practices",
+    "Lady Bird Deeds",
+    "Medicaid Planning",
+    "Irrevocable Trusts",
+    "Testamentary Trusts",
+    "Grantor Retained Annuity Trusts (GRATs)",
+    "Generation-Skipping Trusts",
+    "Wealth Protection Planning",
+    "Family Limited Partnerships (FLPs)",
+    "Trust Administration",
+    "Business Succession Planning",
+    "Alternatives to Probate"
+  ],
+  "yearEstablished": 2021,
+  "notableCases": [],
+  "website": "https://dentonlegacy.com/",
+  "websiteQuality": {
+    "classification": "Strong",
+    "rationale": "Modern custom WordPress theme with responsive viewport meta tag, mobile menu toggle, and media queries; clear repeated 'schedule a meeting' CTAs plus an embedded Calendly booking link (calendly.com/dentonlegacy) and a Contact Form 7 contact form. Local positioning is excellent ('7 generations in Denton', LocalBusiness schema with geo coordinates) and the copyright footer is current (© 2026). Trust signals are decent but soft: flat-fee promise, free consultation, and bar admissions are stated, while no third-party review widgets, badges, or board certifications are visible; several decorative images carry empty alt attributes.",
+    "factors": {
+      "mobileUsability": "Viewport meta tag present; dedicated mobile-menu-toggle and responsive @media CSS breakpoints (e.g. 1080px) indicate a mobile-ready layout.",
+      "pageSpeed": "Not directly measured (no lab tooling). Inference: ~240KB homepage HTML with ~30 script tags is moderately heavy, but the site runs the WP Rocket caching/optimization plugin, suggesting attention to performance; likely acceptable load behavior.",
+      "accessibility": "Logo and icons have alt text, but a large share of images (44 empty alt attributes observed) are decorative or lack meaningful alt text; form uses standard labeled inputs via Contact Form 7.",
+      "visualCredibility": "Custom 'dentonlegacy' theme, professional photography, cohesive branding and typography; footer copyright current to 2026.",
+      "navigation": "Sticky header with clear main navigation, dropdown sub-menus for an extensive practice-area library, and footer links; easy to reach contact and practice pages.",
+      "contentClarity": "Plain-language, well-organized educational copy on estate and business planning topics; each practice area has a dedicated explanatory page.",
+      "callsToAction": "Repeated 'schedule a meeting' CTAs above and below the fold, prominent phone number with phone icons, 'contact us now' links inside articles.",
+      "contactFormQuality": "Dedicated /contact/ page with a Contact Form 7 form (checkbox and hidden fields observed) and an appropriate no-attorney-client-relationship disclaimer.",
+      "localPositioning": "Very strong: '7 generations in Denton, Texas' messaging throughout, LocalBusiness JSON-LD schema with street address and geo coordinates, Denton-focused headlines.",
+      "trustSignals": "Flat-fee structure and free initial consultation stated; bar admissions (Texas state courts, U.S. District Court E.D. Tex., U.S. Bankruptcy Court E.D. Tex.), Eagle Scout, and Leadership Denton noted on bio page; no visible review widgets, ratings badges, or board certifications.",
+      "appointmentBooking": "Online self-scheduling available via Calendly (calendly.com/dentonlegacy) linked from site CTAs, in addition to phone, email, and contact form."
+    }
+  },
+  "sources": [
+    {
+      "url": "https://dentonlegacy.com/",
+      "supports": "firm name, practice areas, phone (940) 594-7754, address 319 W Oak St Denton TX 76201 (JSON-LD schema), Calendly booking, CTAs, copyright 2026, website quality assessment"
+    },
+    {
+      "url": "https://dentonlegacy.com/about/hunter-sargent/",
+      "supports": "attorney Hunter Sargent (founder), firm opened in Denton in 2021, returned to Denton in 2014 to practice law, bar admissions, education (University of Oklahoma, Texas A&M University School of Law), 'seventh generation Dentonite'"
+    },
+    {
+      "url": "https://dentonlegacy.com/frequently-asked-questions/",
+      "supports": "Hunter Sargent licensed to practice law in 2014 (yearBeganPractice), office located inside the Alagood, Cartwright, Burke building at 319 W Oak St., Denton, Texas 76201, free initial consultation"
+    },
+    {
+      "url": "https://dentonlegacy.com/practice-areas/alternatives-to-probate/",
+      "supports": "public business email hunter@dentonlegacy.com (quoted in page text), phone (940) 594-7754, probate/alternatives-to-probate practice area"
+    },
+    {
+      "url": "https://dentonlegacy.com/contact/",
+      "supports": "contact form presence, phone (940) 594-7754, address 319 W Oak St, website disclaimer"
+    },
+    {
+      "url": "https://prospeo.io/c/hunter-sargent-email-format",
+      "supports": "third-party corroboration of headquarters 319 W Oak St, Denton, TX 76201, phone +1 940-594-7754, founded 2021"
+    }
+  ],
+  "unverified": [
+    "State Bar of Texas profile (independent corroboration of 2014 bar admission; 2014 date comes from the firm's own FAQ)",
+    "third-party directory profiles (Avvo, Justia, Martindale, Lawyers.com) — none located for this firm/attorney",
+    "notable or reported cases — none found in public news or court coverage",
+    "whether any attorneys besides Hunter Sargent practice at the firm (site presents only him; solo status implied but not explicitly stated)"
+  ],
+  "notes": "Assignment lane is 'business' and the firm does business planning/entity/succession work, but the site's own headline positioning is 'Denton's premier estate planning lawyer and business planning law firm' — estate planning appears to be the primary emphasis. Office is inside the Alagood, Cartwright, Burke building at 319 W Oak St. Seed facts (address, phone, solo attorney licensed 2014, '7 generations in Denton') all verified against the firm's own site.",
+  "researchedAt": "2026-07-16"
+}
