@@ -1,26 +1,29 @@
 /**
- * make-preview.mjs — render key IntakeBrief pages from a running production
+ * make-preview.mjs — render IntakeBrief pages from a running production
  * server and save SELF-CONTAINED HTML files (CSS + JS inlined) under preview/.
  * Usage:
  *   DEMO_MODE=true npm start -- -p 3110 &
  *   node scripts/make-preview.mjs
  * The output files open straight from disk (double-click) — no server needed
  * for the visual preview. Interactive form calls (/api/*) require the live server.
+ *
+ * NOTE: preview/index.html is NOT generated here — it is a custom hand-built
+ * landing page (see design/alagood-cartwright-burke-intake-mockup.html style);
+ * this script deliberately skips it so regeneration never clobbers it.
  */
-import { mkdir, writeFile } from 'node:fs/promises';
+import { mkdir, readdir, writeFile } from 'node:fs/promises';
 
 const BASE = process.env.PREVIEW_BASE ?? 'http://localhost:3110';
 const OUT = new URL('../preview/', import.meta.url);
+const RESEARCH = new URL('../research/firms/', import.meta.url);
 
-const PAGES = {
-  'index': '/',
-  'status': '/status',
-  'firm-youngberg-law': '/firms/youngberg-law',
-  'firm-peugh-law': '/firms/peugh-law',
-  'capture-sarah-roland-law': '/capture/sarah-roland-law',
-  'capture-kelsey-law': '/capture/kelsey-law',
-  'capture-alagood-cartwright-burke': '/capture/alagood-cartwright-burke',
-};
+const slugs = (await readdir(RESEARCH)).filter((f) => f.endsWith('.json')).map((f) => f.replace(/\.json$/, '')).sort();
+
+const PAGES = { 'status': '/status' };
+for (const slug of slugs) {
+  PAGES[`firm-${slug}`] = `/firms/${slug}`;
+  PAGES[`capture-${slug}`] = `/capture/${slug}`;
+}
 
 const get = async (url, retries = 3) => {
   let lastErr;

@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>IntakeBrief — Denton County Preview Directory (Sales Preview)</title>
+<meta name="description" content="Sales preview: proposed lead-capture pages and firm profiles for 25 Denton County, TX law firms. Sample data; not the firms&rsquo; official websites.">
+<!--
+  IntakeBrief sales-preview landing page. One self-contained file:
+  inline style + inline IIFE script, zero external requests, no build step.
+  Runs from file:// — all links are relative to sibling preview files.
+-->
+<style>
+  :root{
+    --paper:#FAF7F0;          /* page bg */
+    --ink:#1A1A2E;            /* text/headings/top rules */
+    --oxblood:#7A1E2B;        /* accent: stamps, docket #s, focus, CTA hover */
+    --brass:#B08D57;          /* secondary accent: card hover underline */
+    --slate:#2E4057;          /* secondary text/links */
+    --line:#D8D2C4;           /* hairlines */
+    --success:#2F6B4F;
+    --warning:#9A6B1E;
+    --danger:#8A2E2E;
+    --surface-card:#FFFFFF;
+    --surface-muted:#F3EEE3;
+    --font-display:'Iowan Old Style','Palatino Linotype',Palatino,Georgia,serif;
+    --font-ui:system-ui,-apple-system,'Segoe UI',sans-serif;
+    --font-mono:SFMono-Regular,Consolas,'Liberation Mono',monospace;
+    --max-column:72rem;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth; scroll-padding-top:1rem}
+  body{
+    margin:0; background:var(--paper); color:var(--ink);
+    font-family:var(--font-ui); line-height:1.55;
+    -webkit-text-size-adjust:100%;
+  }
+  :focus-visible{outline:2px solid var(--oxblood); outline-offset:2px}
+  .visually-hidden{position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap}
+  .wrap{max-width:var(--max-column); margin:0 auto; padding-left:clamp(1rem,4vw,2.5rem); padding-right:clamp(1rem,4vw,2.5rem)}
+
+  /* Skip link */
+  .skip-link{
+    position:absolute; left:1rem; top:-5rem; z-index:20;
+    background:var(--ink); color:var(--paper); font-weight:700; font-size:.9rem;
+    padding:.75rem 1.25rem; text-decoration:none; transition:top .15s ease;
+  }
+  .skip-link:focus{top:.75rem}
+
+  /* Signature primitives */
+  .stamp{
+    display:inline-block; font-family:var(--font-ui); font-size:.6875rem; font-weight:700;
+    letter-spacing:.14em; text-transform:uppercase; padding:.15rem .55rem;
+    border:1.5px solid currentColor; border-radius:2px;
+    transform:rotate(-1.2deg); background:transparent;
+  }
+  .stamp-oxblood{color:var(--oxblood)} .stamp-success{color:var(--success)}
+  .stamp-warning{color:var(--warning)} .stamp-danger{color:var(--danger)}
+  .stamp-slate{color:var(--slate)}
+  .rule{border:0; border-top:1px solid var(--ink); opacity:.85; margin:0}
+  .docket{font-family:var(--font-mono); font-size:.78rem; color:var(--oxblood); letter-spacing:.04em}
+
+  /* Demo banner */
+  .demo-banner{
+    margin:0; background:var(--surface-muted); color:var(--slate); text-align:center;
+    font-size:.72rem; letter-spacing:.14em; text-transform:uppercase; padding:.5rem 1rem;
+  }
+
+  /* Top bar */
+  .bar{display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:.75rem 1.5rem; padding-top:1.25rem; padding-bottom:1.25rem}
+  .brand-group{display:flex; align-items:center; gap:.9rem; flex-wrap:wrap}
+  .wordmark{font-family:var(--font-display); font-weight:700; font-size:1.5rem; color:var(--ink); text-decoration:none}
+  .site-nav{display:flex; align-items:center; gap:.25rem 1.25rem; flex-wrap:wrap}
+  .site-nav a{
+    color:var(--slate); font-weight:600; text-decoration:none;
+    display:inline-flex; align-items:center; min-height:44px;
+  }
+  .site-nav a:hover{color:var(--oxblood); text-decoration:underline; text-underline-offset:.2em}
+
+  /* Hero */
+  .hero{padding-top:clamp(2rem,5vw,4rem); padding-bottom:clamp(2rem,5vw,3.5rem)}
+  .hero h1{
+    font-family:var(--font-display); font-weight:700; letter-spacing:-.01em;
+    font-size:clamp(2rem,4.5vw,3rem); line-height:1.08; margin:.9rem 0 .8rem; max-width:22ch;
+  }
+  .hero .sub{color:var(--slate); font-size:1rem; max-width:40rem; margin:0 0 1.6rem}
+  .cta-row{display:flex; gap:.9rem; flex-wrap:wrap}
+  .btn{
+    display:inline-flex; align-items:center; justify-content:center; gap:.55rem;
+    min-height:48px; padding:.8rem 1.5rem; border-radius:2px;
+    font-weight:600; font-size:.95rem; text-decoration:none; cursor:pointer;
+  }
+  .btn svg{width:18px; height:18px; flex:none}
+  .btn-primary{background:var(--ink); color:var(--paper); border:1.5px solid var(--ink)}
+  .btn-primary:hover{background:var(--oxblood); border-color:var(--oxblood)}
+  .btn-outline{background:transparent; color:var(--ink); border:1.5px solid var(--ink)}
+  .btn-outline:hover{color:var(--oxblood); border-color:var(--oxblood)}
+  .stats{
+    display:grid; grid-template-columns:repeat(3,1fr); gap:1px;
+    background:var(--line); border:1px solid var(--line); border-top:2px solid var(--ink);
+    margin-top:clamp(1.75rem,4vw,2.75rem); max-width:46rem;
+  }
+  .stat{background:var(--surface-card); padding:1rem 1.25rem}
+  .stat b{display:block; font-family:var(--font-mono); font-size:1.35rem; font-weight:700; color:var(--oxblood)}
+  .stat span{font-size:.72rem; letter-spacing:.12em; text-transform:uppercase; color:var(--slate)}
+
+  /* Curve divider */
+  .divider{line-height:0; background:var(--paper)}
+  .divider svg{width:100%; height:48px; display:block}
+  .divider path{fill:var(--surface-muted)}
+
+  /* Muted band: directory + legend + integrations */
+  .band-muted{background:var(--surface-muted)}
+  .directory{padding-top:clamp(2rem,5vw,3.5rem)}
+  .section-head h2{
+    font-family:var(--font-display); font-weight:700; letter-spacing:-.01em;
+    font-size:clamp(1.6rem,3vw,2.1rem); margin:.8rem 0 .25rem;
+  }
+  .section-head .lede{color:var(--slate); margin:.25rem 0 1.5rem; max-width:44rem}
+
+  /* Toolbar */
+  .toolbar{
+    background:var(--surface-card); border:1px solid var(--line); border-top:2px solid var(--ink);
+    padding:1rem 1rem 1.25rem; margin-bottom:1.5rem;
+  }
+  .field-label{
+    display:block; font-size:.72rem; font-weight:700; letter-spacing:.14em;
+    text-transform:uppercase; color:var(--slate); margin:0 0 .4rem;
+  }
+  .chip-label{margin-top:1.1rem}
+  .search-input{
+    width:100%; max-width:26rem; min-height:44px; padding:.65rem .8rem;
+    font:inherit; color:var(--ink); background:#fff;
+    border:1px solid var(--line); border-top:2px solid var(--ink); border-radius:2px;
+  }
+  .chips{display:flex; flex-wrap:wrap; gap:.5rem}
+  .chip{
+    display:inline-flex; align-items:center; gap:.45rem; min-height:44px;
+    padding:.5rem .95rem; border-radius:999px; border:1px solid var(--line);
+    background:var(--surface-muted); color:var(--ink); font:inherit; font-size:.875rem; cursor:pointer;
+  }
+  .chip:hover{border-color:var(--ink)}
+  .chip[aria-pressed="true"]{background:var(--ink); color:var(--paper); border-color:var(--ink)}
+  .chip .n{font-family:var(--font-mono); font-size:.78rem; opacity:.75}
+  .toolbar-foot{display:flex; align-items:center; justify-content:space-between; gap:.75rem 1rem; flex-wrap:wrap; margin-top:1.1rem}
+  .result-count{font-family:var(--font-mono); font-size:.85rem; color:var(--slate); margin:0}
+  .clear-btn{
+    display:inline-flex; align-items:center; justify-content:center; min-height:44px;
+    padding:.55rem 1.1rem; border:0; border-radius:2px; cursor:pointer;
+    background:var(--ink); color:var(--paper); font:inherit; font-weight:600; font-size:.875rem;
+  }
+  .clear-btn:hover{background:var(--oxblood)}
+
+  /* Firm grid + cards */
+  .grid{
+    list-style:none; margin:0; padding:0;
+    display:grid; grid-template-columns:repeat(auto-fill,minmax(19rem,1fr)); gap:1.5rem;
+  }
+  .firm-card{
+    position:relative; display:flex; flex-direction:column;
+    background:var(--surface-card); border:1px solid var(--line); border-top:2px solid var(--ink);
+    padding:1rem 1rem 1.5rem; transition:box-shadow .15s ease;
+  }
+  .firm-card:hover, .firm-card:focus-within{box-shadow:0 2px 0 0 var(--brass)}
+  .card-head{display:flex; justify-content:space-between; align-items:baseline; gap:.75rem}
+  .firm-card:nth-child(even) .stamp{transform:rotate(1deg)}
+  .firm-name{font-family:var(--font-display); font-size:1.25rem; font-weight:600; line-height:1.25; margin:.8rem 0 .3rem}
+  .card-link{color:var(--ink); text-decoration:none}
+  .card-link::after{content:""; position:absolute; inset:0}
+  .firm-card:hover .card-link{text-decoration:underline; text-decoration-color:var(--brass); text-underline-offset:.15em}
+  .card-meta{font-size:.875rem; color:var(--slate); margin:.1rem 0}
+  .card-phone{font-family:var(--font-mono); font-size:.85rem; margin:.35rem 0 .6rem}
+  .card-id{font-size:.875rem; color:var(--slate); margin:0 0 1rem}
+  .card-foot{
+    margin-top:auto; display:flex; justify-content:space-between; align-items:center;
+    gap:.5rem .75rem; flex-wrap:wrap; border-top:1px solid var(--line); padding-top:.35rem;
+  }
+  .card-go{color:var(--oxblood); font-weight:600; font-size:.875rem; display:inline-flex; align-items:center; min-height:44px}
+  .profile-link{
+    position:relative; z-index:1; color:var(--slate); font-weight:600; font-size:.875rem;
+    text-decoration:none; display:inline-flex; align-items:center; min-height:44px;
+  }
+  .profile-link:hover{color:var(--oxblood); text-decoration:underline; text-underline-offset:.2em}
+  .firm-card[hidden]{display:none}
+
+  /* Empty state */
+  .empty{border:1.5px dashed var(--line); background:var(--surface-muted); padding:2.5rem 1.5rem; text-align:center; margin-top:1.5rem}
+  .empty p{font-family:var(--font-display); font-size:1.15rem; margin:.25rem 0 1rem}
+
+  /* Legend strip */
+  .legend{border-top:1px solid var(--line); margin-top:2.5rem; padding:1.5rem 0}
+  .legend p{margin:.45rem 0; font-size:.875rem; color:var(--slate); display:flex; gap:.6rem; align-items:center; flex-wrap:wrap}
+  .legend .ln{font-family:var(--font-mono); font-size:.8rem; color:var(--ink)}
+
+  /* Integration-status strip */
+  .integrations{border-top:1px solid var(--line); padding:2rem 0 2.5rem}
+  .int-list{list-style:none; margin:1.25rem 0 .5rem; padding:0; border-top:1px solid var(--line)}
+  .int-row{display:flex; justify-content:space-between; align-items:center; gap:1rem; padding:.8rem 0; border-bottom:1px solid var(--line)}
+  .int-name{font-weight:700}
+  .int-reason{display:block; font-size:.875rem; color:var(--slate); font-weight:400}
+  .status-link{
+    color:var(--slate); font-weight:600; text-decoration:none;
+    display:inline-flex; align-items:center; gap:.45rem; min-height:44px;
+  }
+  .status-link:hover{color:var(--oxblood); text-decoration:underline; text-underline-offset:.2em}
+
+  /* Trust band + footer */
+  .trust{padding:2.25rem 0; text-align:center}
+  .trust p{font-family:var(--font-mono); color:var(--ink); letter-spacing:.06em; font-size:.9rem; margin:1.1rem 0}
+  .foot-inner{display:flex; flex-wrap:wrap; gap:.4rem 2rem; align-items:baseline; justify-content:space-between; padding:1.75rem 0 2.5rem}
+  .foot-brand{font-family:var(--font-display); font-size:1.25rem; font-weight:700; margin:0}
+  .foot-note{color:var(--slate); font-size:.875rem; margin:0}
+  .foot-docket{font-family:var(--font-mono); color:var(--oxblood); font-size:.8rem; margin:0}
+
+  /* Responsive */
+  @media (max-width:42rem){
+    .grid{grid-template-columns:1fr}
+    .toolbar{padding:1rem}
+    .search-input{max-width:none}
+  }
+  @media (max-width:35rem){
+    .cta-row{flex-direction:column}
+    .btn{width:100%}
+    .divider svg{height:24px}
+    .stats{grid-template-columns:1fr}
+    .site-nav{width:100%}
+  }
+
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    *{transition:none !important}
+    .stamp, .firm-card:nth-child(even) .stamp{transform:none}
+  }
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+<p class="demo-banner">Sales preview — proposed concepts, not the firms&rsquo; official websites</p>
+
+<header class="site-header">
+  <div class="wrap">
+    <div class="bar">
+      <div class="brand-group">
+        <a class="wordmark" href="index.html">IntakeBrief</a>
+        <span class="stamp stamp-oxblood">Denton County, TX</span>
+      </div>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="#firms">Firms</a>
+        <a href="status.html">Status</a>
+        <span class="docket">No. 2026-DIR</span>
+      </nav>
+    </div>
+    <hr class="rule">
+  </div>
+</header>
+
+<main id="main" tabindex="-1">
+  <section class="hero">
+    <div class="wrap">
+      <span class="stamp stamp-oxblood">Research workspace · Lead capture</span>
+      <h1>Twenty-five Denton County firms, one docket.</h1>
+      <p class="sub">Every firm on the research docket has a proposed lead-capture page and a firm profile — sample data, built to show how IntakeBrief turns county research into booked consultations. Search the docket, or filter by practice lane and website quality.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="#firms">
+          Browse the firms
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v16m0 0l-6-6m6 6l6-6"/></svg>
+        </a>
+        <a class="btn btn-outline" href="status.html">
+          See integration status
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16m0 0l-6-6m6 6l-6 6"/></svg>
+        </a>
+      </div>
+      <div class="stats" role="group" aria-label="Docket summary">
+        <div class="stat"><b>25</b><span>Firms indexed</span></div>
+        <div class="stat"><b>51</b><span>Preview pages</span></div>
+        <div class="stat"><b>12 / 13</b><span>Strong · Adequate sites</span></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider" aria-hidden="true">
+    <svg viewBox="0 0 1000 100" preserveAspectRatio="none" focusable="false"><path d="M0 35 C 250 95 750 95 1000 35 L 1000 100 L 0 100 Z"/></svg>
+  </div>
+
+  <div class="band-muted">
+    <section class="directory wrap" id="firms" aria-labelledby="firms-h">
+      <div class="section-head">
+        <span class="stamp stamp-oxblood">The docket</span>
+        <h2 id="firms-h">The full docket, A&ndash;Z</h2>
+        <p class="lede">Twenty-five firms in docket order. Each card opens the proposed intake page; the small profile link opens the firm&rsquo;s research profile.</p>
+      </div>
+
+      <div class="toolbar">
+        <label class="field-label" for="q">Search the docket</label>
+        <input class="search-input" id="q" type="search" placeholder="Name, city, lane, phone&hellip;" autocomplete="off">
+
+        <p class="field-label chip-label" id="lane-label">Filter by lane</p>
+        <div class="chips" role="group" aria-labelledby="lane-label">
+          <button type="button" class="chip" data-group="lane" data-value="all" aria-pressed="true">All lanes <span class="n">25</span></button>
+          <button type="button" class="chip" data-group="lane" data-value="family" aria-pressed="false">Family law <span class="n">6</span></button>
+          <button type="button" class="chip" data-group="lane" data-value="criminal" aria-pressed="false">Criminal defense <span class="n">6</span></button>
+          <button type="button" class="chip" data-group="lane" data-value="estate" aria-pressed="false">Estate &amp; probate <span class="n">4</span></button>
+          <button type="button" class="chip" data-group="lane" data-value="pi" aria-pressed="false">Personal injury <span class="n">4</span></button>
+          <button type="button" class="chip" data-group="lane" data-value="business" aria-pressed="false">Business &amp; civil <span class="n">5</span></button>
+        </div>
+
+        <p class="field-label chip-label" id="quality-label">Filter by website quality</p>
+        <div class="chips" role="group" aria-labelledby="quality-label">
+          <button type="button" class="chip" data-group="quality" data-value="all" aria-pressed="true">All sites <span class="n">25</span></button>
+          <button type="button" class="chip" data-group="quality" data-value="strong" aria-pressed="false">Strong <span class="n">12</span></button>
+          <button type="button" class="chip" data-group="quality" data-value="adequate" aria-pressed="false">Adequate <span class="n">13</span></button>
+        </div>
+
+        <div class="toolbar-foot">
+          <p class="result-count" id="result-count" role="status" aria-live="polite">Showing 25 of 25 firms</p>
+          <button type="button" class="clear-btn" data-clear>Clear filters</button>
+        </div>
+      </div>
+
+      <ul class="grid" id="firm-grid" role="list">
+        <li class="firm-card" data-lane="business" data-quality="strong">
+          <div class="card-head">
+            <span class="docket">No. 2026-001</span>
+            <span class="stamp stamp-success">Strong</span>
+          </div>
+          <h3 class="firm-name"><a class="card-link" href="capture-alagood-cartwright-burke.html">Alagood Cartwright Burke PC</a></h3>
+          <p class="card-meta">Denton, TX · Business &amp; civil</p>
+          <p class="card-phone">940-891-0003</p>
+          <p class="card-id">Alagood Cartwright Burke PC has served Denton since 2003, bringing together three board-certified partners for real estate, civil litigation, personal injury, business law, and probate matters.</p>
+          <div class="card-foot">
+            <span class="card-go">View intake page &rarr;</span>
+            <a class="profile-link" href="firm-alagood-cartwright-burke.html" aria-label="Firm profile: Alagood Cartwright Burke PC">Firm profile &rarr;</a>
+          </div>
+        </li>
+        <li class="firm-card" data-lane="estate" data-quality="adequate">
+          <div class="card-head">
+            <span class="docket">No. 2026-002</span>
+            <span class="stamp stamp-warning">Adequate</span>
+          </div>
+          <h3 class="firm-name"><a class="card-link" href="capture-biles-law.html">Law Offices of David W. Biles, P.C.</a></h3>
+          <p class="card-meta">Denton, TX · Estate &amp; probate</p>
+          <p class="card-phone">(940) 566-0566</p>
+          <p class="card-id">Law Offices of David W Biles, PC is a boutique Denton firm where attorney David W Biles has helped North Texas families with estate planning, probate, wills, and powers of attorney since 1987.</p>
+          <div class="card-foot">
+            <span class="card-go">View intake page &rarr;</span>
+            <a class="profile-link" href="firm-biles-law.html" aria-label="Firm profile: Law Offices of David W. Biles, P.C.">Firm profile &rarr;</a>
+          </div>
+        </li>
+        <li class="firm-card" data-lane="family" data-quality="strong">
+          <div class="card-head">
+            <span class="docket">No. 2026-003</span>
+            <span class="stamp stamp-success">Strong</span>
+          </div>
+          <h3 class="firm-name"><a class="card-link" href="capture-bouschor-law.html">Law Office of David S. Bouschor, II, P.C.</a></h3>
+          <p class="card-meta">Denton, TX · Family law</p>
+          <p class="card-phone">(940) 202-8323</p>
+          <p class="card-id">The Law Office of David S Bouschor II PC is a Denton family law firm serving the area since 2000 with a focus on divorce, child custody, probate, and guardianship matters.</p>
+          <div class="card-foot">
+            <span class="card-go">View intake page &rarr;</span>
+            <a class="profile-link" href="firm-bouschor-law.html" aria-label="Firm profile: Law Office of David S. Bouschor, II, P.C.">Firm profile &rarr;</a>
+          </div>
+        </li>
+        <li class="firm-card" data-lane="estate" data-quality="adequate">
+          <div class="card-head">
+            <span class="docket">No. 2026-004</span>
+            <span class="stamp stamp-warning">Adequate</span>
+          </div>
+          <h3 class="firm-name"><a class="card-link" href="capture-caitlyn-ashley-law.html">Caitlyn Ashley Law</a></h3>
+          <p class="card-meta">Denton, TX · Estate &amp; probate</p>
+          <p class="card-phone">940-320-7496</p>
+          <p class="card-id">Caitlyn Ashley Law is a Denton estate planning, probate, and guardianship firm founded in March 2021 by Caitlyn Ashley, an attorney whose Denton roots run five generations deep.</p>
+          <div class="card-foot">
+            <span class="card-go">View intake page &rarr;</span>
+            <a class="profile-link" href="firm-caitlyn-ashley-law.html" aria-label="Firm profile: Caitlyn Ashley Law">Firm profile &rarr;</a>
+          </div>
+        </li>
+        <li class="firm-card" data-lane="pi" data-quality="strong">
+          <div class="card-head">
+            <span class="docket">No. 2026-005</span>
+            <span class="stamp stamp-success">Strong</span>
+          </div>
+          <h3 class="firm-name"><a class="card-link" href="capture-chandler-ross.html">Chandler | Ross, Injury Attorneys</a></h3>
+          <p class="card-meta">Denton, TX · Personal injury</p>
+          <p class="card-phone">(940) 800-2500</p>
+          <p class="card-id">Chandler | Ross, Injury Attorneys is a Denton personal injury firm founded by Brent Chandler and Tony Ross, who have each practiced Texas law since 2006, representing people hurt in vehicle, commercial truck, and workplace accidents and families pursuing wrongful death claims.</p>
+          <div class="card-foot">
+            <span class="card-go">View intake page &rarr;</span>
+            <a class="profile-link" href="firm-chandler-ross.html" aria-label="Firm profile: Chandler | Ross, Injury Attorneys">Firm profile &rarr;</a>
+          </div>
+        </li>
+        <li class="firm-card" data-lane="estate" data-quality="adequate">
+          <div class="card-head">
+            <span class="docket">No. 2026-006</span>
+            <span class="stamp stamp-warning">Adequate</span>
+          </div>
+          <h3 class="firm-name"><a class="card-link" href="capture-chenault-law.html">Chenault Law Firm (Law Office of Gilland Chenault, PLLC)</a></h3>
+          <p class="card-meta">Denton, TX · Estate &amp; probate</p>
+          <p class="card-phone">(972) 591-0099</p>
+          <p class="card-id">Chenault Law Firm is a Denton practice founded in 2011 that helps North Texas families with probate, estate planning, trusts, and fiduciary litigation.</p>
+          <div class="card-foot">
+            <span class="card-go">View intake page &rarr;</span>
+            <a class="profile-link" href="firm-chenault-law.html" aria-label="Firm profile: Chenault Law Firm (Law Office of Gilland Chenault, PLLC)">Firm profile &rarr;</a>
+          </div>
+        </li>
+        <li class="firm-card" data-lane="criminal" data-quality="adequate">
+          <div class="card-head">
+            <span class="docket">No. 2026-007</span>
+            <span class="stamp stamp-warning">Adequate</span>
+          </div>
+          <h3 class="firm-name"><a class="card-link" href="capture-earl-dobson.html">The Law Office of Earl Dobson</a></h3>
+          <p class="card-meta">Denton, TX · Criminal defense</p>
+          <p class="card-phone">(940) 591-7097</p>
+          <p class="card-id">The Law Office of Earl Dobson is a Denton criminal defense firm led by a Board Certified criminal law attorney who spent twelve years as a Denton County Chief Felony Prosecutor and has tried cases in local courts since 1993.</p>
+          <div class="card-foot">
+            <span class="card-go">View intake page &rarr;</span>
+            <a class="profile-link" href="firm-earl-dobson.html" aria-label="Firm profile: The Law Office of Earl Dobson">Firm profile &rarr;</a>
+          </div>
+        </li>
+        <li class="firm-card" data-lane="business" data-quality="strong">
+          <div class="card-head">
+            <span class="docket">No. 2026-008</span>
+            <span class="stamp stamp-success">Strong</span>
+          </div>
+          <h3 class="firm-name"><a class="card-link" href="capture-ferguson-law.html">Ferguson Law Firm LLC</a></h3>
+          <p class="card-meta">Denton, TX · Business &amp; civil</p>
+          <p class="card-phone">682-428-9220</p>
+          <p class="card-id">Ferguson Law Firm LLC is a Denton civil and business law firm helping property owners, contractors, and local businesses resolve real estate, construction, commercial, and civil disputes.</p>
+          <div class="card-foot">
+            <span class="card-go">View intake page &rarr;</span>
+            <a class="profile-link" href="firm-ferguson-law.html" aria-label="Firm profile: Ferguson Law Firm LLC">Firm profile &rarr;</a>
+          </div>
+        </li>
+        <li class="firm-card" data-lane="pi" data-quality="adequate">
+          <div class="card-head">
+            <span class="docket">No. 2026-009</span>
+            <span class="stamp stamp-warning">Adequate</span>
+          </div>
+          <h3 class="firm-name"><a class="card-link" href="capture-goline-roland.html">Goline &amp; Roland Law Firm, PLLC</a></h3>
+          <p class="card-meta">Denton, TX · Personal injury</p>
+          <p class="card-phone">(940) 400-0475</p>
+          <p class="card-id">Goline &amp; Roland Law Firm, PLLC is a Denton law firm formed in 2022 by attorneys whose practice experience reaches back to 2008, serving family law, criminal defense, and personal injury clients in Denton County and Hopkins County.</p>
+          <div class="card-foot">
+            <span class="card-go">View intake page &rarr;</span>
+            <a class="profile-link" href="firm-goline-roland.html" aria-label="Firm profile: Goline &amp; Roland Law Firm, PLLC">Firm profile &rarr;</a>
+          </div>
+        </li>
+        <li class="firm-card" data-lane="estate" data-quality="strong">
+          <div class="card-head">
+            <span class="docket">No. 2026-010</span>
+            <span class="stamp stamp-success">Strong</span>
+          </div>
+          <h3 class="firm-name"><a class="card-link" href="capture-hammerle-morris.html">Hammerle Morris Law Firm</a></h3>
+          <p class="card-meta">Lewisville, TX · Estate &amp; probate</p>
+          <p class="card-phone">(972) 436-9300</p>
+          <p class="card-id">Hammerle Morris Law Firm has served Denton County families and businesses since 1984 from its Lewisville office, guiding clients through estate planning, probate, guardianship, elder law, and civil litigation.</p>
+          <div class="card-foot">
+            <span class="card-go">View intake page &rarr;</span>
+            <a class="profile-link" href="firm-hammerle-morris.html" aria-label="Firm profile: Hammerle Morris Law Firm">Firm profile &rarr;</a>
+          </div>
+        </li>
+        <li class="firm-card" data-lane="business" data-quality="strong">
+          <div class="card-head">
+            <span class="docket">No. 2026-011</span>
+            <span class="stamp stamp-success">Strong</span>
+          </div>
+          <h3 class="firm-name"><a class="card-link" href="capture-hunter-sargent.html">Hunter Sargent, PLLC</a></h3>
+          <p class="card-meta">Denton, TX · Business &amp; civil</p>
+          <p class="card-phone">(940) 594-7754</p>
+          <p class="card-id">Hunter Sargent, PLLC is a Denton estate planning and business planning law firm founded in 2021 by a seventh generation Dentonite who has practiced law since 2014.</p>
+          <div class="card-foot">
+            <span class="card-go">View intake page &rarr;</span>
+            <a class="profile-link" href="firm-hunter-sargent.html" aria-label="Firm profile: Hunter Sargent, PLLC">Firm profile &rarr;</a>
+          </div>
+        </li>
+        <li class="firm-card" data-lane="business" data-quality="adequate">
+          <div class="card-head">
+            <span class="docket">No. 2026-012</span>
+            <span class="stamp stamp-warning">Adequate</span>
+          </div>
+          <h3 class="firm-name"><a class="card-link" href="capture-kelsey-law.html">Kelsey Law Firm, PLLC</a></h3>
+          <p class="card-meta">Denton, TX · Business &amp; civil</p>
+          <p class="card-phone">940-387-9551</p>
+          <p class="card-id">Kelsey Law Firm, PLLC is a Denton firm where attorney John Kelsey has guided local families and businesses through estate planning, elder law, real estate, guardianship, and probate matters since he began practicing alongside his father in 1995.</p>
+          <div class="card-foot">
+            <span class="card-go">View intake page &rarr;</span>
+            <a class="profile-link" href="firm-kelsey-law.html" aria-label="Firm profile: Kelsey Law Firm, PLLC">Firm profile &rarr;</a>
+          </div>
+        </li>
+        <li class="firm-card" data-lane="family" data-quality="adequate">
+          <div class="card-head">
+            <span class="docket">No. 2026-013</span>
+            <span class="stamp stamp-warning">Adequate</span>
+          </div>
+          <h3 class="firm-name"><a class="card-link" href="capture-kerestine-law.html">Kerestine Law</a></h3>
+          <p class="card-meta">Denton, TX · Family law</p>
+          <p class="card-phone">940-387-8719</p>
+          <p class="card-id">Kerestine Law is a Denton solo practice where founding attorney Julia Kerestine has helped North Texas families with divorce, custody, mediation, and collaborative law since 1984.</p>
+          <div class="card-foot">
+            <span class="card-go">View intake page &rarr;</span>
+            <a class="profile-link" href="firm-kerestine-law.html" aria-label="Firm profile: Kerestine Law">Firm profile &rarr;</a>
+          </div>
+        </li>
+        <li class="firm-card" data-lane="pi" data-quality="adequate">
+          <div class="card-head">
+            <span class="docket">No. 2026-014</span>
+            <span class="stamp stamp-warning">Adequate</span>
+          </div>
+          <h3 class="firm-name"><a class="card-link" href="capture-kuzmich-law.html">The Kuzmich Law Firm, P.C.</a></h3>
+          <p class="card-meta">Flower Mound, TX · Personal injury</p>
+          <p class="card-phone">(972) 434-1555</p>
+          <p class="card-id">The Kuzmich Law Firm PC is a Flower Mound personal injury firm where founding partner Steve Kuzmich, who has practiced law since 1994, helps injured people and families across Denton County.</p>
+          <div class="card-foot">
+            <span class="card-go">View intake page &rarr;</span>
+            <a class="profile-link" href="firm-kuzmich-law.html" aria-label="Firm profile: The Kuzmich Law Firm, P.C.">Firm profile &rarr;</a>
+          </div>
+        </li>
+        <li class="firm-card" data-lane="family" data-quality="adequate">
+          <div class="card-head">
+            <span class="docket">No. 2026-015</span>
+            <span class="stamp stamp-warning">Adequate</span>
+          </div>
+          <h3 class="firm-name"><a class="card-link" href="capture-lewis-passons-darnell.html">Lewis, Passons &amp; Darnell, P.C.</a></h3>
+          <p class="card-meta">Denton, TX · Family law</p>
+          <p class="card-phone">940-591-1191</p>
+          <p class="card-id">Lewis, Passons &amp; Darnell, PC is a Denton County family law firm where both named partners are Board Certified in Family Law by the Texas Board of Legal Specialization.</p>
+          <div class="card-foot">
+            <span class="card-go">View intake page &rarr;</span>
+            <a class="profile-link" href="firm-lewis-passons-darnell.html" aria-label="Firm profile: Lewis, Passons &amp; Darnell, P.C.">Firm profile &rarr;</a>
+          </div>
+        </li>
+        <li class="firm-card" data-lane="family" data-quality="strong">
+          <div class="card-head">
+            <span class="docket">No. 2026-016</span>
+            <span class="stamp stamp-success">Strong</span>
+          </div>
+          <h3 class="firm-name"><a class="card-link" href="capture-little-logue.html">Little &amp; Logue, PLLC</a></h3>
+          <p class="card-meta">Flower Mound, TX · Family law</p>
+          <p class="card-phone">(940) 204-5535</p>
+          <p class="card-id">Little &amp; Logue, PLLC is a Flower Mound family law firm founded in 2023 by Thomas Little and James Logue, guiding Denton County clients through divorce, custody, adoption, mediation, and wills and power of attorney matters.</p>
+          <div class="card-foot">
+            <span class="card-go">View intake page &rarr;</span>
+            <a class="profile-link" href="firm-little-logue.html" aria-label="Firm profile: Little &amp; Logue, PLLC">Firm profile &rarr;</a>
+          </div>
+        </li>
+        <li class="firm-card" data-lane="business" data-quality="strong">
+          <div class="card-head">
+            <span class="docket">No. 2026-017</span>
+            <span class="stamp stamp-success">Strong</span>
+          </div>
+          <h3 class="firm-name"><a class="card-link" href="capture-minor-jester.html">Minor &amp; Jester, P.C.</a></h3>
+          <p class="card-meta">Denton, TX · Business &amp; civil</p>
+          <p class="card-phone">(940) 387-7585</p>
+          <p class="card-id">Minor &amp; Jester, PC is a Denton law firm founded in 1917 whose attorneys guide local families and businesses through real estate, family law, estate planning, probate, bankruptcy, and civil litigation matters.</p>
+          <div class="card-foot">
+            <span class="card-go">View intake page &rarr;</span>
+            <a class="profile-link" href="firm-minor-jester.html" aria-label="Firm profile: Minor &amp; Jester, P.C.">Firm profile &rarr;</a>
+          </div>
+        </li>
+        <li class="firm-card" data-lane="criminal" data-quality="strong">
+          <div class="card-head">
+            <span class="docket">No. 2026-018</span>
+            <span class="stamp stamp-success">Strong</span>
+          </div>
+          <h3 class="firm-name"><a class="card-link" href="capture-nathan-miller.html">The Law Offices of Nathan Miller, PLLC</a></h3>
+          <p class="card-meta">Denton, TX · Criminal defense</p>
+          <p class="card-phone">(940) 580-4287</p>
+          <p class="card-id">The Law Offices of Nathan Miller, PLLC is a Denton criminal defense firm founded in 2010 by Nathan Miller, a former Denton County prosecutor who has practiced law since 2008, defending people facing DWI, drug, theft, assault, and other criminal charges in Denton County.</p>
+          <div class="card-foot">
+            <span class="card-go">View intake page &rarr;</span>
+            <a class="profile-link" href="firm-nathan-miller.html" aria-label="Firm profile: The Law Offices of Nathan Miller, PLLC">Firm profile &rarr;</a>
+          </div>
+        </li>
+        <li class="firm-card" data-lane="family" data-quality="adequate">
+          <div class="card-head">
+            <span class="docket">No. 2026-019</span>
+            <span class="stamp stamp-warning">Adequate</span>
+          </div>
+          <h3 class="firm-name"><a class="card-link" href="capture-navarrette-bowen.html">Navarrette Bowen, P.C.</a></h3>
+          <p class="card-meta">Denton, TX · Family law</p>
+          <p class="card-phone">940-566-0606</p>
+          <p class="card-id">Navarrette Bowen PC is a boutique Denton family law firm where attorney Chrysandra Bowen, Board Certified in Texas Family Law and practicing since 2008, helps clients with divorce, child custody, and adoption throughout Denton County.</p>
+          <div class="card-foot">
+            <span class="card-go">View intake page &rarr;</span>
+            <a class="profile-link" href="firm-navarrette-bowen.html" aria-label="Firm profile: Navarrette Bowen, P.C.">Firm profile &rarr;</a>
+          </div>
+        </li>
+        <li class="firm-card" data-lane="criminal" data-quality="adequate">
+          <div class="card-head">
+            <span class="docket">No. 2026-020</span>
+            <span class="stamp stamp-warning">Adequate</span>
+          </div>
+          <h3 class="firm-name"><a class="card-link" href="capture-peugh-law.html">The Peugh Law Firm</a></h3>
+          <p class="card-meta">Denton, TX · Criminal defense</p>
+          <p class="card-phone">940-566-0271</p>
+          <p class="card-id">The Peugh Law Firm is a Denton criminal defense practice led by Daniel K Peugh, a former chief prosecutor in the Denton County District Attorney's office who has represented clients in DWI, drug, juvenile, and assault cases since 1998.</p>
+          <div class="card-foot">
+            <span class="card-go">View intake page &rarr;</span>
+            <a class="profile-link" href="firm-peugh-law.html" aria-label="Firm profile: The Peugh Law Firm">Firm profile &rarr;</a>
+          </div>
+        </li>
+        <li class="firm-card" data-lane="criminal" data-quality="strong">
+          <div class="card-head">
+            <span class="docket">No. 2026-021</span>
+            <span class="stamp stamp-success">Strong</span>
+          </div>
+          <h3 class="firm-name"><a class="card-link" href="capture-sarah-roland-law.html">Sarah Roland, Attorney at Law</a></h3>
+          <p class="card-meta">Denton, TX · Criminal defense</p>
+          <p class="card-phone">(940) 323-9305</p>
+          <p class="card-id">Sarah Roland, Attorney at Law is a Denton criminal defense firm where founding attorney Sarah Roland has defended people facing charges across Denton County since she began practicing law in 2006.</p>
+          <div class="card-foot">
+            <span class="card-go">View intake page &rarr;</span>
+            <a class="profile-link" href="firm-sarah-roland-law.html" aria-label="Firm profile: Sarah Roland, Attorney at Law">Firm profile &rarr;</a>
+          </div>
+        </li>
+        <li class="firm-card" data-lane="criminal" data-quality="adequate">
+          <div class="card-head">
+            <span class="docket">No. 2026-022</span>
+            <span class="stamp stamp-warning">Adequate</span>
+          </div>
+          <h3 class="firm-name"><a class="card-link" href="capture-shanklin-law.html">Law Office of Kimberly Shanklin, PLLC</a></h3>
+          <p class="card-meta">Denton, TX · Criminal defense</p>
+          <p class="card-phone">940-382-8216</p>
+          <p class="card-id">The Law Office of Kimberly Shanklin, PLLC is a Denton solo practice focused exclusively on Denton County family law and criminal law, led by an attorney who has practiced since 2002.</p>
+          <div class="card-foot">
+            <span class="card-go">View intake page &rarr;</span>
+            <a class="profile-link" href="firm-shanklin-law.html" aria-label="Firm profile: Law Office of Kimberly Shanklin, PLLC">Firm profile &rarr;</a>
+          </div>
+        </li>
+        <li class="firm-card" data-lane="pi" data-quality="strong">
+          <div class="card-head">
+            <span class="docket">No. 2026-023</span>
+            <span class="stamp stamp-success">Strong</span>
+          </div>
+          <h3 class="firm-name"><a class="card-link" href="capture-springer-lyle.html">Springer Lyle Dameron &amp; Harrison</a></h3>
+          <p class="card-meta">Denton, TX · Personal injury</p>
+          <p class="card-phone">940-370-4033</p>
+          <p class="card-id">Springer Lyle Dameron &amp; Harrison is a Denton, Texas advocacy firm that helps people who have suffered severe injuries and businesses involved in serious legal disputes, led by partners Jeff Springer and Frank Lyle, who began practicing law in 1985 and 1986.</p>
+          <div class="card-foot">
+            <span class="card-go">View intake page &rarr;</span>
+            <a class="profile-link" href="firm-springer-lyle.html" aria-label="Firm profile: Springer Lyle Dameron &amp; Harrison">Firm profile &rarr;</a>
+          </div>
+        </li>
+        <li class="firm-card" data-lane="criminal" data-quality="adequate">
+          <div class="card-head">
+            <span class="docket">No. 2026-024</span>
+            <span class="stamp stamp-warning">Adequate</span>
+          </div>
+          <h3 class="firm-name"><a class="card-link" href="capture-vrba-law.html">VRBA Law, PLLC</a></h3>
+          <p class="card-meta">Denton, TX · Criminal defense</p>
+          <p class="card-phone">(469) 240-9080</p>
+          <p class="card-id">VRBA Law, PLLC is a Denton criminal defense firm on West Hickory Street where attorneys Rudy &ldquo;Glynn&rdquo; Vrba and Lindsey Pruitt devote their entire practice to defending people charged with crimes in Denton County.</p>
+          <div class="card-foot">
+            <span class="card-go">View intake page &rarr;</span>
+            <a class="profile-link" href="firm-vrba-law.html" aria-label="Firm profile: VRBA Law, PLLC">Firm profile &rarr;</a>
+          </div>
+        </li>
+        <li class="firm-card" data-lane="family" data-quality="strong">
+          <div class="card-head">
+            <span class="docket">No. 2026-025</span>
+            <span class="stamp stamp-success">Strong</span>
+          </div>
+          <h3 class="firm-name"><a class="card-link" href="capture-youngberg-law.html">Youngberg Law Firm</a></h3>
+          <p class="card-meta">Denton, TX · Family law</p>
+          <p class="card-phone">(940) 498-2929</p>
+          <p class="card-id">Youngberg Law Firm is a Denton family law practice where founding attorney Michael Youngberg, licensed in Texas since 2014 and drawing on his background in the Texas Attorney General's child support division, personally guides Denton County clients through divorce, custody, support, adoption, and protective order matters.</p>
+          <div class="card-foot">
+            <span class="card-go">View intake page &rarr;</span>
+            <a class="profile-link" href="firm-youngberg-law.html" aria-label="Firm profile: Youngberg Law Firm">Firm profile &rarr;</a>
+          </div>
+        </li>
+      </ul>
+
+      <div class="empty" id="empty-state" hidden>
+        <p>No firms match those filters.</p>
+        <button type="button" class="clear-btn" data-clear>Clear filters</button>
+      </div>
+    </section>
+
+    <section class="legend wrap" aria-label="How to read the docket">
+      <p class="field-label">How to read the docket</p>
+      <p><span class="stamp stamp-success">Strong</span> Current, well-maintained website — only minor gaps <span class="ln">(12 firms)</span></p>
+      <p><span class="stamp stamp-warning">Adequate</span> Functional website with clear gaps — booking, speed, or markup <span class="ln">(13 firms)</span></p>
+      <p>Lanes: <span class="ln">Family law 6 · Criminal defense 6 · Estate &amp; probate 4 · Personal injury 4 · Business &amp; civil 5</span></p>
+    </section>
+
+    <section class="integrations wrap" aria-labelledby="int-h">
+      <span class="stamp stamp-oxblood">Integrations</span>
+      <div class="section-head">
+        <h2 id="int-h">Integration status at a glance</h2>
+      </div>
+      <ul class="int-list" role="list">
+        <li class="int-row">
+          <span class="int-name">Email (Resend)<span class="int-reason">Missing RESEND_API_KEY, EMAIL_FROM, FIRM_RECIPIENTS_JSON allowlist vars.</span></span>
+          <span class="stamp stamp-warning">Blocked</span>
+        </li>
+        <li class="int-row">
+          <span class="int-name">Automated customer response<span class="int-reason">Deterministic 25-topic classifier with templated replies, verified live.</span></span>
+          <span class="stamp stamp-success">Operational</span>
+        </li>
+        <li class="int-row">
+          <span class="int-name">Calendar (Google Calendar)<span class="int-reason">Missing CLIENT_ID, CLIENT_SECRET, REFRESH_TOKEN, CALENDAR_ID credentials.</span></span>
+          <span class="stamp stamp-warning">Blocked</span>
+        </li>
+        <li class="int-row">
+          <span class="int-name">Payments (Stripe)<span class="int-reason">Missing STRIPE_SECRET_KEY and STRIPE_WEBHOOK_SECRET; code fully tested.</span></span>
+          <span class="stamp stamp-warning">Blocked</span>
+        </li>
+        <li class="int-row">
+          <span class="int-name">AI classification<span class="int-reason">Deterministic classification used instead; provider slots documented only.</span></span>
+          <span class="stamp stamp-slate">Not configured</span>
+        </li>
+        <li class="int-row">
+          <span class="int-name">Deployment<span class="int-reason">Missing hosting credential (VERCEL_TOKEN or equivalent).</span></span>
+          <span class="stamp stamp-warning">Blocked</span>
+        </li>
+      </ul>
+      <a class="status-link" href="status.html">Full integration status &rarr;</a>
+    </section>
+  </div>
+
+  <section class="trust wrap" aria-label="Preview facts">
+    <hr class="rule">
+    <p>25 firms &middot; 51 preview pages &middot; Denton County, TX</p>
+    <hr class="rule">
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <hr class="rule">
+    <div class="foot-inner">
+      <p class="foot-brand">IntakeBrief</p>
+      <p class="foot-note">&copy; 2026 IntakeBrief &middot; Sales preview export</p>
+      <p class="foot-docket">No. 2026-DIR &middot; Exported 2026-07-16</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  'use strict';
+  var TOTAL = 25;
+  var q = document.getElementById('q');
+  var grid = document.getElementById('firm-grid');
+  var cards = Array.prototype.slice.call(grid.querySelectorAll('.firm-card'));
+  var laneChips = Array.prototype.slice.call(document.querySelectorAll('[data-group="lane"]'));
+  var qualChips = Array.prototype.slice.call(document.querySelectorAll('[data-group="quality"]'));
+  var count = document.getElementById('result-count');
+  var empty = document.getElementById('empty-state');
+  var state = { lane:'all', quality:'all', text:'' };
+
+  cards.forEach(function(card){
+    card._hay = card.textContent.toLowerCase().replace(/\s+/g,' ');
+  });
+
+  function apply(){
+    var shown = 0;
+    cards.forEach(function(card){
+      var ok = (state.lane === 'all' || card.getAttribute('data-lane') === state.lane)
+            && (state.quality === 'all' || card.getAttribute('data-quality') === state.quality)
+            && (state.text === '' || card._hay.indexOf(state.text) !== -1);
+      card.hidden = !ok;
+      if (ok) shown++;
+    });
+    count.textContent = shown === 0
+      ? 'Showing 0 of ' + TOTAL + ' firms \u2014 no matches. Clear filters to start over.'
+      : 'Showing ' + shown + ' of ' + TOTAL + ' firms';
+    empty.hidden = shown !== 0;
+  }
+
+  function press(chips, chip){
+    chips.forEach(function(c){ c.setAttribute('aria-pressed', c === chip ? 'true' : 'false'); });
+  }
+
+  laneChips.forEach(function(chip){
+    chip.addEventListener('click', function(){
+      state.lane = chip.getAttribute('data-value');
+      press(laneChips, chip);
+      apply();
+    });
+  });
+  qualChips.forEach(function(chip){
+    chip.addEventListener('click', function(){
+      state.quality = chip.getAttribute('data-value');
+      press(qualChips, chip);
+      apply();
+    });
+  });
+
+  q.addEventListener('input', function(){
+    state.text = q.value.trim().toLowerCase();
+    apply();
+  });
+
+  Array.prototype.slice.call(document.querySelectorAll('[data-clear]')).forEach(function(btn){
+    btn.addEventListener('click', function(){
+      state.lane = 'all';
+      state.quality = 'all';
+      state.text = '';
+      q.value = '';
+      press(laneChips, laneChips[0]);
+      press(qualChips, qualChips[0]);
+      apply();
+      q.focus();
+    });
+  });
+})();
+</script>
+</body>
+</html>
