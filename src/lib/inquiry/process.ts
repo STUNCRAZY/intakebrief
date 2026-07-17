@@ -19,6 +19,7 @@ import { createHash } from 'node:crypto';
 import { promises as fs } from 'node:fs';
 import { classifyMatter } from '@/lib/classify';
 import { getEmailProvider, type EmailMessage, type EmailProvider } from '@/lib/email/provider';
+import { getAvailability } from '@/lib/calendar/service';
 import { getFirm } from '@/lib/firms/load';
 import type { FirmProfile } from '@/lib/firms/types';
 import type { DeliveryStatus } from '@/lib/inquiry/types';
@@ -42,11 +43,17 @@ export interface TemplateInput {
     topics: string[];
   };
   submittedAt: Date;
+  availability?: {
+    status: 'ok' | 'blocked';
+    timezone?: string;
+    slots?: { startISO: string; endISO: string }[];
+    demo?: boolean;
+  };
 }
 
 export interface InquiryTemplates {
   buildFirmNotification(input: TemplateInput): EmailMessage;
-  buildCustomerResponse(input: TemplateInput): EmailMessage;
+  buildCustomerResponse(input: TemplateInput): EmailMessage | Promise<EmailMessage>;
 }
 
 export interface ProcessDeps {
@@ -201,8 +208,17 @@ export async function processInquiry(
     } else {
       // 9b. Only then send the customer response (to the submitter's own address).
       firmNotification = { status: 'accepted', detail: firmResult.detail };
+      const availability = await getAvailability(
+        firm.id,
+        new Date(now).toISOString(),
+        new Date(now + 14 * 24 * 60 * 60 * 1000).toISOString(),
+        env as NodeJS.ProcessEnv,
+      );
+      input.availability = availability.status === 'ok'
+        ? { status: 'ok', timezone: availability.timezone, slots: availability.slots, demo: availability.demo }
+        : { status: 'blocked' };
       const customerMessage: EmailMessage = {
-        ...templates.buildCustomerResponse(input),
+        ...(await templates.buildCustomerResponse(input)),
         to: inquiry.email,
       };
       const customerResult = await provider.send(customerMessage);

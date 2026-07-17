@@ -35,7 +35,8 @@ npm run dev                  # http://localhost:3000
 - `src/lib/firms` — profile/content loaders, pipeline types
 - `src/lib/inquiry` — inquiry contracts + per-firm field definitions
 - `src/lib/email` — email provider abstraction (Resend + blocked null provider)
-- `src/lib/classify` — deterministic, keyword-based matter classification (no AI)
+- `src/lib/classify` — deterministic, keyword-based routing classification
+- `src/lib/ai/local` — Ollama-backed, on-device inquiry summarization for customer replies
 - `src/lib/calendar` — Google Calendar free/busy availability provider
 - `src/lib/booking` — booking state machine (hold → confirm) with pluggable store
 - `src/lib/payments` — Stripe hosted-checkout deposit helpers
@@ -87,6 +88,25 @@ Availability is computed from the Calendar `freeBusy` endpoint (weekday
 ### Payments — Stripe
 
 Env vars: `STRIPE_SECRET_KEY`, `STRIPE_WEBHOOK_SECRET`, optional `STRIPE_PRICE_ID`.
+
+### Inquiry response AI — local Ollama
+
+Customer-response emails use a local Ollama model to produce only three
+inquiry-specific fields: a summarized topic, a short summary, and a topical
+information list. The subject format, available slots, deposit terms, and legal
+notice are application-owned template text. Inquiry text is sent only to the
+loopback Ollama server (`127.0.0.1`), not to an external AI provider.
+
+Install and run the default local model once:
+
+```powershell
+ollama pull qwen2.5:7b
+```
+
+Optional env settings are `AI_PROVIDER=ollama`, `OLLAMA_BASE_URL`,
+`OLLAMA_MODEL`, and `OLLAMA_TIMEOUT_MS`. When the local model is unavailable
+or returns invalid structured output, the app sends a conservative fallback
+response rather than blocking firm-notification delivery.
 
 1. <https://dashboard.stripe.com> → Developers → API keys → copy the **Secret key**
    into `STRIPE_SECRET_KEY`.

@@ -1,29 +1,30 @@
 /**
  * Email template builders for the inquiry pipeline.
  *
- * buildFirmNotification — full inquiry detail to the firm, replyTo the
- *   inquirer, with a prominent non-confidentiality warning.
- * buildCustomerResponse — topic-aware acknowledgment sent by IntakeBrief on
- *   the firm's behalf. Never gives legal advice, never predicts outcomes,
- *   never asks the customer to respond to the email itself.
- *
- * All user-supplied content is HTML-escaped at output time.
+ * The firm receives the complete inquiry. The customer reply uses a local
+ * model only for inquiry-specific wording; booking, deposit, availability,
+ * and legal-safety terms are fixed application-owned text.
  */
 import type { EmailMessage } from './provider';
 import type { FirmProfile } from '../firms/types';
 import type { BaseInquiry } from '../inquiry/types';
 import { getFieldsForFirm } from '../inquiry/fields';
-import { getPreparationGuidance } from '../guidance/preparation';
-import { MANDATED_DOCUMENT_INSTRUCTION } from '../guidance/prohibited';
+import { generateLocalEmailDraft } from '../ai/local';
 
 export interface TemplateInput {
   firm: FirmProfile;
   inquiry: BaseInquiry & { practiceFields?: Record<string, string> };
   classification: { primary: string | null; confidence: 'high' | 'medium' | 'low'; topics: string[] };
   submittedAt: Date;
+  availability?: {
+    status: 'ok' | 'blocked';
+    timezone?: string;
+    slots?: { startISO: string; endISO: string }[];
+    demo?: boolean;
+  };
 }
 
-/** Escape user content for safe interpolation into HTML. */
+/** Escape untrusted content before interpolation into HTML. */
 export function escapeHtml(value: string): string {
   return value
     .replace(/&/g, '&amp;')
@@ -37,25 +38,15 @@ function escapeWithBreaks(value: string): string {
   return escapeHtml(value).replace(/\r?\n/g, '<br>');
 }
 
-/** Format the submission time in America/Chicago with the timezone named. */
 function formatSubmittedAt(date: Date): string {
   return new Intl.DateTimeFormat('en-US', {
-    timeZone: 'America/Chicago',
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric',
-    hour: 'numeric',
-    minute: '2-digit',
-    timeZoneName: 'long',
+    timeZone: 'America/Chicago', year: 'numeric', month: 'long', day: 'numeric',
+    hour: 'numeric', minute: '2-digit', timeZoneName: 'long',
   }).format(date);
 }
 
-/** Fallback label for practice fields unknown to getFieldsForFirm. */
 function humanize(name: string): string {
-  const spaced = name
-    .replace(/([a-z0-9])([A-Z])/g, '$1 $2')
-    .replace(/[_-]+/g, ' ')
-    .trim();
+  const spaced = name.replace(/([a-z0-9])([A-Z])/g, '$1 $2').replace(/[_-]+/g, ' ').trim();
   return spaced.charAt(0).toUpperCase() + spaced.slice(1);
 }
 
@@ -63,170 +54,10 @@ const NON_CONFIDENTIALITY_WARNING =
   'Submitting this form does not create an attorney-client relationship. ' +
   'No confidential documents should be sent through this form or in response to it.';
 
-/* ------------------------------------------------------------------ */
-/* Topic copy blocks — one per classifier topic.                       */
-/* Each names the topic plainly, acknowledges the situation without    */
-/* quoting the message back, and explains what a consultation can      */
-/* clarify. None give legal advice or predict outcomes.                */
-/* ------------------------------------------------------------------ */
-
-interface TopicBlock {
-  label: string;
-  body: string;
-}
-
-const TOPIC_BLOCKS: Record<string, TopicBlock> = {
-  divorce: {
-    label: 'Divorce',
-    body:
-      'Your inquiry concerns divorce. Divorce typically involves decisions about dividing property and debts, possible support, and — where children are involved — parenting arrangements. An initial consultation can help clarify how the process generally works, which issues are most likely to matter in your situation, and what information would be helpful to gather.',
-  },
-  separation: {
-    label: 'Separation',
-    body:
-      'Your inquiry concerns separation. A period of separation can raise questions about living arrangements, finances, and temporary arrangements for children, whether or not a divorce follows. An initial consultation can help clarify the difference between informal and court-recognized arrangements and what steps people in your position commonly consider.',
-  },
-  'child-custody': {
-    label: 'Child custody',
-    body:
-      'Your inquiry concerns child custody. Custody matters generally center on the child\u2019s best interests, any existing orders, and each parent\u2019s involvement. An initial consultation can help clarify how custody arrangements are commonly evaluated, what role existing orders play, and what to expect if a hearing is involved.',
-  },
-  visitation: {
-    label: 'Visitation / parenting time',
-    body:
-      'Your inquiry concerns visitation or parenting time. These matters often involve setting, modifying, or enforcing a schedule for time with a child. An initial consultation can help clarify how parenting-time arrangements are commonly structured and what options people typically explore when a schedule is not being followed.',
-  },
-  'child-support': {
-    label: 'Child support',
-    body:
-      'Your inquiry concerns child support. Support questions can involve establishing an amount, modifying an existing order, or addressing missed payments. An initial consultation can help clarify how support is generally determined and what information is usually needed to evaluate a change.',
-  },
-  'criminal-charge': {
-    label: 'Criminal charge',
-    body:
-      'Your inquiry concerns a criminal charge. Criminal matters often move quickly through scheduled court settings, and decisions made early can shape the options available later. An initial consultation can help clarify the general court process, what upcoming dates mean, and what information to bring.',
-  },
-  arrest: {
-    label: 'Arrest',
-    body:
-      'Your inquiry concerns an arrest. The period following an arrest often involves strict timelines and fast-moving decisions. An initial consultation can help clarify what typically happens next in the process and which questions to be ready to discuss.',
-  },
-  bond: {
-    label: 'Bond',
-    body:
-      'Your inquiry concerns bond or bail. Bond questions often involve how bond is set, reviewed, or modified. An initial consultation can help clarify how bond decisions are generally made and what information is typically relevant.',
-  },
-  dwi: {
-    label: 'DWI',
-    body:
-      'Your inquiry concerns a DWI. DWI matters can involve both a criminal case and separate consequences for driving privileges, each with its own deadlines. An initial consultation can help clarify the different tracks a DWI matter can take and which dates matter most.',
-  },
-  probate: {
-    label: 'Probate',
-    body:
-      'Your inquiry concerns probate. Probate is the court-supervised process for handling a person\u2019s estate after death, and the steps can vary by county. An initial consultation can help clarify what the process generally involves and which filings or decisions may be time-sensitive.',
-  },
-  executor: {
-    label: 'Executor / personal representative',
-    body:
-      'Your inquiry concerns serving as an executor or personal representative. That role carries formal duties — gathering assets, notifying heirs and creditors, and accounting to the court. An initial consultation can help clarify what the role generally requires and where people commonly run into difficulty.',
-  },
-  wills: {
-    label: 'Wills',
-    body:
-      'Your inquiry concerns a will. Will-related matters can range from planning ahead to questions about the validity or interpretation of an existing will. An initial consultation can help clarify which situation applies and what information would be useful to review together.',
-  },
-  trusts: {
-    label: 'Trusts',
-    body:
-      'Your inquiry concerns a trust. Trust matters can involve creating a trust, administering one, or questions about a trustee\u2019s responsibilities. An initial consultation can help clarify which kind of trust issue is involved and what information the firm would need to assess it.',
-  },
-  guardianship: {
-    label: 'Guardianship',
-    body:
-      'Your inquiry concerns guardianship. Guardianship matters involve a court process for appointing someone to make decisions on another person\u2019s behalf. An initial consultation can help clarify how the process generally works and what a court typically considers.',
-  },
-  'personal-injury': {
-    label: 'Personal injury',
-    body:
-      'Your inquiry concerns a personal injury. Injury matters often involve questions about how the incident happened, the treatment received, and how a claim is evaluated. An initial consultation can help clarify how injury claims generally proceed and what documentation tends to matter.',
-  },
-  'vehicle-accident': {
-    label: 'Vehicle accident',
-    body:
-      'Your inquiry concerns a vehicle accident. Accident matters can involve insurance claims, questions about fault, and injuries that are still being treated. An initial consultation can help clarify how these matters commonly unfold and what information from the accident is most useful.',
-  },
-  'medical-treatment': {
-    label: 'Medical treatment',
-    body:
-      'Your inquiry concerns medical treatment connected to a legal matter. Treatment status and provider information often play a central role in evaluating an injury-related claim. An initial consultation can help clarify how treatment information is typically used and what is worth keeping track of going forward.',
-  },
-  'insurance-claim': {
-    label: 'Insurance claim',
-    body:
-      'Your inquiry concerns an insurance claim. Claim matters can involve a denial, a settlement offer, or difficulty dealing with an adjuster. An initial consultation can help clarify how claim disputes are commonly evaluated and what the correspondence you have received may mean for next steps.',
-  },
-  'business-dispute': {
-    label: 'Business dispute',
-    body:
-      'Your inquiry concerns a business dispute. Disputes between partners, owners, or companies often turn on the underlying agreements and the history of the relationship. An initial consultation can help clarify how such disputes are commonly approached and what documents would be most relevant.',
-  },
-  'contract-dispute': {
-    label: 'Contract dispute',
-    body:
-      'Your inquiry concerns a contract dispute. These matters often turn on the specific terms of the agreement and how each side has performed. An initial consultation can help clarify what the dispute may involve and which documents and communications are likely to matter.',
-  },
-  'real-estate-dispute': {
-    label: 'Real estate dispute',
-    body:
-      'Your inquiry concerns a real estate dispute. Property matters can involve boundaries, titles, easements, or disagreements arising from a transaction. An initial consultation can help clarify how these disputes are commonly evaluated and what records would be useful to gather.',
-  },
-  'civil-litigation': {
-    label: 'Civil litigation',
-    body:
-      'Your inquiry concerns a civil lawsuit or a potential lawsuit. Litigation matters often involve strict response deadlines and a structured court process. An initial consultation can help clarify the general stages of a civil case and which dates or papers deserve immediate attention.',
-  },
-  'employment-dispute': {
-    label: 'Employment dispute',
-    body:
-      'Your inquiry concerns an employment dispute. Workplace matters — such as a termination or unpaid wages — can involve short deadlines and specific procedures. An initial consultation can help clarify what processes may apply and what information would help the firm understand the situation.',
-  },
-  discrimination: {
-    label: 'Discrimination',
-    body:
-      'Your inquiry concerns discrimination. Discrimination matters can involve specific agencies and filing deadlines that come before any lawsuit. An initial consultation can help clarify how these matters are commonly raised and which dates may be important.',
-  },
-  'civil-rights': {
-    label: 'Civil rights',
-    body:
-      'Your inquiry concerns a potential civil rights issue. Civil rights matters can involve particular procedures and time limits that differ from other cases. An initial consultation can help clarify what processes may apply and what information the firm would need.',
-  },
-};
-
-const LOW_CONFIDENCE_BODY =
-  'Your inquiry does not fit one clear category yet. A consultation can identify the main issue and the next step.';
-
-/** Pull the concise, topic-specific middle sentence from a topic copy block. */
-function getTopicFocus(block: TopicBlock): string {
-  const focus = block.body.split('. ')[1] ?? block.body;
-  return /[.!?]$/.test(focus) ? focus : `${focus}.`;
-}
-
-/** True when a practice field records a hearing, court, or deadline date. */
-function hasUrgentDate(inquiry: TemplateInput['inquiry']): boolean {
-  return Object.entries(inquiry.practiceFields ?? {}).some(
-    ([name, value]) => /hearing|court|deadline/i.test(name) && value.trim() !== '',
-  );
-}
-
-/* ------------------------------------------------------------------ */
-/* Firm notification                                                   */
-/* ------------------------------------------------------------------ */
-
+/** The firm email preserves every submitted field and replies to the inquirer. */
 export function buildFirmNotification(input: TemplateInput): EmailMessage {
   const { firm, inquiry, classification, submittedAt } = input;
-  const labels = new Map(getFieldsForFirm(firm).map((f) => [f.name, f.label]));
-
+  const labels = new Map(getFieldsForFirm(firm).map((field) => [field.name, field.label]));
   const rows: Array<[string, string]> = [
     [labels.get('fullName') ?? 'Full name', inquiry.fullName],
     [labels.get('email') ?? 'Email address', inquiry.email],
@@ -241,131 +72,77 @@ export function buildFirmNotification(input: TemplateInput): EmailMessage {
   const submitted = formatSubmittedAt(submittedAt);
   const classificationLine = `Classification: ${classification.primary ?? 'uncategorized'} (confidence: ${classification.confidence})`;
   const subject = `New ${classification.primary ?? 'general'} inquiry for ${firm.name}`;
-
-  const htmlRows = rows
-    .map(
-      ([label, value]) =>
-        `<tr><th align="left" valign="top" style="padding:4px 12px 4px 0;">${escapeHtml(label)}</th>` +
-        `<td style="padding:4px 0;">${escapeWithBreaks(value)}</td></tr>`,
-    )
-    .join('\n');
-
+  const htmlRows = rows.map(([label, value]) =>
+    `<tr><th align="left" valign="top" style="padding:4px 12px 4px 0;">${escapeHtml(label)}</th>` +
+    `<td style="padding:4px 0;">${escapeWithBreaks(value)}</td></tr>`,
+  ).join('\n');
   const html = [
-    `<div style="border:2px solid #b91c1c;background:#fef2f2;padding:12px 16px;margin-bottom:16px;">`,
+    '<div style="border:2px solid #b91c1c;background:#fef2f2;padding:12px 16px;margin-bottom:16px;">',
     `<strong>Important:</strong> ${escapeHtml(NON_CONFIDENTIALITY_WARNING)}`,
-    `</div>`,
-    `<p>A new inquiry was submitted through your IntakeBrief intake page.</p>`,
+    '</div>',
+    '<p>A new inquiry was submitted through your IntakeBrief intake page.</p>',
     `<p><strong>Submitted:</strong> ${escapeHtml(submitted)}<br>${escapeHtml(classificationLine)}</p>`,
     `<table cellpadding="0" cellspacing="0">${htmlRows}</table>`,
   ].join('\n');
-
   const text = [
-    `IMPORTANT: ${NON_CONFIDENTIALITY_WARNING}`,
-    '',
-    'A new inquiry was submitted through your IntakeBrief intake page.',
-    `Submitted: ${submitted}`,
-    classificationLine,
-    '',
-    ...rows.map(([label, value]) => `${label}: ${value}`),
+    `IMPORTANT: ${NON_CONFIDENTIALITY_WARNING}`, '', 'A new inquiry was submitted through your IntakeBrief intake page.',
+    `Submitted: ${submitted}`, classificationLine, '', ...rows.map(([label, value]) => `${label}: ${value}`),
   ].join('\n');
-
   return { to: firm.email ?? '', subject, html, text, replyTo: inquiry.email };
 }
 
-/* ------------------------------------------------------------------ */
-/* Customer response                                                   */
-/* ------------------------------------------------------------------ */
+function firstName(fullName: string): string {
+  return fullName.trim().split(/\s+/)[0] || 'there';
+}
 
-export function buildCustomerResponse(input: TemplateInput): EmailMessage {
+function formatOpenSlot(slot: { startISO: string }, timezone: string): string {
+  return new Intl.DateTimeFormat('en-US', {
+    timeZone: timezone, weekday: 'long', month: 'long', day: 'numeric',
+    hour: 'numeric', minute: '2-digit', timeZoneName: 'short',
+  }).format(new Date(slot.startISO));
+}
+
+function openSlots(input: TemplateInput): string[] {
+  if (input.availability?.status === 'ok' && input.availability.slots?.length) {
+    const timezone = input.availability.timezone || 'America/Chicago';
+    const formatted = input.availability.slots.slice(0, 5).map((slot) => formatOpenSlot(slot, timezone));
+    return input.availability.demo
+      ? ['Demo availability — sample times; calendar not connected', ...formatted]
+      : formatted;
+  }
+  return ['Open consultation times are not available to share in this email right now.'];
+}
+
+/**
+ * The model's sole responsibility is a topic, short summary, and topical
+ * information list. All consequential customer-facing terms stay below.
+ */
+export async function buildCustomerResponse(input: TemplateInput): Promise<EmailMessage> {
   const { firm, inquiry, classification } = input;
-
-  const block = classification.primary ? TOPIC_BLOCKS[classification.primary] : undefined;
-  const topicParagraph =
-    classification.confidence === 'low' || !block
-      ? LOW_CONFIDENCE_BODY
-      : `We categorized your inquiry as ${block.label.toLowerCase()}. ${getTopicFocus(block)}`;
-
-  const urgent = hasUrgentDate(inquiry);
-  const urgencyParagraph = urgent
-    ? 'You mentioned a hearing, court date, or deadline. This may be time-sensitive; choose the earliest available time.'
-    : null;
-
-  const allPreparation = getPreparationGuidance({ lane: firm.lane, topics: classification.topics });
-  const topicPreparation = getPreparationGuidance({
-    lane: '',
-    topics: classification.topics,
-  }).slice(6, 8);
-  const specificPreparation =
-    topicPreparation.length > 0 ? topicPreparation : allPreparation.slice(6, 8);
-  const preparation = Array.from(
-    new Set(
-      [
-        allPreparation.find((item) => /typed timeline/i.test(item)),
-        allPreparation.find((item) => /three main questions/i.test(item)),
-        ...specificPreparation,
-      ].filter((item): item is string => Boolean(item)),
-    ),
-  );
-
-  const greeting = `Hi ${inquiry.fullName},`;
-  const introParagraph =
-    `${firm.name} received your ${block ? block.label.toLowerCase() : 'general'} inquiry through IntakeBrief.`;
-
-  const nextSteps = [
-    `Choose a consultation time on the firm\u2019s intake page.`,
-    `The time is held for 15 minutes during checkout.`,
-    `A $50 deposit reserves it under the firm\u2019s policies.`,
-  ];
-
-  const documentsParagraph = MANDATED_DOCUMENT_INSTRUCTION;
-
-  const closingParagraph =
-    `This email is not legal advice and does not create an attorney-client relationship. ` +
-    `Representation begins only if the firm agrees to represent you.`;
-
-  const signature = `IntakeBrief for ${firm.name}`;
-
-  const subject = block
-    ? `Next steps for your ${block.label.toLowerCase()} inquiry — ${firm.name}`
-    : `Next steps for your inquiry — ${firm.name}`;
-
-  const textParts: string[] = [
-    greeting,
-    '',
-    introParagraph,
-    '',
-    topicParagraph,
-    ...(urgencyParagraph ? ['', urgencyParagraph] : []),
-    '',
-    'What happens next:',
-    ...nextSteps.map((step, i) => `${i + 1}. ${step}`),
-    '',
-    'How to prepare for a consultation:',
-    ...preparation.map((item) => `- ${item}`),
-    '',
-    'Documents and sensitive information:',
-    documentsParagraph,
-    '',
-    closingParagraph,
-    '',
-    signature,
-  ];
-
-  const htmlParts: string[] = [
-    `<p>${escapeHtml(greeting)}</p>`,
-    `<p>${escapeWithBreaks(introParagraph)}</p>`,
-    `<p>${escapeHtml(topicParagraph)}</p>`,
-    ...(urgencyParagraph
-      ? [`<p><strong>${escapeHtml(urgencyParagraph)}</strong></p>`]
-      : []),
-    `<p><strong>What happens next:</strong></p>`,
-    `<ol>${nextSteps.map((step) => `<li>${escapeHtml(step)}</li>`).join('')}</ol>`,
-    `<p><strong>How to prepare for a consultation:</strong></p>`,
-    `<ul>${preparation.map((item) => `<li>${escapeHtml(item)}</li>`).join('')}</ul>`,
-    `<p><strong>Documents and sensitive information:</strong><br>${escapeHtml(documentsParagraph)}</p>`,
-    `<p>${escapeHtml(closingParagraph)}</p>`,
-    `<p>${escapeHtml(signature)}</p>`,
-  ];
-
-  return { to: inquiry.email, subject, html: htmlParts.join('\n'), text: textParts.join('\n') };
+  const draft = await generateLocalEmailDraft({ inquiry, fallbackTopic: classification.primary });
+  const slots = openSlots(input);
+  const bookingUrl = `${(process.env.APP_BASE_URL || 'http://localhost:3000').replace(/\/$/, '')}/capture/${encodeURIComponent(firm.id)}`;
+  const greeting = `Hi ${firstName(inquiry.fullName)},`;
+  const thankYou = `Thank you for reaching out to us about ${draft.topic}. We would love to set up a consultation with you to further discuss ${draft.summary} We have provided a list of open time slots below.`;
+  const notice = 'Notice: All consultations require a scheduled appointment and a $50 deposit. This deposit is non-refundable, but it will be applied to your consultation fee.';
+  const replyInstruction = 'If none of these times are acceptable, please respond at your earliest convenience with the days and times that work best for you, and we will provide the soonest available times within those windows.';
+  const confirmation = 'You will receive confirmation once the payment has been processed. We look forward to meeting you.';
+  const legalNote = 'Note: This email does not establish a lawyer-client relationship. Do not respond to this email with any documentation or classified information. Sending documentation or classified information in reply, or in future correspondence before an attorney-client relationship is established, will result in cancellation of the scheduled appointment and forfeiture of the $50 deposit.';
+  const preparationLead = 'To make the most of your time, the following information will be useful:';
+  const documentsReminder = "Do not email these items; bring them to the consultation or follow the firm's separate secure instructions.";
+  const subject = `${firm.name} - ${draft.topic} - Book a consultation`;
+  const text = [
+    greeting, '', thankYou, '', notice, '', 'Open time slots:', ...slots.map((slot) => `- ${slot}`),
+    `Book a time: ${bookingUrl}`, '', replyInstruction, '', confirmation, '', legalNote, '', preparationLead,
+    ...draft.preparation.map((item) => `- ${item}`), documentsReminder,
+  ].join('\n');
+  const html = [
+    `<p>${escapeHtml(greeting)}</p>`, `<p>${escapeHtml(thankYou)}</p>`, `<p><strong>${escapeHtml(notice)}</strong></p>`,
+    '<p><strong>Open time slots:</strong></p>', `<ul>${slots.map((slot) => `<li>${escapeHtml(slot)}</li>`).join('')}</ul>`,
+    `<p><a href="${escapeHtml(bookingUrl)}">Book a consultation time</a></p>`, `<p>${escapeHtml(replyInstruction)}</p>`,
+    `<p>${escapeHtml(confirmation)}</p>`, `<p><strong>${escapeHtml(legalNote)}</strong></p>`,
+    `<p><strong>${escapeHtml(preparationLead)}</strong></p>`, `<ul>${draft.preparation.map((item) => `<li>${escapeHtml(item)}</li>`).join('')}</ul>`,
+    `<p>${escapeHtml(documentsReminder)}</p>`,
+  ].join('\n');
+  return { to: inquiry.email, subject, html, text };
 }
