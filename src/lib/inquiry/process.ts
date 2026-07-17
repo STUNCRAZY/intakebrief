@@ -21,7 +21,6 @@ import { classifyMatter } from '@/lib/classify';
 import { getEmailProvider, type EmailMessage, type EmailProvider } from '@/lib/email/provider';
 import { getFirm } from '@/lib/firms/load';
 import type { FirmProfile } from '@/lib/firms/types';
-import { getFieldsForFirm } from '@/lib/inquiry/fields';
 import type { DeliveryStatus } from '@/lib/inquiry/types';
 import { getFirmRecipient } from '@/lib/security/allowlist';
 import * as idempotency from '@/lib/security/idempotency';
@@ -135,9 +134,10 @@ export async function processInquiry(
 
     // 6. Deterministic classification — runs even when delivery is blocked, so
     // the response honestly reports the likely matter in every outcome.
+    // Works from the message text alone; the minimal form collects no
+    // practice-specific fields.
     const classification = classifyMatter({
       message: inquiry.message,
-      practiceFields: getFieldsForFirm(firm),
       firmPracticeAreas: firm.practiceAreas,
     });
 

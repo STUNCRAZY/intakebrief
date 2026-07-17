@@ -91,9 +91,22 @@ describe('buildFirmNotification', () => {
       expect(msg.text).toContain(value);
       expect(msg.html).toContain(value);
     }
-    // humanized labels from getFieldsForFirm
-    expect(msg.text).toContain('Upcoming hearing date');
-    expect(msg.text).toContain('Type of family matter');
+    // humanized labels for legacy practice-field keys (no longer in the form)
+    expect(msg.text).toContain('Hearing Date');
+    expect(msg.text).toContain('Matter Type');
+  });
+
+  it('renders cleanly when phone and practiceFields are absent (minimal form)', () => {
+    const input = makeInput();
+    const { phone: _p, practiceFields: _f, ...minimalInquiry } = input.inquiry;
+    const msg = buildFirmNotification(makeInput({ inquiry: minimalInquiry }));
+    expect(msg.text).toContain('(not provided)');
+    expect(msg.html).toContain('(not provided)');
+    expect(msg.text).toContain('Jane Doe');
+    // customer response must also render without practice fields
+    const customer = buildCustomerResponse(makeInput({ inquiry: minimalInquiry }));
+    expect(customer.text).toContain('Jane Doe');
+    expect(customer.text).not.toMatch(/time-sensitive/i);
   });
 
   it('includes the submission timestamp in America/Chicago with the timezone named', () => {

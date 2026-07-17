@@ -98,4 +98,53 @@ describe('capture page', () => {
     // aria-live status region present.
     expect(html).toContain('aria-live="polite"');
   });
+
+  it('renders the MINIMAL form: exactly 4 non-checkbox fields, email the only email input', async () => {
+    const element = await CapturePage({ params: Promise.resolve({ id: fixtureFirm.id }) });
+    const html = renderToStaticMarkup(element);
+
+    const inputCount = (html.match(/<input/g) ?? []).length;
+    const checkboxCount = (html.match(/type="checkbox"/g) ?? []).length;
+    const textareaCount = (html.match(/<textarea/g) ?? []).length;
+    const selectCount = (html.match(/<select/g) ?? []).length;
+    const honeypotCount = (html.match(/id="field-hp_company"/g) ?? []).length;
+
+    // fullName, email, phone, message — nothing else.
+    const nonCheckboxFields = inputCount - honeypotCount - checkboxCount + textareaCount + selectCount;
+    expect(nonCheckboxFields).toBe(4);
+    expect(checkboxCount).toBe(2); // consent + acknowledgment only
+    expect(selectCount).toBe(0); // no preferredContact select, no practice selects
+    expect(honeypotCount).toBe(1); // honeypot untouched
+
+    // email is the only email-type input on the page.
+    expect((html.match(/type="email"/g) ?? []).length).toBe(1);
+
+    // phone renders but is optional (no required marker on it).
+    expect(html).toContain('id="field-phone"');
+    expect(html).toContain('Phone (optional)');
+  });
+
+  it('shows the "watch what happens next" video slot and a compact prohibited-items block', async () => {
+    const element = await CapturePage({ params: Promise.resolve({ id: fixtureFirm.id }) });
+    const html = renderToStaticMarkup(element);
+
+    // Accessible video block directly above the form.
+    const videoIndex = html.indexOf('<video');
+    const formIndex = html.indexOf('<form');
+    expect(videoIndex).toBeGreaterThanOrEqual(0);
+    expect(videoIndex).toBeLessThan(formIndex);
+    expect(html).toContain('<figure');
+    expect(html).toContain('src="/how-it-works.mp4"');
+    expect(html).toContain('poster="/how-it-works-poster.jpg"');
+    expect(html).toContain('<track');
+    expect(html).toContain('src="/how-it-works-captions.vtt"');
+    expect(html).toContain('<figcaption');
+    expect(html).toContain('90-second preview: what happens after you send this');
+
+    // Mandated sentence fully visible; prohibited list collapsed in <details>.
+    expect(html).toContain(MANDATED_DOCUMENT_INSTRUCTION);
+    expect(html).toContain('<details');
+    expect(html).toContain('<summary');
+    expect(html).toContain('See the full list of what not to send');
+  });
 });

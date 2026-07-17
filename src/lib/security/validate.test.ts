@@ -26,6 +26,24 @@ describe('validateInquiry', () => {
     }
   });
 
+  it('accepts the minimal payload: no phone, no preferredContact, no practiceFields', () => {
+    const { phone: _p, preferredContact: _c, ...minimal } = valid;
+    const res = validateInquiry(minimal);
+    expect(res.ok).toBe(true);
+    if (res.ok) {
+      expect(res.data.phone).toBeUndefined();
+      // preferredContact defaults to 'email' when the sender omits it
+      expect(res.data.preferredContact).toBe('email');
+      expect(res.data.practiceFields).toBeUndefined();
+    }
+  });
+
+  it('treats a blank phone string as absent', () => {
+    const res = validateInquiry({ ...valid, phone: '   ' });
+    expect(res.ok).toBe(true);
+    if (res.ok) expect(res.data.phone).toBeUndefined();
+  });
+
   it('accepts multi-line message text (\\n and \\t allowed)', () => {
     const res = validateInquiry({ ...valid, message: 'line one\nline two\ttabbed' });
     expect(res.ok).toBe(true);

@@ -26,16 +26,6 @@ export interface InquiryFormProps {
   preparation: string[];
 }
 
-const BASE_NAMES = new Set([
-  'fullName',
-  'email',
-  'phone',
-  'preferredContact',
-  'message',
-  'consentTransactional',
-  'acknowledgeNoRelationship',
-]);
-
 const CONSENT_LABEL =
   'I consent to receive transactional responses about my inquiry (for example, email or phone replies from the firm).';
 const ACK_LABEL =
@@ -169,29 +159,16 @@ export function InquiryForm({ firm, fields, preparation }: InquiryFormProps) {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
 
-    const practiceFields: Record<string, string> = {};
-    for (const field of fields) {
-      if (BASE_NAMES.has(field.name)) continue;
-      if (field.type === 'checkbox') {
-        practiceFields[field.name] = data.get(field.name) ? 'yes' : 'no';
-      } else {
-        const value = data.get(field.name);
-        if (typeof value === 'string' && value.trim() !== '') practiceFields[field.name] = value;
-      }
-    }
-
     const payload = {
       firmId: firm.id,
       fullName: String(data.get('fullName') ?? ''),
       email: String(data.get('email') ?? ''),
       phone: String(data.get('phone') ?? ''),
-      preferredContact: data.get('preferredContact') === 'phone' ? ('phone' as const) : ('email' as const),
       message: String(data.get('message') ?? ''),
       consentTransactional: true as const,
       acknowledgeNoRelationship: true as const,
       honeypot: String(data.get('hp_company') ?? ''),
       idempotencyKey,
-      practiceFields,
     };
 
     setSubmitState('submitting');
@@ -336,15 +313,36 @@ export function InquiryForm({ firm, fields, preparation }: InquiryFormProps) {
         {statusLine}
       </p>
 
+      <figure className={styles.videoFigure}>
+        <video
+          className={styles.video}
+          controls
+          preload="none"
+          playsInline
+          poster="/how-it-works-poster.jpg"
+          src="/how-it-works.mp4"
+          aria-label="Watch what happens next — 90-second demo video"
+        >
+          <track kind="captions" label="English captions" src="/how-it-works-captions.vtt" default />
+        </video>
+        <figcaption className={styles.videoCaption}>
+          <strong>Watch what happens next.</strong> 90-second preview: what happens after you send
+          this — demo video, no sound required
+        </figcaption>
+      </figure>
+
       <form className={styles.form} onSubmit={handleSubmit}>
         <div className={styles.prohibited} role="note" aria-label="What not to send">
           <p className={styles.prohibitedInstruction}>{MANDATED_DOCUMENT_INSTRUCTION}</p>
-          <p className={styles.prohibitedHeading}>Never include in this form:</p>
-          <ul className={styles.prohibitedList}>
-            {PROHIBITED_ITEMS.map((item) => (
-              <li key={item}>{item}</li>
-            ))}
-          </ul>
+          <details className={styles.prohibitedDetails}>
+            <summary className={styles.prohibitedSummary}>See the full list of what not to send</summary>
+            <p className={styles.prohibitedHeading}>Never include in this form:</p>
+            <ul className={styles.prohibitedList}>
+              {PROHIBITED_ITEMS.map((item) => (
+                <li key={item}>{item}</li>
+              ))}
+            </ul>
+          </details>
         </div>
 
         {submitErrors.length > 0 ? (

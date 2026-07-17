@@ -23,50 +23,67 @@ function makeFirm(lane: FirmLane, practiceAreas: string[] = []): FirmProfile {
   };
 }
 
-const BASE_FIELD_NAMES = [
+const MINIMAL_FIELD_NAMES = [
   'fullName',
   'email',
   'phone',
-  'preferredContact',
   'message',
   'consentTransactional',
   'acknowledgeNoRelationship',
 ];
 
-describe('getFieldsForFirm', () => {
-  it('a criminal firm gets the criminal/DWI fields incl. arrestDate', () => {
-    const names = getFieldsForFirm(makeFirm('criminal')).map((f) => f.name);
-    for (const expected of ['charge', 'arrestDate', 'nextCourtDate', 'custodyStatus', 'bondStatus']) {
-      expect(names).toContain(expected);
-    }
+describe('getFieldsForFirm (minimal contact form)', () => {
+  it('returns exactly the 6-field minimal set — 4 non-checkbox fields', () => {
+    const fields = getFieldsForFirm(makeFirm('family'));
+    expect(fields.map((f) => f.name)).toEqual(MINIMAL_FIELD_NAMES);
+    const nonCheckbox = fields.filter((f) => f.type !== 'checkbox');
+    expect(nonCheckbox).toHaveLength(4);
   });
 
-  it('a family firm gets the family fields incl. childrenInvolved', () => {
-    const names = getFieldsForFirm(makeFirm('family')).map((f) => f.name);
-    for (const expected of ['matterType', 'childrenInvolved', 'existingOrders', 'livingArrangement', 'hearingDate']) {
-      expect(names).toContain(expected);
-    }
+  it('email is the only email-type input', () => {
+    const fields = getFieldsForFirm(makeFirm('criminal'));
+    const emailType = fields.filter((f) => f.type === 'email');
+    expect(emailType).toHaveLength(1);
+    expect(emailType[0].name).toBe('email');
+    expect(emailType[0].label).toBe('Email address');
+    expect(emailType[0].required).toBe(true);
   });
 
-  it('base fields are always present, for every lane', () => {
+  it('phone is optional and there is no preferredContact select', () => {
+    const fields = getFieldsForFirm(makeFirm('pi'));
+    const phone = fields.find((f) => f.name === 'phone');
+    expect(phone).toBeDefined();
+    expect(phone!.required).toBe(false);
+    expect(phone!.label).toBe('Phone (optional)');
+    expect(fields.some((f) => f.name === 'preferredContact')).toBe(false);
+    expect(fields.some((f) => f.type === 'select')).toBe(false);
+  });
+
+  it('message asks for a short, non-confidential summary', () => {
+    const message = getFieldsForFirm(makeFirm('estate')).find((f) => f.name === 'message');
+    expect(message).toBeDefined();
+    expect(message!.type).toBe('textarea');
+    expect(message!.required).toBe(true);
+    expect(message!.label).toBe(
+      "What can we help you with? A sentence or two is plenty — please don't include confidential details.",
+    );
+  });
+
+  it('is identical for every firm, regardless of lane or practice areas', () => {
     const lanes: FirmLane[] = ['family', 'criminal', 'estate', 'pi', 'business'];
+    const reference = getFieldsForFirm(makeFirm('family'));
     for (const lane of lanes) {
-      const names = getFieldsForFirm(makeFirm(lane)).map((f) => f.name);
-      for (const base of BASE_FIELD_NAMES) {
-        expect(names).toContain(base);
-      }
+      expect(getFieldsForFirm(makeFirm(lane, ['DWI', 'Probate', 'Personal Injury']))).toEqual(reference);
     }
   });
 
-  it('practice areas can pull in a second group, merged and deduped', () => {
-    const names = getFieldsForFirm(makeFirm('pi', ['Personal Injury', 'Criminal Defense'])).map((f) => f.name);
-    expect(names).toContain('incidentDate'); // personal-injury group (lane)
-    expect(names).toContain('arrestDate'); // criminal-dwi group (practice area)
-
-    const familyEstate = getFieldsForFirm(makeFirm('family', ['Divorce', 'Wills & Probate'])).map((f) => f.name);
-    expect(familyEstate).toContain('childrenInvolved'); // family group
-    expect(familyEstate).toContain('county'); // probate-estate group
-    // matterType exists in both groups — must appear exactly once.
-    expect(familyEstate.filter((n) => n === 'matterType')).toHaveLength(1);
+  it('both consent checkboxes are required', () => {
+    const fields = getFieldsForFirm(makeFirm('business'));
+    for (const name of ['consentTransactional', 'acknowledgeNoRelationship']) {
+      const field = fields.find((f) => f.name === name);
+      expect(field).toBeDefined();
+      expect(field!.type).toBe('checkbox');
+      expect(field!.required).toBe(true);
+    }
   });
 });

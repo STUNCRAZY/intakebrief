@@ -225,7 +225,7 @@ export function buildFirmNotification(input: TemplateInput): EmailMessage {
   const rows: Array<[string, string]> = [
     [labels.get('fullName') ?? 'Full name', inquiry.fullName],
     [labels.get('email') ?? 'Email address', inquiry.email],
-    [labels.get('phone') ?? 'Phone number', inquiry.phone],
+    [labels.get('phone') ?? 'Phone number', inquiry.phone?.trim() ? inquiry.phone : '(not provided)'],
     [labels.get('preferredContact') ?? 'Preferred contact method', inquiry.preferredContact],
     [labels.get('message') ?? 'Message', inquiry.message],
   ];

@@ -11,11 +11,17 @@
  * landing page (see design/alagood-cartwright-burke-intake-mockup.html style);
  * this script deliberately skips it so regeneration never clobbers it.
  */
-import { mkdir, readdir, writeFile } from 'node:fs/promises';
+import { copyFile, mkdir, readdir, writeFile } from 'node:fs/promises';
 
 const BASE = process.env.PREVIEW_BASE ?? 'http://localhost:3110';
 const OUT = new URL('../preview/', import.meta.url);
 const RESEARCH = new URL('../research/firms/', import.meta.url);
+const PUBLIC = new URL('../public/', import.meta.url);
+
+/** "What happens next" video assets served from public/ — rewritten to
+ *  relative paths in the self-contained preview files and copied alongside
+ *  them when present (skipped silently when absent). */
+const VIDEO_ASSETS = ['how-it-works.mp4', 'how-it-works-poster.jpg', 'how-it-works-captions.vtt'];
 
 const slugs = (await readdir(RESEARCH)).filter((f) => f.endsWith('.json')).map((f) => f.replace(/\.json$/, '')).sort();
 
@@ -75,6 +81,14 @@ async function inlineAssets(html) {
   return html;
 }
 
+/** Point the video/poster/captions URLs at sibling files next to the preview HTML. */
+function relativizeVideoAssets(html) {
+  for (const asset of VIDEO_ASSETS) {
+    html = html.split(`="/${asset}"`).join(`="${asset}"`);
+  }
+  return html;
+}
+
 function assertBalanced(name, html) {
   // Naive tag counts false-positive on '<script' string literals inside
   // inlined bundles. Instead, pair script blocks sequentially (inlined JS is
@@ -97,10 +111,19 @@ function assertBalanced(name, html) {
 await mkdir(OUT, { recursive: true });
 await waitForServer();
 for (const [name, path] of Object.entries(PAGES)) {
-  const html = await inlineAssets(await get(BASE + path));
+  const html = relativizeVideoAssets(await inlineAssets(await get(BASE + path)));
   assertBalanced(name, html);
   const file = new URL(`${name}.html`, OUT);
   await writeFile(file, html);
   console.log(`preview/${name}.html  ${(html.length / 1024).toFixed(0)} KB  ← ${path}`);
+}
+// Copy the video assets beside the preview files when they exist (absent = skip silently).
+for (const asset of VIDEO_ASSETS) {
+  try {
+    await copyFile(new URL(asset, PUBLIC), new URL(asset, OUT));
+    console.log(`preview/${asset}  copied from public/`);
+  } catch {
+    /* asset not present yet — the poster/video slot degrades gracefully */
+  }
 }
 console.log('done');

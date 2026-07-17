@@ -104,6 +104,25 @@ describe('processInquiry', () => {
     expect(res.body.classification!.confidence).toMatch(/high|medium|low/);
   });
 
+  it('minimal submission without phone/practiceFields succeeds and still classifies', async () => {
+    const provider = new FakeProvider();
+    const { phone: _p, preferredContact: _c, ...minimal } = payload();
+    const res = await processInquiry(minimal, {
+      ip: '1.2.3.4',
+      env: envWithAllowlist,
+      provider,
+      templates: fakeTemplates,
+      now: 5_000_000,
+    });
+    expect(res.http).toBe(200);
+    expect(provider.sent).toHaveLength(2);
+    expect(res.body.firmNotification?.status).toBe('accepted');
+    expect(res.body.customerResponse?.status).toBe('accepted');
+    // classification works from the message text alone
+    expect(res.body.classification).toBeDefined();
+    expect(res.body.classification!.topics.length).toBeGreaterThan(0);
+  });
+
   it('unknown firm id → 400, zero sends', async () => {
     const provider = new FakeProvider();
     const res = await processInquiry(payload({ firmId: 'no-such-firm' }), {

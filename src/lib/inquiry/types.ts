@@ -4,7 +4,9 @@ export interface BaseInquiry {
   firmId: string;
   fullName: string;
   email: string;
-  phone: string;
+  /** Optional — the minimal form does not require a phone number. */
+  phone?: string;
+  /** Optional on the wire; validation defaults it to 'email' when absent. */
   preferredContact: 'email' | 'phone';
   message: string;
   /** Must be true — consent to transactional contact about the inquiry. */

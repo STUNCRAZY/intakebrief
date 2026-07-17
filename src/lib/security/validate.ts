@@ -45,8 +45,13 @@ export const inquirySchema = z.object({
     .max(254)
     .email()
     .refine((v) => !STRICT_NO_CTRL.test(v), { message: NO_CTRL_MSG }),
-  phone: strictLine(40),
-  preferredContact: z.enum(['email', 'phone']),
+  phone: z.preprocess(
+    // Blank phone from the minimal form means "not provided".
+    (v) => (typeof v === 'string' && v.trim() === '' ? undefined : v),
+    strictLine(40).optional(),
+  ),
+  // Optional on the wire; defaults to 'email' when the sender omits it.
+  preferredContact: z.enum(['email', 'phone']).optional().default('email'),
   message: z
     .string()
     .min(1)
