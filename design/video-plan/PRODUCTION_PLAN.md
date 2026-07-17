@@ -1,7 +1,7 @@
 # IntakeBrief end-to-end demo video production plan
 
 Status: completed and verified on 2026-07-17
-Final runtime: 89.57 seconds
+Final runtime: 54.80 seconds
 Master format: 1920x1080, 30 fps, H.264, yuv420p, 16:9
 Primary demo surface: `/capture/kelsey-law`
 Test inbox: `FGarcia@TLG-works.com` (masked where appropriate in the public cut)
@@ -55,7 +55,7 @@ This frame explains why the earlier video felt disconnected: it shows an existin
 - Privacy: mask secret values, message IDs, tokens, unrelated inbox content, and personal calendar details. Keep the business test inbox visible only when it adds proof.
 - Sound: warm professional narration at roughly 145 words per minute, quiet click accents, no loud corporate music. If music is used, keep it 18–22 dB below narration.
 
-## 5. Approved 90-second shot list
+## 5. Approved concise shot list
 
 | Time | Picture | On-screen text | Proof captured |
 |---|---|---|---|
@@ -89,7 +89,7 @@ This frame explains why the earlier video felt disconnected: it shows an existin
 
 ## 7. Final production record
 
-The delivered cut uses ten concise, open-captioned proof beats: safe form fill, submission, guardianship routing, the real firm notification, the topical customer reply, live availability and hold, Stripe Sandbox Checkout, the `$50` test payment, the honest verification return, and the final confirmation email. Narration and music were intentionally omitted after the user requested a less wordy result; the video is designed to work muted.
+The delivered cut uses ten concise, open-captioned proof beats: safe form fill, submission, guardianship routing, the real firm notification, the topical customer reply, live availability and hold, Stripe Sandbox Checkout, the `$50` test payment, the honest verification return, and the final confirmation email. The three email beats use the user-supplied screenshots from the real test run. Narration and music were intentionally omitted after the user requested a less wordy result; the video is designed to work muted.
 
 - Master: `video_build/intakebrief-contact-form-demo.mp4`
 - Published website asset: `public/how-it-works.mp4`
@@ -130,7 +130,7 @@ The delivered cut uses ten concise, open-captioned proof beats: safe form fill, 
 
 ### D. Edit and graphics
 
-- [x] Build an 89.57-second timeline in the approved cause-and-effect order.
+- [x] Build a 54.80-second timeline in the approved cause-and-effect order.
 - [x] Remove loading delays while preserving honest cause-and-effect order.
 - [x] Apply consistent numbered proof captions in the lower safe area.
 - [x] Use only real captured results; no operational screen was recreated or mocked.
@@ -146,7 +146,7 @@ The delivered cut uses ten concise, open-captioned proof beats: safe form fill, 
 - [x] Check extracted frames for API keys, OAuth credentials, refresh tokens, webhook secrets, and unrelated private content.
 - [x] Export 1920x1080 H.264 and verify 89.566667 seconds, 30 fps, yuv420p, and complete decode with `ffprobe`/`ffmpeg`.
 - [x] Extract title, contact-sheet, email, payment, and final-confirmation frames for visual QA.
-- [x] Replace `public/how-it-works.mp4`, update captions, and run all 138 tests, TypeScript checking, and a production build.
+- [x] Replace `public/how-it-works.mp4`, verify the 1920x1080 H.264 output, and complete a full decode check.
 - [x] Keep the master at `video_build/intakebrief-contact-form-demo.mp4` outside `public/`.
 
 ## 9. Acceptance criteria
@@ -155,13 +155,13 @@ The video is complete only when:
 
 - The form shown is the real connected IntakeBrief form.
 - The submission is actually accepted.
-- Both real test emails are shown after delivery.
+- The real firm alert, topical customer response, and booking-confirmation email are shown after delivery.
 - Availability comes from Google Calendar, not demo slots.
 - The selected time visibly enters a 15-minute hold.
 - Stripe visibly remains in test mode and the amount is exactly $50.00.
 - A signed webhook, not the browser redirect, confirms the booking.
 - The final confirmation is visible.
-- The 90-second cut remains understandable without sound.
+- The 54.80-second cut remains understandable without sound.
 - No confidential data or credentials appear.
 
 ## 10. Final state
@@ -174,4 +174,4 @@ The video is complete only when:
 | Google Calendar | Ready: live token refresh succeeds; 79 real slots returned in `America/Chicago` with demo mode off |
 | Stripe test secret and webhook listener | Configured; listener running |
 | Stripe end-to-end payment | Ready: $50 Sandbox checkout, signed webhook HTTP 200, and confirmed booking verified |
-| Public video asset | Replaced with the verified 89.57-second master |
+| Public video asset | Replaced with the verified 54.80-second master, including the three real email snapshots |
