@@ -1,19 +1,31 @@
 WEBVTT
 
-00:00:00.150 --> 00:00:09.020
-What happens after you hit Send. Here's a quick preview of the IntakeBrief process, shown with sample data.
+00:00:02.500 --> 00:00:12.900
+A short, non-confidential guardianship inquiry.
 
-00:00:12.150 --> 00:00:23.060
-Your inquiry goes straight to the firm's inbox. Real email, with your topic identified. No dashboard for staff to check.
+00:00:12.900 --> 00:00:19.900
+One click starts the intake workflow.
 
-00:00:24.150 --> 00:00:32.710
-You get a real reply in seconds. Specific to your topic, not a generic “we received your message” note.
+00:00:19.900 --> 00:00:28.233
+Routed as guardianship — high confidence.
 
-00:00:36.150 --> 00:00:45.860
-Pick a consultation time. Real availability, shown in your time zone, held for fifteen minutes while you decide.
+00:00:28.233 --> 00:00:35.233
+The firm receives the real inquiry.
 
-00:00:48.150 --> 00:00:57.290
-A fifty dollar deposit reserves your slot. Secure checkout. The firm never sees your card details.
+00:00:35.233 --> 00:00:43.733
+The client reply is topical, not generic.
 
-00:01:00.150 --> 00:01:09.360
-Confirmation by email. Your time is confirmed only after payment is verified. No surprises.
+00:00:43.733 --> 00:00:53.733
+Real availability. A 15-minute hold.
+
+00:00:53.733 --> 00:01:07.066
+Stripe test checkout reserves the consultation.
+
+00:01:07.066 --> 00:01:11.066
+A verified $50 sandbox deposit.
+
+00:01:11.066 --> 00:01:16.066
+The redirect alone does not confirm the booking.
+
+00:01:16.066 --> 00:01:26.066
+Webhook verified. Appointment confirmed.

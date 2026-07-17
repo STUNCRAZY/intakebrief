@@ -14,7 +14,7 @@ import type { FirmProfile } from '../firms/types';
 import type { BaseInquiry } from '../inquiry/types';
 import { getFieldsForFirm } from '../inquiry/fields';
 import { getPreparationGuidance } from '../guidance/preparation';
-import { MANDATED_DOCUMENT_INSTRUCTION, PROHIBITED_ITEMS } from '../guidance/prohibited';
+import { MANDATED_DOCUMENT_INSTRUCTION } from '../guidance/prohibited';
 
 export interface TemplateInput {
   firm: FirmProfile;
@@ -204,8 +204,13 @@ const TOPIC_BLOCKS: Record<string, TopicBlock> = {
 };
 
 const LOW_CONFIDENCE_BODY =
-  'Your inquiry did not point clearly to a single matter category, and that is completely fine. ' +
-  'An initial consultation can help clarify which matter category best fits your situation and what a path forward could look like.';
+  'Your inquiry does not fit one clear category yet. A consultation can identify the main issue and the next step.';
+
+/** Pull the concise, topic-specific middle sentence from a topic copy block. */
+function getTopicFocus(block: TopicBlock): string {
+  const focus = block.body.split('. ')[1] ?? block.body;
+  return /[.!?]$/.test(focus) ? focus : `${focus}.`;
+}
 
 /** True when a practice field records a hearing, court, or deadline date. */
 function hasUrgentDate(inquiry: TemplateInput['inquiry']): boolean {
@@ -276,40 +281,57 @@ export function buildCustomerResponse(input: TemplateInput): EmailMessage {
 
   const block = classification.primary ? TOPIC_BLOCKS[classification.primary] : undefined;
   const topicParagraph =
-    classification.confidence === 'low' || !block ? LOW_CONFIDENCE_BODY : block.body;
+    classification.confidence === 'low' || !block
+      ? LOW_CONFIDENCE_BODY
+      : `We categorized your inquiry as ${block.label.toLowerCase()}. ${getTopicFocus(block)}`;
 
   const urgent = hasUrgentDate(inquiry);
   const urgencyParagraph = urgent
-    ? 'You noted an upcoming hearing, court date, or deadline in your inquiry, so this matter may be time-sensitive. Choosing an early consultation time on the firm\u2019s intake page is a sensible precaution.'
+    ? 'You mentioned a hearing, court date, or deadline. This may be time-sensitive; choose the earliest available time.'
     : null;
 
-  const preparation = getPreparationGuidance({ lane: firm.lane, topics: classification.topics });
+  const allPreparation = getPreparationGuidance({ lane: firm.lane, topics: classification.topics });
+  const topicPreparation = getPreparationGuidance({
+    lane: '',
+    topics: classification.topics,
+  }).slice(6, 8);
+  const specificPreparation =
+    topicPreparation.length > 0 ? topicPreparation : allPreparation.slice(6, 8);
+  const preparation = Array.from(
+    new Set(
+      [
+        allPreparation.find((item) => /typed timeline/i.test(item)),
+        allPreparation.find((item) => /three main questions/i.test(item)),
+        ...specificPreparation,
+      ].filter((item): item is string => Boolean(item)),
+    ),
+  );
 
+  const greeting = `Hi ${inquiry.fullName},`;
   const introParagraph =
-    `Dear ${inquiry.fullName}, this message was sent by IntakeBrief on behalf of ${firm.name} ` +
-    `in response to the inquiry you submitted through the firm\u2019s online intake page. ` +
-    `This response does not create an attorney-client relationship, and no attorney-client ` +
-    `relationship is formed unless and until the firm agrees to represent you.`;
+    `${firm.name} received your ${block ? block.label.toLowerCase() : 'general'} inquiry through IntakeBrief.`;
 
   const nextSteps = [
-    `The firm reviews new inquiries as they arrive.`,
-    `Available consultation times are presented on the firm\u2019s intake page, where you can choose the time that works for you.`,
-    `Reserving a consultation time requires a $50 reservation deposit. The deposit is charged only to reserve the consultation time and is applied per the firm\u2019s policies.`,
+    `Choose a consultation time on the firm\u2019s intake page.`,
+    `The time is held for 15 minutes during checkout.`,
+    `A $50 deposit reserves it under the firm\u2019s policies.`,
   ];
 
-  const documentsParagraph =
-    `${MANDATED_DOCUMENT_INSTRUCTION} Please also do not send any of the following through this ` +
-    `form or by email: ${PROHIBITED_ITEMS.join('; ')}.`;
+  const documentsParagraph = MANDATED_DOCUMENT_INSTRUCTION;
 
   const closingParagraph =
-    `Nothing in this message is legal advice, and no outcome can be predicted or promised. ` +
-    `For scheduling questions, please use the firm\u2019s intake page rather than this message.`;
+    `This email is not legal advice and does not create an attorney-client relationship. ` +
+    `Representation begins only if the firm agrees to represent you.`;
 
-  const signature = `IntakeBrief, on behalf of ${firm.name}`;
+  const signature = `IntakeBrief for ${firm.name}`;
 
-  const subject = `Your consultation inquiry with ${firm.name}`;
+  const subject = block
+    ? `Next steps for your ${block.label.toLowerCase()} inquiry — ${firm.name}`
+    : `Next steps for your inquiry — ${firm.name}`;
 
   const textParts: string[] = [
+    greeting,
+    '',
     introParagraph,
     '',
     topicParagraph,
@@ -330,6 +352,7 @@ export function buildCustomerResponse(input: TemplateInput): EmailMessage {
   ];
 
   const htmlParts: string[] = [
+    `<p>${escapeHtml(greeting)}</p>`,
     `<p>${escapeWithBreaks(introParagraph)}</p>`,
     `<p>${escapeHtml(topicParagraph)}</p>`,
     ...(urgencyParagraph

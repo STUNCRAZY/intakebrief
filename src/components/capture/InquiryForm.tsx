@@ -323,7 +323,7 @@ export function InquiryForm({ firm, fields, preparation }: InquiryFormProps) {
           src="/how-it-works.mp4"
           aria-label="Watch what happens next — 90-second demo video"
         >
-          <track kind="captions" label="English captions" src="/how-it-works-captions.vtt" default />
+          <track kind="captions" label="English captions" src="/how-it-works-captions.vtt" />
         </video>
         <figcaption className={styles.videoCaption}>
           <strong>Watch what happens next.</strong> 90-second preview: what happens after you send

@@ -5,7 +5,7 @@ import {
   escapeHtml,
   type TemplateInput,
 } from './templates';
-import { MANDATED_DOCUMENT_INSTRUCTION, PROHIBITED_ITEMS } from '../guidance/prohibited';
+import { MANDATED_DOCUMENT_INSTRUCTION } from '../guidance/prohibited';
 import type { FirmProfile } from '../firms/types';
 
 function makeFirm(overrides: Partial<FirmProfile> = {}): FirmProfile {
@@ -174,24 +174,44 @@ describe('buildCustomerResponse', () => {
     for (const version of [msg.text, msg.html]) {
       expect(version).toMatch(/does not create an attorney-client relationship/i);
       expect(version).toMatch(/\$50/);
-      expect(version).toMatch(/charged only to reserve the consultation time/i);
-      expect(version).toMatch(/per the firm.{0,5}s policies/i);
+      expect(version).toMatch(/\$50 deposit reserves it/i);
+      expect(version).toMatch(/under the firm.{0,5}s policies/i);
       expect(version).toMatch(/A typed timeline of events/);
       expect(version).toMatch(/three main questions/i);
       expect(version).toContain(MANDATED_DOCUMENT_INSTRUCTION);
     }
-    // summary of prohibited items appears too
-    expect(msg.text).toContain(PROHIBITED_ITEMS[0]);
-    expect(msg.text).toContain(PROHIBITED_ITEMS[PROHIBITED_ITEMS.length - 1]);
-    // family lane preparation extras
+    // Two topic/lane-specific preparation items remain after the common essentials.
     expect(msg.text).toMatch(/children are involved/i);
+    expect(msg.text).toMatch(/current living arrangement/i);
   });
 
   it('mentions next steps and consultation times on the intake page', () => {
     const msg = buildCustomerResponse(makeInput());
     expect(msg.text).toMatch(/What happens next/i);
-    expect(msg.text).toMatch(/consultation times are presented on the firm.{0,5}s intake page/i);
-    expect(msg.text).toMatch(/sent by IntakeBrief on behalf of Example Law Firm/i);
+    expect(msg.text).toMatch(/choose a consultation time on the firm.{0,5}s intake page/i);
+    expect(msg.text).toMatch(/Example Law Firm received your child custody inquiry through IntakeBrief/i);
+    expect(msg.text).toMatch(/held for 15 minutes/i);
+  });
+
+  it('keeps the customer message concise and visibly topic-specific', () => {
+    const msg = buildCustomerResponse(makeInput());
+    const wordCount = msg.text.trim().split(/\s+/).length;
+    expect(wordCount).toBeLessThan(180);
+    expect(msg.subject).toBe('Next steps for your child custody inquiry — Example Law Firm');
+    expect(msg.text).toMatch(/best interests/i);
+
+    const guardianship = buildCustomerResponse(
+      makeInput({
+        // The inquiry topic should win even when the firm's broad lane is business.
+        firm: makeFirm({ lane: 'business', practiceAreas: ['Guardianship'] }),
+        classification: { primary: 'guardianship', confidence: 'medium', topics: ['guardianship'] },
+      }),
+    );
+    expect(guardianship.text).toMatch(/court process for appointing someone/i);
+    expect(guardianship.text).toMatch(/brief family overview/i);
+    expect(guardianship.text).toMatch(/county where the matter/i);
+    expect(guardianship.text).not.toMatch(/timeline of the transaction or dispute/i);
+    expect(guardianship.text).not.toMatch(/child.{0,5}s best interests/i);
   });
 
   it('never tells the customer to respond to the email itself', () => {
@@ -212,8 +232,8 @@ describe('buildCustomerResponse', () => {
     const msg = buildCustomerResponse(
       makeInput({ classification: { primary: null, confidence: 'low', topics: [] } }),
     );
-    expect(msg.text).toMatch(/did not point clearly to a single matter category/i);
-    expect(msg.text).toMatch(/clarify which matter category best fits/i);
+    expect(msg.text).toMatch(/does not fit one clear category yet/i);
+    expect(msg.text).toMatch(/identify the main issue and the next step/i);
   });
 
   it('HTML-escapes user content in the customer response', () => {

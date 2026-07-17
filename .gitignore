@@ -26,3 +26,8 @@ next-env.d.ts
 
 # generated HTML previews
 preview/
+
+# local video production intermediates (final master remains tracked)
+video_build/raw_recording/
+video_build/clips/
+video_build/review/
