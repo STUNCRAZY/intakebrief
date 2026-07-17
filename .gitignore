@@ -32,3 +32,5 @@ preview/
 video_build/raw_recording/
 video_build/clips/
 video_build/review/
+video_build/narration/
+video_build/*-silent.mp4

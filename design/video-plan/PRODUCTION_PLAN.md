@@ -1,7 +1,7 @@
 # IntakeBrief end-to-end demo video production plan
 
 Status: completed and verified on 2026-07-17
-Final runtime: 54.80 seconds
+Final runtime: 51.40 seconds
 Master format: 1920x1080, 30 fps, H.264, yuv420p, 16:9
 Primary demo surface: `/capture/kelsey-law`
 Test inbox: `FGarcia@TLG-works.com` (masked where appropriate in the public cut)
@@ -53,7 +53,7 @@ This frame explains why the earlier video felt disconnected: it shows an existin
 - Browser framing: crop tabs/bookmarks unless the URL establishes trust. Keep the IntakeBrief URL visible during the form submission and Stripe's domain visible during checkout.
 - Captions: open captions in the lower safe area, two lines maximum, high contrast, readable with audio muted.
 - Privacy: mask secret values, message IDs, tokens, unrelated inbox content, and personal calendar details. Keep the business test inbox visible only when it adds proof.
-- Sound: warm professional narration at roughly 145 words per minute, quiet click accents, no loud corporate music. If music is used, keep it 18–22 dB below narration.
+- Sound: ElevenLabs narration using the configured `Snap - Fast-paced Viral Narrator` voice, slowed in the final mix to a measured delivery. No music is used.
 
 ## 5. Approved concise shot list
 
@@ -89,11 +89,13 @@ This frame explains why the earlier video felt disconnected: it shows an existin
 
 ## 7. Final production record
 
-The delivered cut uses ten concise, open-captioned proof beats: safe form fill, submission, guardianship routing, the real firm notification, the topical customer reply, live availability and hold, Stripe Sandbox Checkout, the `$50` test payment, the honest verification return, and the final confirmation email. The three email beats use the user-supplied screenshots from the real test run. Narration and music were intentionally omitted after the user requested a less wordy result; the video is designed to work muted.
+The delivered cut uses nine concise, open-captioned proof beats: safe form fill, delivery status, firm notification, topical customer reply, live availability, Stripe Sandbox Checkout, hosted payment entry, signed-webhook verification, and final confirmation. The firm, client, and booking email proof is cropped from the user-supplied real-test composite. The new source is the user's 2026-07-17 screen recording, and ElevenLabs narration carries the concise explanation; no music is used. Test contact information is masked in the final export.
 
 - Master: `video_build/intakebrief-contact-form-demo.mp4`
 - Published website asset: `public/how-it-works.mp4`
-- Reproducible render: `video_build/render-demo.ps1`
+- Narration generator: `video_build/generate-elevenlabs-narration.ps1`
+- Reproducible render: `video_build/render-narrated-demo.ps1`
+- Narration copy: `video_build/narration-script.txt`
 - Captions: `public/how-it-works-captions.vtt`
 - Raw captures: `video_build/raw_recording/`
 - SHA-256: `778B969CF9B28FABF85AEC522C14A7EDA76251BF5D03A4331540EB559F2DDE0D`
@@ -130,7 +132,7 @@ The delivered cut uses ten concise, open-captioned proof beats: safe form fill, 
 
 ### D. Edit and graphics
 
-- [x] Build a 54.80-second timeline in the approved cause-and-effect order.
+- [x] Build a 51.40-second timeline in the approved cause-and-effect order.
 - [x] Remove loading delays while preserving honest cause-and-effect order.
 - [x] Apply consistent numbered proof captions in the lower safe area.
 - [x] Use only real captured results; no operational screen was recreated or mocked.
@@ -140,7 +142,7 @@ The delivered cut uses ten concise, open-captioned proof beats: safe form fill, 
 
 ### E. Verification and delivery
 
-- [x] Review the complete muted-first cut and confirm it communicates the workflow without narration.
+- [x] Review the narrated cut and confirm the open captions still communicate the workflow with audio muted.
 - [x] Verify every on-screen claim against the captured app state, accepted emails, Google availability, Stripe event, and booking record.
 - [x] Confirm payment is visibly labeled `Sandbox` and no real charge is implied.
 - [x] Check extracted frames for API keys, OAuth credentials, refresh tokens, webhook secrets, and unrelated private content.
@@ -161,7 +163,7 @@ The video is complete only when:
 - Stripe visibly remains in test mode and the amount is exactly $50.00.
 - A signed webhook, not the browser redirect, confirms the booking.
 - The final confirmation is visible.
-- The 54.80-second cut remains understandable without sound.
+- The 51.40-second cut remains understandable without sound.
 - No confidential data or credentials appear.
 
 ## 10. Final state
@@ -174,4 +176,4 @@ The video is complete only when:
 | Google Calendar | Ready: live token refresh succeeds; 79 real slots returned in `America/Chicago` with demo mode off |
 | Stripe test secret and webhook listener | Configured; listener running |
 | Stripe end-to-end payment | Ready: $50 Sandbox checkout, signed webhook HTTP 200, and confirmed booking verified |
-| Public video asset | Replaced with the verified 54.80-second master, including the three real email snapshots |
+| Public video asset | Replaced with the verified 51.40-second narrated master, using the user-provided screen recording and masked email evidence |

@@ -1,0 +1,11 @@
+This is what happens after a prospective client submits an IntakeBrief form.
+
+They enter a short, non-confidential description and accept the required notices.
+
+The system delivers the lead to the firm, identifies the likely matter, and sends the client a response that matches the inquiry.
+
+The client chooses an open consultation time, and IntakeBrief holds it while Stripe hosts the fifty-dollar test checkout.
+
+After payment, the browser waits for signed webhook verification.
+
+The confirmation email closes the loop: qualified lead, scheduled consultation, and verified deposit.

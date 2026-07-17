@@ -1,31 +1,19 @@
 WEBVTT
 
-00:00:02.500 --> 00:00:12.900
-A short, non-confidential guardianship inquiry.
+00:00:00.000 --> 00:00:08.800
+This is what happens after a prospective client submits an IntakeBrief form.
 
-00:00:12.900 --> 00:00:19.900
-One click starts the intake workflow.
+00:00:08.800 --> 00:00:15.600
+They enter a short, non-confidential description and accept the required notices.
 
-00:00:19.900 --> 00:00:28.233
-Routed as guardianship — high confidence.
+00:00:15.600 --> 00:00:24.700
+The lead reaches the firm, the likely matter is identified, and the client gets a response that matches the inquiry.
 
-00:00:28.233 --> 00:00:35.233
-The firm receives the real inquiry.
+00:00:24.700 --> 00:00:36.000
+The client selects an open consultation time. IntakeBrief holds it while Stripe hosts the fifty-dollar test checkout.
 
-00:00:35.233 --> 00:00:43.733
-The client reply is topical, not generic.
+00:00:36.000 --> 00:00:44.800
+After payment, the browser waits for signed webhook verification.
 
-00:00:43.733 --> 00:00:53.733
-Real availability. A 15-minute hold.
-
-00:00:53.733 --> 00:01:07.066
-Stripe test checkout reserves the consultation.
-
-00:01:07.066 --> 00:01:11.066
-A verified $50 sandbox deposit.
-
-00:01:11.066 --> 00:01:16.066
-The redirect alone does not confirm the booking.
-
-00:01:16.066 --> 00:01:26.066
-Webhook verified. Appointment confirmed.
+00:00:44.800 --> 00:00:51.400
+The confirmation email closes the loop: qualified lead, scheduled consultation, and verified deposit.
