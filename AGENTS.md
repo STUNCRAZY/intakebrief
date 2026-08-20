@@ -3,6 +3,16 @@
 Lead-capture + sales-research web app for boutique law firms (Next.js 15 App Router,
 React 19, TypeScript strict, hand-built CSS Modules — no Tailwind).
 
+## Shared memory pointer
+
+This repo has no local vault/cabinet. For shared context, walk those three files in
+`STUNCRAZY/aios-brain`, in order:
+
+`Memory/cabinet/hot.md` → `Memory/cabinet/index.md` → `Memory/cabinet/pages/locks.md`
+
+Do not copy `Memory/cabinet`, dumps, or `employees/` into this repo, and do not invent a
+local cabinet here.
+
 ## Cursor Cloud specific instructions
 
 ### Services
