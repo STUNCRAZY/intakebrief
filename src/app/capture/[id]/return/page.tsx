@@ -3,7 +3,9 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import React from 'react';
 import { getBookingService } from '@/lib/calendar/service';
+import { isDemoMode } from '@/lib/calendar/demo';
 import { getFirm } from '@/lib/firms/load';
+import { getStripe } from '@/lib/payments/stripe';
 import shared from '../../../shared.module.css';
 import styles from './page.module.css';
 
@@ -54,7 +56,9 @@ export default async function CaptureReturnPage({
 
   const cancelled = query.cancelled === '1';
   const hasSession = typeof query.session_id === 'string' && query.session_id.length > 0;
-  const isDemo = query.demo === '1';
+  // Match checkout eligibility: a query flag cannot enable demo mode, and a
+  // configured Stripe client always takes precedence over the local demo.
+  const isDemo = query.demo === '1' && isDemoMode() && getStripe() === null;
 
   // Demo mode return: no Stripe, no charge. Confirm the held slot locally so
   // the sales preview shows a realistic end state; an already-confirmed slot
